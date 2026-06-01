@@ -167,3 +167,4 @@ Each monthly review should ask:
 4. Which notes should be turned into public outputs?
 5. Which experiments should be implemented?
 6. Which topics should be deprioritized?
+7. Does the agent harness (`AGENTS.md` routing, `USER.md`, templates) still match how the repo is actually used? Re-run `/project-meta audit` if it has drifted.
