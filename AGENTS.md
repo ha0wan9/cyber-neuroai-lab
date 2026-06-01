@@ -16,7 +16,6 @@ This repository is a personal research and learning lab for NeuroAI, computation
    - `papers/README.md` for paper-reading artifacts.
    - `learning-log/README.md` for chronological learning records.
    - `templates/*.md` when creating new learning units, paper notes, experiments, or weekly reviews.
-5. If `RTK.md` exists in the repo root, read it before starting work that may affect research tooling or knowledge routines.
 
 ## Project Type
 

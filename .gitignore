@@ -1,3 +1,6 @@
 # Project Meta local user preferences
 /USER.md
 /USER.template.md
+
+# Local editor state
+/.obsidian/

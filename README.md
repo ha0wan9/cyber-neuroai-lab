@@ -70,6 +70,7 @@ papers/           Paper summaries, reading notes, and literature maps
 agents/           AI-assisted research workflows and prompts
 templates/        Reusable templates for notes, experiments, and reviews
 assets/           Figures, diagrams, screenshots, and other static resources
+inbox/            Unsorted capture: raw ideas and snippets awaiting triage into a permanent home
 ```
 
 ## Current Phase
