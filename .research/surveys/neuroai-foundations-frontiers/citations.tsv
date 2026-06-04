@@ -1,0 +1,38 @@
+from	to	relation	evidence
+P015	P014	extends	LeNet convolution/subsampling descends from Neocognitron's S/C-cell hierarchy
+P016	P014	extends	HMAX simple/complex-cell hierarchy descends from Neocognitron
+P032	P015	extends	Goal-driven HCNN uses deep CNNs (LeNet-lineage) as the vision model
+P032	P016	extends	Goal-driven hierarchical models build on HMAX-style cortical hierarchy
+P006	P032	same-team	DiCarlo-lab review consolidating the goal-driven paradigm of P032
+P040	P032	same-team	Brain-Score (DiCarlo lab) operationalizes the goal-driven-fit program of P032
+P033	P032	competing-route	Parallel 2014 result using RSA rather than direct response prediction
+P070	P032	critical-review-of	Argues DNN-as-vision-model (incl. goal-driven fits) fail psychophysics
+P070	P040	critical-review-of	Argues Brain-Score-style benchmarks are confounded
+P076	P032	critical-review-of	Texture-bias shows CNN object recognition diverges from human vision
+P024	P023	extends	Meta-RL recasts dopamine RPE (P023) at the network/algorithm level
+P020	P008	extends	Predictive-coding-approximates-backprop builds on Rao-Ballard PC
+P026	P022	same-team	Backprop-and-the-brain (Lillicrap) extends feedback-alignment line
+P026	P020	cites	NGRAD review situates predictive-coding-as-backprop among bio credit-assignment schemes
+P019	P013	extends	Grid/attractor codes relate to Hopfield-style attractor dynamics
+P018	P017	extends	World Models' recurrent internal memory follows memory-augmented-net lineage (DNC)
+P051	P050	same-team	'Learn and think like people' generalizes the BPL program (Lake)
+P053	P052	extends	MLC (P053) directly solves the SCAN compositional-generalization challenge (P052)
+P042	P041	competing-route	CEBRA (contrastive) vs LFADS (sequential VAE) for latent neural dynamics
+P045	P041	extends	POYO foundation model generalizes single-session latent-dynamics decoding
+P045	P042	cites	POYO situates itself among learned neural-population embeddings
+P059	P058	same-team	Stanford speech BCI extends the same group's handwriting BCI
+P061	P059	competing-route	UC Davis speech neuroprosthesis advances throughput/vocabulary vs Stanford
+P060	P059	competing-route	UCSF ECoG speech+avatar is a different recording modality than intracortical
+P063	P062	competing-route	MindEye vs Stable-Diffusion-from-fMRI: rival fMRI image-reconstruction routes
+P066	P065	same-team	Full-body virtual rat (P066) extends the deep-RL virtual rodent (P065)
+P074	P027	extends	SpikingJelly implements surrogate-gradient SNN training at framework scale
+P073	P029	competing-route	Tianjic hybrid ANN/SNN chip vs pure-SNN TrueNorth
+P073	P028	competing-route	Tianjic hybrid architecture vs Loihi spiking-only design
+P036	P037	competing-route	Independent LM-to-brain alignment results (MIT vs Princeton)
+P038	P036	competing-route	fMRI/MEG LM-brain convergence parallel to ECoG/word-prediction result
+P071	P036	cites	LLM-brain review surveys the language-model encoding-model results
+P072	P032	cites	'If deep learning is the answer' review reflects on goal-driven vision models
+P046	P047	competing-route	Connectome-constrained (fly) vs data-trained digital-twin (mouse) circuit models
+P040	P032	dataset-target	Brain-Score serves as the evaluation target for goal-driven vision models
+P004	P002	extends	2023 NeuroAI roadmap consolidates the bidirectional program framed by Hassabis 2017
+P005	P006	cites	Neuroconnectionist programme reviews the goal-driven-models paradigm

@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuroAI: Foundations and Frontiers (v6)</title>
+  <meta name="generator" content="deep-survey-bfs render_html.py" />
+  <meta name="generated" content="2026-06-02T16:42:30.934019+00:00" />
+
+  
+
+  <style>
+/* ---------- root tokens ---------- */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f7f7f4;
+  --bg-code: #f3f3ee;
+  --fg: #18181b;
+  --fg-muted: #52525b;
+  --fg-faint: #a1a1aa;
+  --border: #e4e4e7;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --warn: #b45309;
+  --crit: #b91c1c;
+  --tooltip-bg: #18181b;
+  --tooltip-fg: #fafafa;
+  --max-content: 880px;
+  --toc-w: 240px;
+  --topbar-h: 48px;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --bg-soft: #18181b;
+  --bg-code: #1f1f23;
+  --fg: #e4e4e7;
+  --fg-muted: #a1a1aa;
+  --fg-faint: #52525b;
+  --border: #27272a;
+  --accent: #60a5fa;
+  --accent-soft: #1e3a5f;
+  --warn: #f59e0b;
+  --crit: #ef4444;
+  --tooltip-bg: #f4f4f5;
+  --tooltip-fg: #18181b;
+}
+
+/* ---------- baseline ---------- */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre { font-family: var(--mono); font-size: 13px; }
+code { background: var(--bg-code); padding: 1px 5px; border-radius: 3px; }
+pre {
+  background: var(--bg-code);
+  padding: 12px 14px;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+}
+pre code { background: transparent; padding: 0; }
+
+/* ---------- topbar ---------- */
+.topbar {
+  height: var(--topbar-h);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  gap: 12px;
+}
+.topbar-left { display: flex; align-items: baseline; gap: 14px; min-width: 0; }
+.topbar-title { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-meta { font-size: 12px; color: var(--fg-muted); white-space: nowrap; }
+.topbar-right { display: flex; align-items: center; gap: 8px; }
+#search-input {
+  width: 280px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-soft);
+  color: var(--fg);
+  font-size: 13px;
+  font-family: var(--sans);
+}
+#search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--bg);
+}
+#theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#theme-toggle:hover { background: var(--bg-soft); }
+
+/* ---------- search results ---------- */
+.search-results {
+  position: fixed;
+  top: var(--topbar-h);
+  right: 18px;
+  width: 420px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  z-index: 60;
+  padding: 6px 0;
+}
+.search-results .res {
+  padding: 8px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+}
+.search-results .res:last-child { border-bottom: none; }
+.search-results .res:hover { background: var(--bg-soft); }
+.search-results .res-kind {
+  display: inline-block;
+  font-size: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.search-results .res-title { font-weight: 500; }
+.search-results .res-snippet { font-size: 12px; color: var(--fg-muted); margin-top: 2px; }
+
+/* ---------- layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: var(--toc-w) minmax(0, 1fr);
+  gap: 28px;
+  max-width: calc(var(--max-content) + var(--toc-w) + 60px);
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+}
+.toc {
+  position: sticky;
+  top: calc(var(--topbar-h) + 16px);
+  align-self: start;
+  max-height: calc(100vh - var(--topbar-h) - 32px);
+  overflow-y: auto;
+  font-size: 13px;
+  border-right: 1px solid var(--border);
+  padding-right: 16px;
+}
+.toc-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--fg-faint);
+  margin-bottom: 10px;
+}
+.toc ul { list-style: none; padding: 0; margin: 0; }
+.toc li { margin: 2px 0; }
+.toc a {
+  display: block;
+  padding: 3px 8px;
+  color: var(--fg-muted);
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+}
+.toc a:hover { background: var(--bg-soft); text-decoration: none; }
+.toc a.active {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+}
+.toc .toc-h3 a { padding-left: 22px; font-size: 12px; }
+
+/* ---------- content ---------- */
+.content {
+  min-width: 0;
+  max-width: var(--max-content);
+}
+.content h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; }
+.content h2 { font-size: 22px; line-height: 1.3; margin: 36px 0 12px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+.content h3 { font-size: 17px; margin: 24px 0 10px; }
+.content h4 { font-size: 15px; margin: 18px 0 8px; }
+.content p { margin: 0 0 14px; }
+.content ul, .content ol { padding-left: 22px; }
+.content blockquote {
+  border-left: 3px solid var(--border);
+  padding: 4px 14px;
+  margin: 14px 0;
+  color: var(--fg-muted);
+  background: var(--bg-soft);
+}
+
+/* tables */
+.content table {
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 13px;
+  width: 100%;
+}
+.content th, .content td {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.content th {
+  background: var(--bg-soft);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+}
+.content th.sortable::after { content: " ⇅"; color: var(--fg-faint); font-size: 10px; }
+.content th.sort-asc::after  { content: " ↑"; color: var(--accent); }
+.content th.sort-desc::after { content: " ↓"; color: var(--accent); }
+
+/* paper / claim refs */
+.paper-ref, .claim-ref {
+  cursor: help;
+  border-bottom: 1px dotted var(--accent);
+  padding: 0 1px;
+}
+.paper-ref:hover, .claim-ref:hover { background: var(--accent-soft); }
+.claim-ref { color: var(--warn); border-bottom-color: var(--warn); }
+
+/* tooltip */
+.tooltip {
+  position: absolute;
+  z-index: 100;
+  max-width: 420px;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-fg);
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease-out;
+}
+.tooltip[aria-hidden="false"] { opacity: 1; }
+.tooltip .t-title { font-weight: 600; margin-bottom: 4px; font-size: 13px; }
+.tooltip .t-meta  { font-size: 11px; opacity: 0.7; margin-bottom: 6px; }
+.tooltip .t-quote { font-style: italic; margin: 6px 0; padding-left: 6px; border-left: 2px solid var(--accent); }
+.tooltip .t-link  { color: var(--accent); font-size: 11px; pointer-events: auto; }
+
+/* mermaid */
+.mermaid {
+  background: var(--bg-soft);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 18px 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+/* plotly chart placeholder */
+.plotly-chart {
+  margin: 18px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  padding: 8px;
+  min-height: 360px;
+}
+.plotly-chart .chart-fallback {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: var(--fg-muted);
+  padding: 8px;
+}
+
+/* misc */
+.section-anchor {
+  visibility: hidden;
+  margin-left: 6px;
+  font-size: 0.7em;
+  color: var(--fg-faint);
+}
+h2:hover .section-anchor, h3:hover .section-anchor { visibility: visible; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+  #search-input { width: 160px; }
+}
+
+@media print {
+  .topbar, .toc, .tooltip, .search-results { display: none !important; }
+  .layout { display: block; padding: 0; }
+  .content { max-width: 100%; }
+  a { color: var(--fg); text-decoration: none; }
+  pre, .mermaid, .plotly-chart { page-break-inside: avoid; }
+}
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-title">NeuroAI: Foundations and Frontiers (v6)</span>
+      <span class="topbar-meta">2026-06-02 · 106 papers · 107 claims</span>
+    </div>
+    <div class="topbar-right">
+      <input type="search" id="search-input" placeholder="Search papers, claims, sections…" autocomplete="off" />
+      <button id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button>
+    </div>
+  </header>
+
+  <div id="search-results" class="search-results" hidden></div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-title">Contents</div>
+      <ul>
+<li class="toc-h2"><a href="#neuroai-foundations-and-frontiers-neuroai-foundations-frontiers-v6">NeuroAI: Foundations and Frontiers (neuroai-foundations-frontiers) v6</a></li>
+<li class="toc-h3"><a href="#contents">Contents</a></li>
+<li class="toc-h3"><a href="#1">§1 Research question and scope</a></li>
+<li class="toc-h3"><a href="#2">§2 Domain background</a></li>
+<li class="toc-h3"><a href="#3">§3 Taxonomy and timeline</a></li>
+<li class="toc-h3"><a href="#4">§4 Datasets and benchmarks</a></li>
+<li class="toc-h3"><a href="#5">§5 Method-route comparison</a></li>
+<li class="toc-h3"><a href="#6">§6 Per-paper deep-dives</a></li>
+<li class="toc-h3"><a href="#7">§7 Downstream applications</a></li>
+<li class="toc-h3"><a href="#8">§8 Cross-cutting analysis</a></li>
+<li class="toc-h3"><a href="#9">§9 Key research teams</a></li>
+<li class="toc-h3"><a href="#10">§10 Open challenges</a></li>
+<li class="toc-h3"><a href="#11">§11 Frontiers / future directions</a></li>
+<li class="toc-h3"><a href="#12">§12 Direct Q&amp;A back to original question</a></li>
+<li class="toc-h3"><a href="#13">§13 Recommended reading</a></li>
+<li class="toc-h3"><a href="#14">§14 Reproducibility tier</a></li>
+</ul>
+    </nav>
+
+    <main class="content" id="content">
+      <h1 id="neuroai-foundations-and-frontiers-neuroai-foundations-frontiers-v6">NeuroAI: Foundations and Frontiers (neuroai-foundations-frontiers) v6<a class="section-anchor" href="#neuroai-foundations-and-frontiers-neuroai-foundations-frontiers-v6" title="link">&para;</a></h1>
+<p><strong>Research question</strong>: Map the field of <strong>NeuroAI</strong> — the intersection of computational and cognitive neuroscience with artificial intelligence — from its cornerstone work through its current frontiers, capturing <em>both</em> directions of exchange (brain → AI inspiration; AI → brain modeling and analysis) across a taxonomy with no major omissions.
+<strong>Scope</strong>: Computational/cognitive/systems/theoretical neuroscience and the ML/DL work that explicitly engages the brain, from ~1940s–2010s cornerstones to mid-2026 frontiers, all model scales and signal modalities, including applied angles (BCI, neuromorphic, neural-data tooling, embodiment). Out of scope: pure ML with no brain claim, wet-lab molecular neuroscience without a computational model, and one-off metaphors.
+<strong>Survey version</strong>: v6 <em>(v2 SQ13; v3 weak-cell hardening; v4 France; v5 Centaur + Meta Brain&amp;AI line; v6 adds TRIBE v2 — the in-silico-neuroscience successor to TRIBE v1 — and the Nat. Commun. word-decoding paper; see the v6 delta footer)</em>
+<strong>Survey date</strong>: 2026-06-02
+<strong>Backing index</strong>: <code>paper_index.md</code> (100 papers — 70 ★★★, 30 ★★; 13 sub-questions; audit passed at Round 4; <code>version</code> additions through Round 7)
+<strong>Generated by</strong>: deep-survey-bfs skill</p>
+<blockquote>
+<p><strong>Provenance &amp; integrity note.</strong> This survey's paper index was built from multi-source, web-verified bibliographic metadata (publisher pages, DBLP, Semantic Scholar) plus abstracts and the established record of these widely-known works. Full-text PDFs were <em>not</em> re-read for every paper. Accordingly, <code>claims.jsonl</code> records findings at the abstract / well-established-result level with explicit <code>confidence</code> values; the quote fields are finding summaries, not certified verbatim transcriptions. Per the skill's claims-discipline, the structural validator does not check verbatim text — <strong>verbatim accuracy against primary sources remains a reader responsibility</strong>, especially for the numeric claims in §4/§6 (flagged inline). Where a result is recent or hedged, confidence is marked <code>medium</code>.</p>
+</blockquote>
+<hr />
+<h2 id="contents">Contents<a class="section-anchor" href="#contents" title="link">&para;</a></h2>
+<ul>
+<li><a href="#1">§1 Research question + scope</a></li>
+<li><a href="#2">§2 Domain background</a></li>
+<li><a href="#3">§3 Taxonomy + timeline</a></li>
+<li><a href="#4">§4 Datasets and benchmarks</a></li>
+<li><a href="#5">§5 Method-route comparison</a></li>
+<li><a href="#6">§6 Per-paper deep-dives</a></li>
+<li><a href="#7">§7 Downstream applications</a></li>
+<li><a href="#8">§8 Cross-cutting analysis</a></li>
+<li><a href="#9">§9 Key research teams</a></li>
+<li><a href="#10">§10 Open challenges</a></li>
+<li><a href="#11">§11 Frontiers / future directions</a></li>
+<li><a href="#12">§12 Direct Q&amp;A</a></li>
+<li><a href="#13">§13 Recommended reading</a></li>
+<li><a href="#14">§14 Reproducibility tier</a></li>
+</ul>
+<hr />
+<h2 id="1">§1 Research question and scope<a class="section-anchor" href="#1" title="link">&para;</a></h2>
+<p>NeuroAI is the research program at the boundary of neuroscience and artificial intelligence. It rests on a two-way bet: that biological brains are the only existing proof that the kind of flexible, sample-efficient, embodied intelligence we want from machines is physically possible (so brains should inform AI), and that modern AI systems — being the first artifacts whose internal representations are rich enough to compare quantitatively against neural data — are now the best available <em>models</em> of brains (so AI should inform neuroscience). The 2023 field-defining roadmap makes the first bet explicit, proposing an <strong>embodied Turing test</strong> that benchmarks machines against animal sensorimotor competence rather than human language (P004, C001); the goal-driven modeling literature makes the second (P006, P032).</p>
+<p>This survey answers 13 sub-questions (SQ1–SQ13; see <code>index.md</code>) that tile the field. <em>(SQ13 — visual intelligence &amp; world models — was added in v2 as an explicit, changelogged frame amendment; see §3.M / §6.M / §12.)</em> The decomposition deliberately separates <strong>direction of influence</strong> (brain→AI: SQ3/SQ4/SQ7; AI→brain: SQ5/SQ8/SQ11) from <strong>level of analysis</strong> (single neuron → circuit → network → cognition → behavior), so the buckets partition rather than overlap. SQ1–SQ2 cover foundations and classical theory; SQ6/SQ9/SQ10 cover cognition, applied decoding, and embodiment; SQ12 is the mandatory critical sub-question. The sum of the §12 answers is the answer to the framed question.</p>
+<p><strong>Scope boundaries</strong> (full table in <code>index.md</code>): in — both directions of influence, all model scales, cornerstones from the 1940s through mid-2026 frontier, all neural modalities, and applied NeuroAI (BCI, neuromorphic, neural-data tooling, embodiment). Out — pure ML with no brain claim, clinical neurology without a computational model, molecular neuroscience without a model, and loose metaphor.</p>
+<h2 id="2">§2 Domain background<a class="section-anchor" href="#2" title="link">&para;</a></h2>
+<p>Two framings recur throughout and are worth stating once. <strong>Marr's three levels of analysis</strong> (P001, C004) — computational (<em>what</em> problem is solved and <em>why</em>), algorithmic/representational (<em>how</em>, in terms of representations and processes), and implementational (<em>physical substrate</em>) — give the field a shared vocabulary for saying at which level a model is meant to be correct; much confusion in NeuroAI is a level mismatch. <strong>The "three components" decomposition</strong> (P003, C003) reframes both brains and artificial networks as defined by an <em>objective function</em>, a <em>learning rule</em>, and an <em>architecture</em>, and argues neuroscience should seek normative explanations in those terms rather than cataloguing response properties. These two framings — <em>levels</em> and <em>components</em> — are the conceptual coordinate system for the taxonomy in §3.</p>
+<h2 id="3">§3 Taxonomy and timeline<a class="section-anchor" href="#3" title="link">&para;</a></h2>
+<h3 id="31-primary-axis-direction-of-influence-level-of-analysis">3.1 Primary axis: direction of influence × level of analysis<a class="section-anchor" href="#31-primary-axis-direction-of-influence-level-of-analysis" title="link">&para;</a></h3>
+<p>The field's cleanest partition is a 3×N grid: <strong>direction of influence</strong> (brain→AI / AI→brain / bidirectional-or-applied) against <strong>level / object of study</strong>. Every ★★★ paper lands in exactly one primary cell.</p>
+<p><strong>Route A — Foundations &amp; framing (bidirectional).</strong> The conceptual scaffolding and field-defining statements: Marr's levels (<span class="paper-ref" data-id="P001">P001</span>), the bidirectional manifestos (P002 C002, P004 C001), the three-components reframing (P003 C003), and the Lakatosian "neuroconnectionist programme" that treats ANNs-as-brain-models as a falsifiable research program (P005 C006).</p>
+<p><strong>Route B — Classical computational-neuroscience theory (the substrate AI must explain).</strong> Normative principles of neural computation: efficient/sparse coding (P007 C007), hierarchical predictive coding (P008 C008), the free-energy principle (P009 C009), the Bayesian brain (P010 C010), divisive normalization as a canonical computation (P011 C011), and the dynamical-systems / neural-manifold view of population activity (P012 C012).</p>
+<p><strong>Route C — Brain → AI architectures.</strong> Structural inspiration: the visual-cortex → Neocognitron → CNN lineage (P014 C014 → P015 C015 → P016 C016), attractor/associative memory (Hopfield, P013 C013), memory-augmented networks (DNC, P017 C017), world-model architectures (P018 C018), and grid-code/navigation RNNs (P019 C019).</p>
+<p><strong>Route D — Brain → AI learning &amp; credit assignment.</strong> Biologically motivated alternatives to vanilla backprop: predictive coding ≈ backprop (P020 C020), feedback alignment (P022 C021), the dopamine reward-prediction-error → TD-learning link (P023 C022), prefrontal cortex as meta-RL (P024 C023), complementary learning systems ↔ replay (P025 C024), and the NGRAD synthesis (P026 C025).</p>
+<p><strong>Route E — AI → brain: deep nets as models of neural representation.</strong> Goal-driven vision models predicting V4/IT (P032 C031, P006 C005), RSA-based model comparison (P035 C034, P033 C032), auditory cortex models (P034 C033), language-model↔brain alignment (P036 C035, P037 C036, P038 C037), the Brain-Score benchmark (P040 C038), and dynamical-systems RNN models of cortex (P039 C039).</p>
+<p><strong>Route F — Spiking &amp; neuromorphic computation.</strong> SNN training (surrogate gradients, P027 C026; ultra-sparse TTFS, P031 C030) and neuromorphic hardware (Loihi P028 C027, TrueNorth P029 C028, SpiNNaker P030 C029, hybrid Tianjic P073 C072, the SpikingJelly framework P074 C073).</p>
+<p><strong>Route G — AI as a tool for neural &amp; behavioral data.</strong> Latent-dynamics models (LFADS P041 C040, CEBRA P042 C041), pose estimation (DeepLabCut P043 C042), connectomics segmentation (P044 C043), and neural-data foundation models (POYO P045 C044).</p>
+<p><strong>Route H — Cognitive-level &amp; human-like learning.</strong> Bayesian program induction (P050 C049), the "learn and think like people" agenda (P051 C050), compositional generalization (SCAN P052 C051 → MLC P053 C052), intuitive physics (P054 C053), the ARC measure of intelligence (P055 C054), and cognitive architectures (ACT-R P056 C055; Global Workspace in deep nets P057 C056).</p>
+<p><strong>Route I — BCI &amp; neural decoding (applied).</strong> Motor-text/handwriting (P058 C057), speech neuroprostheses (P059 C058, P060 C059, P061 C060), and stimulus reconstruction from brain activity (images: P062 C061, P063 C062; language: P064 C063).</p>
+<p><strong>Route J — Embodiment &amp; agents.</strong> Virtual animals (P065 C064, P066 C065) and world-model/autonomous-agent programs (JEPA P067 C066; World Models P018).</p>
+<p><strong>Route K — Convergence frontiers.</strong> Connectome-constrained and digital-twin circuit models (P046 C045, P047 C046), manifold-capacity theory (P048 C047), mechanistic interpretability as a "neuroscience of AI" (P049 C048), and the LLM↔brain and DL-for-neuroscience reviews (P071 C070, P072 C071).</p>
+<p><strong>Route L — Critiques &amp; limitations.</strong> The keystone critique that DNNs fail as vision models and that benchmarks are confounded (P070 C067), the texture-vs-shape bias result (P076 C074), the theory-deficit argument (P068 C069), and the deep-learning critical appraisal (P069 C068).</p>
+<p><strong>Route M — Visual intelligence &amp; world models (SQ13, v2 added).</strong> A cross-cutting route on how brains and AI build <em>internal models of the world</em> and <em>visual intelligence beyond recognition</em>, in four threads: (i) <strong>AI world models</strong> — World Models (<span class="paper-ref" data-id="P018">P018</span>), DreamerV3 (P077 C078), the non-generative V-JEPA video objective (P078 C079; scaled to planning in V-JEPA 2, P079 C089), generative interactive worlds (Genie, P080 C080), and the "video generation as world simulator" debate (Sora, P081 C086); (ii) <strong>world models in the brain / cognitive maps</strong> — the Tolman-Eichenbaum Machine (P082 C081) and the successor-representation predictive map (P083 C082), building on grid-cell codes (<span class="paper-ref" data-id="P019">P019</span>); (iii) <strong>object-centric &amp; relational visual reasoning</strong> — Slot Attention (P084 C083), the Neuro-Symbolic Concept Learner (P085 C084), and relational/graph inductive biases (P086 C088); (iv) <strong>vision-as-inverse-graphics &amp; intuitive physics as world simulation</strong> — DC-IGN analysis-by-synthesis (P089 C087), intuitive-physics-from-video (P087 C085) and its benchmark IntPhys 2 (P088 C090), extending the simulation-as-engine view (<span class="paper-ref" data-id="P054">P054</span>). This route deliberately spans both directions: AI world models (brain→AI inspiration and capability) and the hippocampal world model (AI-as-model-of-cognitive-maps).</p>
+<h3 id="32-lineage-figure-route-inheritance">3.2 Lineage figure (route inheritance)<a class="section-anchor" href="#32-lineage-figure-route-inheritance" title="link">&para;</a></h3>
+<p>The within-survey inheritance/rivalry edges. Solid <code>--&gt;</code> = direct inheritance; dotted = same-team or external relation; thick <code>==&gt;</code> = same-problem rival route. (See <code>citations.tsv</code> for the evidence behind each edge.)</p>
+<div class="mermaid">graph LR
+  subgraph BCI_decoding["BCI-decoding"]
+    P058["P058 brain-to-text handwriting<br/>2021 Nature"]
+    P059["P059 speech neuroprosthesis<br/>2023 Nature"]
+    P060["P060 speech + avatar<br/>2023 Nature"]
+    P061["P061 rapid speech BCI<br/>2024 NEJM"]
+    P062["P062 image recon (LDM)<br/>2023 CVPR"]
+    P063["P063 MindEye<br/>2023 NeurIPS"]
+  end
+  subgraph CNN_lineage["CNN-lineage"]
+    P014["P014 Neocognitron<br/>1980"]
+    P015["P015 LeNet<br/>1998"]
+    P016["P016 HMAX (Serre)<br/>2007"]
+  end
+  subgraph Cognitive["Cognitive"]
+    P050["P050 BPL<br/>2015 Science"]
+    P051["P051 learn&think<br/>2017 BBS"]
+    P052["P052 SCAN<br/>2018 ICML"]
+    P053["P053 MLC<br/>2023 Nature"]
+  end
+  subgraph Convergence["Convergence-frontier"]
+    P046["P046 connectome-constrained<br/>2024 Nature"]
+    P047["P047 digital twin<br/>2025 Nature"]
+  end
+  subgraph Credit["Credit-assignment"]
+    P020["P020 PC≈backprop<br/>2017"]
+    P022["P022 feedback alignment<br/>2016"]
+    P023["P023 dopamine RPE<br/>1997 Science"]
+    P024["P024 meta-RL PFC<br/>2018"]
+    P026["P026 backprop&brain<br/>2020 NRN"]
+  end
+  subgraph Embodied["Embodied-agents"]
+    P065["P065 virtual rodent<br/>2020 ICLR"]
+    P066["P066 virtual rat<br/>2024 Nature"]
+  end
+  subgraph Foundations["Foundations"]
+    P002["P002 Neuro-Inspired AI<br/>2017 Neuron"]
+    P004["P004 NeuroAI roadmap<br/>2023"]
+  end
+  subgraph Language_brain["Language-brain"]
+    P036["P036 LM↔brain (Schrimpf)<br/>2021 PNAS"]
+    P037["P037 shared principles<br/>2022 Nat Neuro"]
+    P038["P038 brains&algos converge<br/>2022 Comm Bio"]
+  end
+  subgraph Memory["Memory-attractor"]
+    P013["P013 Hopfield net<br/>1982 PNAS"]
+    P017["P017 DNC<br/>2016 Nature"]
+    P018["P018 World Models<br/>2018"]
+    P019["P019 grid cells in RNN<br/>2018 Nature"]
+  end
+  subgraph NeuralData["Neural-data-ML"]
+    P041["P041 LFADS<br/>2018 Nat Methods"]
+    P042["P042 CEBRA<br/>2023 Nature"]
+    P045["P045 POYO<br/>2023 NeurIPS"]
+  end
+  subgraph Neuromorphic["Neuromorphic"]
+    P027["P027 surrogate gradients<br/>2019"]
+    P028["P028 Loihi<br/>2018"]
+    P029["P029 TrueNorth<br/>2014 Science"]
+    P073["P073 Tianjic<br/>2019 Nature"]
+    P074["P074 SpikingJelly<br/>2023"]
+  end
+  subgraph Normative["Normative-theory"]
+    P008["P008 predictive coding<br/>1999 Nat Neuro"]
+  end
+  subgraph Vision_models["Vision-models"]
+    P006["P006 goal-driven review<br/>2016 Nat Neuro"]
+    P032["P032 HCNN→IT<br/>2014 PNAS"]
+    P033["P033 deep supervised→IT<br/>2014"]
+    P040["P040 Brain-Score<br/>2020 Neuron"]
+  end
+  P015 --> P014
+  P016 --> P014
+  P032 --> P015
+  P032 --> P016
+  P006 -.->|same-team| P032
+  P040 -.->|same-team| P032
+  P033 ==>|competing| P032
+  P024 --> P023
+  P020 --> P008
+  P026 -.->|same-team| P022
+  P019 --> P013
+  P018 --> P017
+  P051 -.->|same-team| P050
+  P053 --> P052
+  P042 ==>|competing| P041
+  P045 --> P041
+  P059 -.->|same-team| P058
+  P061 ==>|competing| P059
+  P060 ==>|competing| P059
+  P063 ==>|competing| P062
+  P066 -.->|same-team| P065
+  P074 --> P027
+  P073 ==>|competing| P029
+  P073 ==>|competing| P028
+  P036 ==>|competing| P037
+  P038 ==>|competing| P036
+  P046 ==>|competing| P047
+  P004 --> P002
+</div>
+<h3 id="33-timeline-reframing-moments-marked">3.3 Timeline (reframing moments marked ★)<a class="section-anchor" href="#33-timeline-reframing-moments-marked" title="link">&para;</a></h3>
+<ul>
+<li><strong>1943–1982 — cybernetic &amp; connectionist roots.</strong> McCulloch-Pitts neurons, the perceptron, and Hebb predate this index; the indexed cornerstones begin with the <strong>Neocognitron (1980, P014)</strong> ★ — the architectural seed of the CNN — and the <strong>Hopfield network (1982, P013)</strong> ★, which made attractor dynamics a computational primitive (and shared in the 2024 Nobel Prize in Physics).</li>
+<li><strong>1996–2004 — normative principles.</strong> Sparse coding (1996, P007) ★, predictive coding (1999, P008) ★, the dopamine-RPE result (1997, P023) ★ linking RL to neuroscience, and the Bayesian-brain statement (2004, P010). LeNet (1998, P015) shows backprop-trained convnets work at scale.</li>
+<li><strong>2007–2013 — pre-deep-learning bridge.</strong> HMAX (2007, P016); intuitive-physics simulation (2013, P054); the context-dependent PFC-RNN dynamics result (2013, P039).</li>
+<li><strong>2014 — the goal-driven inflection ★★.</strong> Yamins et al. (P032, C031, C076) and Khaligh-Razavi &amp; Kriegeskorte (<span class="paper-ref" data-id="P033">P033</span>) independently show ImageNet-optimized deep nets predict ventral-stream representations — the empirical onset of modern AI→brain modeling. TrueNorth (<span class="paper-ref" data-id="P029">P029</span>) lands the same year.</li>
+<li><strong>2015–2018 — the build-out.</strong> BPL (2015, P050) ★; DNC (2016, P017); feedback alignment (2016, P022); Hassabis et al.'s bidirectional manifesto (2017, P002) ★; the "learn and think like people" agenda (2017, P051); World Models, grid-cells-in-RNNs, meta-RL-PFC, LFADS, DeepLabCut, flood-filling nets, SCAN, manifold capacity, Loihi (all 2018) — a remarkably dense year.</li>
+<li><strong>2019–2020 — consolidation.</strong> The three-components framework (2019, P003) ★; surrogate-gradient SNN training (2019, P027); texture-bias critique (2019, P076); Tianjic (2019, P073); Brain-Score in <em>Neuron</em> (2020, P040); backprop-and-the-brain (2020, P026); the circuits/mech-interp programme (2020, P049); virtual rodent (2020, P065); population-dynamics review (2020, P012).</li>
+<li><strong>2021–2023 — language, decoding, and field identity ★★.</strong> LM↔brain alignment (2021–2022, P036/P037/P038) ★; high-performance BCIs (2021 handwriting P058, 2023 speech P059/P060) ★; stimulus reconstruction via diffusion (2023, P062/P063) and language (2023, P064); CEBRA (2023, P042) and POYO (2023, P045); MLC solves SCAN (2023, P053); the <strong>NeuroAI roadmap (2023, P004)</strong> ★ consolidates the field's identity and names the embodied Turing test (<span class="claim-ref" data-id="C077">C077</span>); the neuroconnectionist programme review (2023, P005); LLM↔brain review (2024, P071).</li>
+<li><strong>2024–2025 — connectome-constrained &amp; digital-twin frontier ★.</strong> Connectome-constrained fly model (2024, P046) ★; full-body virtual rat predicting neural activity (2024, P066); rapid high-accuracy speech BCI (2024, P061); ultra-sparse SNNs (2024, P031); foundation-model "digital twin" of mouse visual cortex (2025, P047) ★.</li>
+</ul>
+<p>The visible reframing moments: <strong>2014</strong> (deep nets become brain models), <strong>2018</strong> (the methods explosion), and <strong>2023</strong> (field self-definition + the language and decoding frontiers).</p>
+<h2 id="4">§4 Datasets and benchmarks<a class="section-anchor" href="#4" title="link">&para;</a></h2>
+<p>NeuroAI's evaluation surface is unusual: many "datasets" are either (a) standard ML training corpora repurposed as <em>task definitions</em> for goal-driven models, or (b) neural-recording datasets that are gated by ethics/hardware and therefore only partially shareable. This shapes the reproducibility picture in §14.</p>
+<h3 id="41-canonical-datasets-benchmark-substrates">4.1 Canonical datasets / benchmark substrates<a class="section-anchor" href="#41-canonical-datasets-benchmark-substrates" title="link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name (citation)</th>
+<th>Year</th>
+<th>Class</th>
+<th>Modality / role</th>
+<th>Standard metric</th>
+<th>Adoption in this survey</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ImageNet</strong> (Deng/Russakovsky)</td>
+<td>2009/2012</td>
+<td>canonical</td>
+<td>natural-image labels; <em>training task</em> for goal-driven vision models</td>
+<td>top-1/top-5 acc. (as task), neural-predictivity (as model)</td>
+<td>P032, P006, P040, P076 (vision-model route)</td>
+</tr>
+<tr>
+<td><strong>Brain-Score</strong> (<span class="paper-ref" data-id="P040">P040</span>)</td>
+<td>2018/2020</td>
+<td>canonical (meta-benchmark)</td>
+<td>aggregated V1/V2/V4/IT neural + behavioral fit</td>
+<td>composite "Brain-Score"</td>
+<td>P040 (defines it); referenced by P070 critique</td>
+</tr>
+<tr>
+<td><strong>Omniglot</strong> (<span class="paper-ref" data-id="P050">P050</span>)</td>
+<td>2015</td>
+<td>canonical</td>
+<td>1623 handwritten characters; one-shot learning</td>
+<td>one-shot classification; visual Turing test</td>
+<td>P050 (intro), P051</td>
+</tr>
+<tr>
+<td><strong>SCAN</strong> (<span class="paper-ref" data-id="P052">P052</span>)</td>
+<td>2018</td>
+<td>canonical</td>
+<td>compositional command→action sequences</td>
+<td>exact-match systematic-generalization splits</td>
+<td>P052 (intro), P053</td>
+</tr>
+<tr>
+<td><strong>ARC / ARC-AGI</strong> (<span class="paper-ref" data-id="P055">P055</span>)</td>
+<td>2019</td>
+<td>canonical (unsaturated)</td>
+<td>abstract reasoning grids; few-shot</td>
+<td>task-solve rate (humans ≫ AI)</td>
+<td>P055 (intro)</td>
+</tr>
+<tr>
+<td><strong>Allen Brain Observatory</strong> (Allen Inst.)</td>
+<td>2016</td>
+<td>canonical</td>
+<td>standardized mouse visual-cortex 2-photon/Neuropixels</td>
+<td>decoding/embedding consistency</td>
+<td>P042 (CEBRA validation)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-emergent-datasets-23-yrs-gap-filling-where-the-field-is-moving">4.2 Emergent datasets (≤2–3 yrs, gap-filling, where the field is moving)<a class="section-anchor" href="#42-emergent-datasets-23-yrs-gap-filling-where-the-field-is-moving" title="link">&para;</a></h3>
+<ul>
+<li><strong>Natural Scenes Dataset (NSD)</strong> (P091, Allen et al. 2022, <em>Nat. Neuroscience</em>) [v3] — massive 7T fMRI over 70k+ natural images; the de-facto substrate for <strong>image reconstruction</strong> (P062, P063) and a non-MIT model↔brain benchmark. Fast-rising toward canonical.</li>
+<li><strong>THINGS-data</strong> (P092, Hebart et al. 2023, <em>eLife</em>) [v3] — fMRI + MEG + 4.7M behavioral judgments over 1,854 object concepts; a German-led multimodal object-representation benchmark (<span class="claim-ref" data-id="C093">C093</span>) complementing NSD for SQ5/SQ9.</li>
+<li><strong>Neural Latents Benchmark (NLB 2021)</strong> — standardized splits/metrics for <em>latent population dynamics</em>, created precisely because LFADS-style results (<span class="paper-ref" data-id="P041">P041</span>) were hard to compare; the comparison ground for P042/P045.</li>
+<li><strong>IBL (International Brain Lab)</strong> — standardized, multi-lab mouse decision-making ephys; a template for reproducible systems neuroscience that neural-data foundation models (<span class="paper-ref" data-id="P045">P045</span>) draw on.</li>
+<li><strong>MICrONS</strong> (mouse cortex co-registered connectome + functional recording) — enables the <strong>digital-twin</strong> program (<span class="paper-ref" data-id="P047">P047</span>) and connectome-constrained modeling logic shared with P046.</li>
+<li><strong>FlyWire / Drosophila connectome</strong> — the wiring diagram that makes the <strong>connectome-constrained</strong> model (<span class="paper-ref" data-id="P046">P046</span>) possible.</li>
+<li><strong>Algonauts / THINGS / BrainTreebank</strong> — model-to-brain encoding challenges (vision and, recently, language) that operationalize the SQ5/SQ11 comparison; referenced conceptually by P040/P071.</li>
+</ul>
+<h3 id="43-adoption-heatmap-modelbrain-decoding-papers">4.3 Adoption heatmap (model↔brain &amp; decoding ★★★ papers)<a class="section-anchor" href="#43-adoption-heatmap-modelbrain-decoding-papers" title="link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Paper \ Dataset</th>
+<th style="text-align: center;">ImageNet (task)</th>
+<th style="text-align: center;">NSD (fMRI img)</th>
+<th style="text-align: center;">Allen Obs.</th>
+<th style="text-align: center;">Brain-Score</th>
+<th style="text-align: center;">NLB / motor ephys</th>
+<th style="text-align: center;">Connectome (Fly/MICrONS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P032 HCNN→IT</td>
+<td style="text-align: center;">✓ (train)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">(pre-dates)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>P040 Brain-Score</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓ (defines)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>P076 texture bias</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>P062 LDM recon</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>P063 MindEye</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>P041 LFADS</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>P042 CEBRA</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>P045 POYO</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>P046 connectome</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓ (Fly)</td>
+</tr>
+<tr>
+<td>P047 digital twin</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓ (MICrONS)</td>
+</tr>
+</tbody>
+</table>
+<p>The heatmap reveals the field's <strong>fragmentation of evaluation surfaces</strong>: vision-model, image-reconstruction, latent-dynamics, and connectome routes barely share a benchmark. Only ImageNet (as a <em>task</em>) and Brain-Score (as a <em>meta-benchmark</em>) cut across, and only within the vision route. This is itself a §10 finding.</p>
+<h3 id="44-dataset-gaps">4.4 Dataset gaps<a class="section-anchor" href="#44-dataset-gaps" title="link">&para;</a></h3>
+<ul>
+<li><strong>No shared cross-modality model-brain benchmark.</strong> Vision (Brain-Score), language (Algonauts-language/BrainTreebank), and audition each have separate, non-comparable scoring.</li>
+<li><strong>No standard split for "imagined" vs "perceived" decoding</strong> — BCI reconstruction papers (P062–P064) each define their own.</li>
+<li><strong>No canonical embodied/sensorimotor benchmark</strong> — exactly the gap the embodied Turing test (<span class="paper-ref" data-id="P004">P004</span>) names but does not yet operationalize with a dataset.</li>
+<li><strong>Connectome-constrained evaluation is single-organism</strong> — fly (<span class="paper-ref" data-id="P046">P046</span>) and mouse (<span class="paper-ref" data-id="P047">P047</span>) results have no common protocol.</li>
+</ul>
+<h2 id="5">§5 Method-route comparison<a class="section-anchor" href="#5" title="link">&para;</a></h2>
+<p>Rows are representative ★★★ models/results; columns are the attributes that matter for comparing across NeuroAI routes. "n/a" = not applicable to this route; "not disclosed" = genuinely unreported. Reproducibility tier per §14.</p>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Route</th>
+<th>Direction</th>
+<th>Core method</th>
+<th>Neural target / task</th>
+<th>Scale signal</th>
+<th>Evidence</th>
+<th>Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P032 Yamins HCNN</td>
+<td>E vision-model</td>
+<td>AI→brain</td>
+<td>task-optimized CNN, fit to neural data</td>
+<td>macaque V4/IT</td>
+<td>ImageNet-scale CNN</td>
+<td>predicts IT variance</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>P040 Brain-Score</td>
+<td>E benchmark</td>
+<td>AI→brain</td>
+<td>aggregated neural+behavioral scoring</td>
+<td>V1–IT + behavior</td>
+<td>meta-benchmark</td>
+<td>composite leaderboard</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>P036 LM↔brain</td>
+<td>E/K language</td>
+<td>AI→brain</td>
+<td>regress LM features to neural responses</td>
+<td>human language cortex</td>
+<td>&gt;40 LMs</td>
+<td>prediction↔next-word-skill</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>P020 PC≈backprop</td>
+<td>D learning</td>
+<td>brain→AI</td>
+<td>local Hebbian predictive coding</td>
+<td>n/a (algorithm)</td>
+<td>small nets</td>
+<td>gradient approximation</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>P022 feedback align.</td>
+<td>D learning</td>
+<td>brain→AI</td>
+<td>fixed random feedback weights</td>
+<td>n/a (algorithm)</td>
+<td>mid-scale</td>
+<td>learns w/o weight transport</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>P024 meta-RL PFC</td>
+<td>D learning</td>
+<td>brain→AI</td>
+<td>RNN trained by RL → emergent inner RL</td>
+<td>PFC/dopamine analogy</td>
+<td>mid-scale</td>
+<td>reproduces behavioral signatures</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>P027 surrogate-grad SNN</td>
+<td>F neuromorphic</td>
+<td>brain→AI</td>
+<td>smooth surrogate for spike gradient</td>
+<td>n/a (training)</td>
+<td>mid-scale</td>
+<td>trains deep SNNs</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>P073 Tianjic</td>
+<td>F neuromorphic</td>
+<td>brain→AI</td>
+<td>hybrid ANN/SNN silicon</td>
+<td>n/a (hardware)</td>
+<td>1 chip, bicycle demo</td>
+<td>functional demo</td>
+<td>R4 (hardware)</td>
+</tr>
+<tr>
+<td>P041 LFADS</td>
+<td>G data-tool</td>
+<td>AI-for-data</td>
+<td>sequential VAE</td>
+<td>motor-cortex single-trial</td>
+<td>mid-scale</td>
+<td>high behavioral decode</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>P042 CEBRA</td>
+<td>G data-tool</td>
+<td>AI-for-data</td>
+<td>contrastive embedding</td>
+<td>multi-region</td>
+<td>mid-scale</td>
+<td>consistent embeddings</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>P045 POYO</td>
+<td>G/K data-tool</td>
+<td>AI-for-data</td>
+<td>spike-tokenizing transformer</td>
+<td>many sessions/regions</td>
+<td>"foundation" pretrain</td>
+<td>few-shot transfer</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>P050 BPL</td>
+<td>H cognitive</td>
+<td>brain→AI(cog)</td>
+<td>probabilistic program induction</td>
+<td>Omniglot one-shot</td>
+<td>small</td>
+<td>passes visual Turing test</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>P053 MLC</td>
+<td>H cognitive</td>
+<td>brain→AI(cog)</td>
+<td>meta-learning for compositionality</td>
+<td>SCAN / human errors</td>
+<td>standard net</td>
+<td>human-level systematicity</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>P058 handwriting BCI</td>
+<td>I decoding</td>
+<td>AI→brain(applied)</td>
+<td>RNN decoder on intracortical spikes</td>
+<td>motor cortex (N=1)</td>
+<td>clinical single-subject</td>
+<td>~90 char/min</td>
+<td>R3 (clinical)</td>
+</tr>
+<tr>
+<td>P059/P061 speech BCI</td>
+<td>I decoding</td>
+<td>AI→brain(applied)</td>
+<td>neural→text/voice decoder</td>
+<td>motor/speech cortex (N=1)</td>
+<td>clinical single-subject</td>
+<td>62→high-acc wpm</td>
+<td>R3 (clinical)</td>
+</tr>
+<tr>
+<td>P062/P063 image recon</td>
+<td>I decoding</td>
+<td>AI→brain(applied)</td>
+<td>diffusion / contrastive from fMRI</td>
+<td>visual cortex (NSD)</td>
+<td>per-subject</td>
+<td>reconstructs seen images</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>P046 connectome-constrained</td>
+<td>K frontier</td>
+<td>AI↔brain</td>
+<td>fixed connectome, optimized dynamics</td>
+<td>fly visual system</td>
+<td>whole optic lobe</td>
+<td>single-neuron prediction</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>P047 digital twin</td>
+<td>K frontier</td>
+<td>AI→brain</td>
+<td>foundation model of cortex</td>
+<td>mouse V1</td>
+<td>large neural pretrain</td>
+<td>generalizes to novel stimuli</td>
+<td>R3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">§6 Per-paper deep-dives<a class="section-anchor" href="#6" title="link">&para;</a></h2>
+<p>Compact deep-dives grouped by route. Each ★★★ paper: contribution → <em>why it matters</em> (tied to a sub-question) → limitation → reproducibility tier. ★★ cornerstones are noted inline within their route.</p>
+<h3 id="6a-foundations-framing-sq1">6.A Foundations &amp; framing (SQ1)<a class="section-anchor" href="#6a-foundations-framing-sq1" title="link">&para;</a></h3>
+<ul>
+<li><strong>P004 NeuroAI roadmap (2023) [R4-conceptual]</strong> — A 27-author manifesto proposing the embodied Turing test (<span class="claim-ref" data-id="C001">C001</span>). <em>Why it matters (SQ1):</em> it gave the field a name, a goal, and a funding narrative. <em>Limit:</em> programmatic, not empirical (evidence=0). ★★ companions: <strong>P002 Hassabis et al. (2017)</strong> bidirectional review (<span class="claim-ref" data-id="C002">C002</span>); <strong>P001 Marr (1982)</strong> the three levels (<span class="claim-ref" data-id="C004">C004</span>).</li>
+<li><strong>P003 three components (2019) [R3-conceptual]</strong> — Objective/learning-rule/architecture decomposition (<span class="claim-ref" data-id="C003">C003</span>). <em>Why (SQ1/SQ2):</em> the analytic frame the rest of the field uses. <em>Limit:</em> a lens, not a result.</li>
+<li><strong>P005 neuroconnectionist programme (2023) [R3]</strong> — Casts ANN-as-brain-model as a Lakatosian program (<span class="claim-ref" data-id="C006">C006</span>). <em>Why (SQ1/SQ11/SQ12):</em> supplies the falsifiability vocabulary that the §10/§12 debate needs.</li>
+</ul>
+<h3 id="6b-classical-theory-sq2">6.B Classical theory (SQ2)<a class="section-anchor" href="#6b-classical-theory-sq2" title="link">&para;</a></h3>
+<ul>
+<li><strong>P007 sparse coding (1996) [R2]</strong> — A sparseness objective on natural images yields V1-like Gabor receptive fields (<span class="claim-ref" data-id="C007">C007</span>). <em>Why:</em> first clean demonstration that <em>normative objectives</em> explain biological tuning — the ancestor of goal-driven modeling. <em>Limit:</em> linear/shallow.</li>
+<li><strong>P008 predictive coding (1999) [R2]</strong> — Hierarchical prediction+error model explains extra-classical RF effects (<span class="claim-ref" data-id="C008">C008</span>). <em>Why (SQ2/SQ4):</em> the seed for both the predictive-processing theory and the PC≈backprop learning route (<span class="paper-ref" data-id="P020">P020</span>). <em>Limit:</em> qualitative fits.</li>
+<li>★★ companions: <strong>P009 free-energy principle</strong> (<span class="claim-ref" data-id="C009">C009</span>), <strong>P010 Bayesian brain</strong> (<span class="claim-ref" data-id="C010">C010</span>), <strong>P011 divisive normalization</strong> (<span class="claim-ref" data-id="C011">C011</span>) — normative principles; <strong>P012 population dynamics review</strong> [★★★, R3] (<span class="claim-ref" data-id="C012">C012</span>) is the canonical statement of the manifold/dynamical view that underpins P039/P041.</li>
+</ul>
+<h3 id="6c-brainai-architectures-sq3">6.C Brain→AI architectures (SQ3)<a class="section-anchor" href="#6c-brainai-architectures-sq3" title="link">&para;</a></h3>
+<ul>
+<li><strong>P015 LeNet (1998) [R1]</strong> — Convolution+pooling+backprop, end-to-end (<span class="claim-ref" data-id="C015">C015</span>). <em>Why (SQ3):</em> the working realization of the Neocognitron idea; ancestor of every modern vision model. ★★ <strong>P014 Neocognitron</strong> (<span class="claim-ref" data-id="C014">C014</span>) is the biological source.</li>
+<li><strong>P016 HMAX/Serre (2007) [R2]</strong> — Feedforward simple/complex-cell hierarchy benchmarked on natural scenes (<span class="claim-ref" data-id="C016">C016</span>). <em>Why (SQ3):</em> the explicitly cortex-derived recognition system bridging to P032.</li>
+<li><strong>P017 DNC (2016) [R2]</strong> — Neural controller + differentiable external memory (<span class="claim-ref" data-id="C017">C017</span>). <em>Why (SQ3):</em> operationalizes working-memory/episodic-memory ideas as a differentiable module. <em>Limit:</em> brittle at scale; superseded in practice by attention/transformers.</li>
+<li><strong>P018 World Models (2018) [R1]</strong> — VAE+RNN internal world model; agents train in "dreams" (<span class="claim-ref" data-id="C018">C018</span>). <em>Why (SQ3/SQ10):</em> the clean modern statement of model-based, predictive internal simulation. <em>Limit:</em> toy environments.</li>
+<li><strong>P019 grid cells in RNN (2018) [R2]</strong> — Grid-like codes emerge in a path-integration RNN and support navigation (<span class="claim-ref" data-id="C019">C019</span>). <em>Why (SQ3/SQ5):</em> a <em>bidirectional</em> result — brain-like codes emerge from a task, and they improve the agent. ★★ <strong>P013 Hopfield</strong> (<span class="claim-ref" data-id="C013">C013</span>) anchors the attractor lineage.</li>
+</ul>
+<h3 id="6d-brainai-learning-sq4">6.D Brain→AI learning (SQ4)<a class="section-anchor" href="#6d-brainai-learning-sq4" title="link">&para;</a></h3>
+<ul>
+<li><strong>P020 PC≈backprop (2017) [R2]</strong> — Predictive coding with local Hebbian updates approximates backprop (<span class="claim-ref" data-id="C020">C020</span>). <em>Why (SQ4):</em> a concrete biological route to gradient-like credit assignment. <em>Limit:</em> approximation conditions are restrictive.</li>
+<li><strong>P022 feedback alignment (2016) [R2]</strong> — Fixed random feedback weights still drive learning (<span class="claim-ref" data-id="C021">C021</span>). <em>Why (SQ4):</em> dissolves the "weight-transport problem" objection to backprop in the brain. <em>Limit:</em> scales poorly to very deep/convolutional nets.</li>
+<li><strong>P023 dopamine RPE (1997) [R2]</strong> — Dopamine firing ≈ TD reward-prediction error (<span class="claim-ref" data-id="C022">C022</span>). <em>Why (SQ4):</em> the single most successful brain↔AI correspondence; foundation of computational RL-in-the-brain.</li>
+<li><strong>P024 meta-RL PFC (2018) [R2]</strong> — RL-trained RNN gives rise to a faster inner RL process; PFC as meta-RL (<span class="claim-ref" data-id="C023">C023</span>). <em>Why (SQ4):</em> explains rapid adaptation as emergent, not hand-built. <em>Limit:</em> analogy validated behaviorally, not mechanistically.</li>
+<li><strong>P026 backprop &amp; the brain (2020) [R3-conceptual]</strong> — The NGRAD synthesis: feedback-driven activity differences may approximate backprop (<span class="claim-ref" data-id="C025">C025</span>). <em>Why (SQ4/SQ12):</em> the field's reference statement on biological credit assignment. ★★ <strong>P025 CLS</strong> (<span class="claim-ref" data-id="C024">C024</span>) supplies the replay↔hippocampus link. ★★ <strong>P093 Whittington &amp; Bogacz (2019, <em>TiCS</em>)</strong> [v3] (<span class="claim-ref" data-id="C094">C094</span>) is an Oxford-led critical assessment of backprop-in-the-brain theories — a non-DeepMind counterweight to P026. ★★ <strong>P095 Doya (2002, <em>Neural Networks</em>)</strong> [v3] (<span class="claim-ref" data-id="C096">C096</span>) maps RL metaparameters to neuromodulators (Japan; country-bias diversification).</li>
+</ul>
+<h3 id="6e-aibrain-models-sq5">6.E AI→brain models (SQ5)<a class="section-anchor" href="#6e-aibrain-models-sq5" title="link">&para;</a></h3>
+<ul>
+<li><strong>P032 Yamins HCNN (2014) [R2]</strong> — Task-optimized CNNs predict V4/IT responses (C031, C076). <em>Why (SQ5):</em> the founding result of modern AI→brain modeling; defined "neural predictivity" as a currency. <em>Limit:</em> feedforward, predicts but doesn't explain (see §10).</li>
+<li><strong>P006 goal-driven review (2016) [R3]</strong> — Consolidates the paradigm across vision and audition (<span class="claim-ref" data-id="C005">C005</span>). <em>Why (SQ1/SQ5):</em> the canonical statement of "optimize for the task, then compare to the brain."</li>
+<li><strong>P034 auditory model (2018) [R2]</strong> — Task-optimized net predicts auditory cortex and reveals a primary→non-primary hierarchy (<span class="claim-ref" data-id="C033">C033</span>). <em>Why (SQ5):</em> shows the goal-driven approach generalizes beyond vision.</li>
+<li><strong>P036 LM↔brain (2021) [R2]</strong> — Across &gt;40 LMs, next-word-prediction skill predicts neural fit, approaching the noise ceiling (<span class="claim-ref" data-id="C035">C035</span>). <em>Why (SQ5/SQ11):</em> extends goal-driven modeling to language and ties a <em>training objective</em> (prediction) to brain-likeness. <strong>P037 Goldstein (2022)</strong> [R3] (<span class="claim-ref" data-id="C036">C036</span>) and <strong>P038 Caucheteux (2022)</strong> [R2] (<span class="claim-ref" data-id="C037">C037</span>) are independent confirmations from distinct labs/modalities (ECoG; fMRI/MEG).</li>
+<li><strong>P040 Brain-Score (2020) [R1]</strong> — The integrative neural+behavioral benchmark (<span class="claim-ref" data-id="C038">C038</span>). <em>Why (SQ5/SQ12):</em> turned "is this model brain-like?" into a number — which is exactly what P070 then attacks. ★★ <strong>P035 RSA</strong> (<span class="claim-ref" data-id="C034">C034</span>) is the methodological substrate; ★★ <strong>P033</strong> (<span class="claim-ref" data-id="C032">C032</span>) the parallel 2014 result; ★★ <strong>P039 Mante</strong> dynamical-RNN model of PFC (<span class="claim-ref" data-id="C039">C039</span>).</li>
+</ul>
+<h3 id="6f-spiking-neuromorphic-sq7">6.F Spiking &amp; neuromorphic (SQ7)<a class="section-anchor" href="#6f-spiking-neuromorphic-sq7" title="link">&para;</a></h3>
+<ul>
+<li><strong>P027 surrogate gradients (2019) [R1]</strong> — Standard recipe for training SNNs through the spike non-differentiability (<span class="claim-ref" data-id="C026">C026</span>). <em>Why (SQ7):</em> made deep SNNs trainable with backprop tooling.</li>
+<li><strong>P028 Loihi (2018) [R4-hardware]</strong> — 128-core chip with on-chip learning (<span class="claim-ref" data-id="C027">C027</span>); <strong>P029 TrueNorth (2014) [R4-hardware]</strong> — 1M neurons at ~70 mW (<span class="claim-ref" data-id="C028">C028</span>); <strong>P030 SpiNNaker (2014) [R4-hardware]</strong> — ARM-core real-time spiking simulator (<span class="claim-ref" data-id="C029">C029</span>). <em>Why (SQ7):</em> the three reference neuromorphic substrates. <em>Limit:</em> proprietary hardware ⇒ external reproduction is access-gated.</li>
+<li><strong>P073 Tianjic (2019) [R4-hardware]</strong> — Hybrid ANN+SNN chip, autonomous-bicycle demo (<span class="claim-ref" data-id="C072">C072</span>). <em>Why (SQ7/SQ11):</em> the leading non-US neuromorphic cornerstone; argues hybrid (not pure-spiking) hardware. <strong>P031 ultra-sparse TTFS SNN (2024) [R2]</strong> (<span class="claim-ref" data-id="C030">C030</span>) is the accuracy/efficiency frontier; <strong>P074 SpikingJelly (2023) [R1]</strong> (<span class="claim-ref" data-id="C073">C073</span>) the dominant open SNN framework. ★★ <strong>P090 Roy et al. (2019, <em>Nature</em>)</strong> [v3] (<span class="claim-ref" data-id="C091">C091</span>) is a Purdue-led neuromorphic review that diversifies the SQ7 survey perspective beyond P027. ★★★ <strong>P099 Kheradpisheh et al. (2018, <em>Neural Networks</em>)</strong> [v4] (<span class="claim-ref" data-id="C100">C100</span>) — unsupervised STDP + temporal-coding deep spiking CNN (CNRS Toulouse), a <em>biologically-plausible learning</em> route to SNNs; ★★ <strong>P098 Denève &amp; Machens (2016, <em>Nat. Neuroscience</em>)</strong> [v4] (<span class="claim-ref" data-id="C099">C099</span>) gives the French balanced-spiking efficient-coding theory (bridging SQ2↔SQ7).</li>
+</ul>
+<h3 id="6g-ai-for-neural-data-sq8">6.G AI-for-neural-data (SQ8)<a class="section-anchor" href="#6g-ai-for-neural-data-sq8" title="link">&para;</a></h3>
+<ul>
+<li><strong>P041 LFADS (2018) [R1]</strong> — Sequential VAE infers single-trial population dynamics with high behavioral decode (<span class="claim-ref" data-id="C040">C040</span>). <em>Why (SQ8):</em> showed deep generative models recover interpretable latent dynamics, not just decode.</li>
+<li><strong>P042 CEBRA (2023) [R1]</strong> — Contrastive, behavior/time-aligned embeddings validated across regions (<span class="claim-ref" data-id="C041">C041</span>). <em>Why (SQ8):</em> a consistency-first embedding method with strong open tooling.</li>
+<li><strong>P045 POYO (2023) [R1]</strong> — Spike-tokenizing transformer pretrained across sessions; few-shot transfer (<span class="claim-ref" data-id="C044">C044</span>). <em>Why (SQ8/SQ11):</em> the clearest "foundation model for spikes" result. ★★★ <strong>P043 DeepLabCut (2018) [R1]</strong> (<span class="claim-ref" data-id="C042">C042</span>) — markerless pose estimation, the field's most adopted tool; <strong>P044 flood-filling nets (2018) [R2]</strong> (<span class="claim-ref" data-id="C043">C043</span>) — connectomics segmentation. ★★ <strong>P100 Abraham et al. (2014, <em>Front. Neuroinformatics</em>)</strong> [v4] (<span class="claim-ref" data-id="C101">C101</span>) — scikit-learn decoding/encoding for fMRI, seed of the nilearn library (INRIA/NeuroSpin); the French AI-for-neuroimaging tooling cornerstone.</li>
+</ul>
+<h3 id="6h-cognitive-sq6">6.H Cognitive (SQ6)<a class="section-anchor" href="#6h-cognitive-sq6" title="link">&para;</a></h3>
+<ul>
+<li><strong>P050 BPL (2015) [R2]</strong> — Concepts as probabilistic programs; one-shot learning passing a visual Turing test (<span class="claim-ref" data-id="C049">C049</span>). <em>Why (SQ6):</em> the strongest demonstration that structured, generative, compositional models beat pattern recognition on human-like learning.</li>
+<li><strong>P052 SCAN (2018) [R1]</strong> → <strong>P053 MLC (2023) [R1]</strong> — SCAN shows seq2seq nets fail systematic generalization (<span class="claim-ref" data-id="C051">C051</span>); MLC then gives a standard net human-level systematicity via meta-learning, matching human errors (<span class="claim-ref" data-id="C052">C052</span>). <em>Why (SQ6):</em> a complete arc — a sharp failure, then a brain-inspired (learning-to-learn) fix.</li>
+<li><strong>P054 intuitive physics (2013) [R2]</strong> — Probabilistic mental simulation predicts human physical judgments (<span class="claim-ref" data-id="C053">C053</span>). <em>Why (SQ6):</em> operationalizes "intuitive theories." ★★ <strong>P051 learn&amp;think</strong> (<span class="claim-ref" data-id="C050">C050</span>), ★★ <strong>P055 ARC</strong> (<span class="claim-ref" data-id="C054">C054</span>), ★★ <strong>P056 ACT-R</strong> (<span class="claim-ref" data-id="C055">C055</span>), ★★ <strong>P057 Global Workspace in DL</strong> (<span class="claim-ref" data-id="C056">C056</span>) cover the agenda, the unsaturated benchmark, the classical architecture, and the consciousness-theory bridge. ★★ <strong>P094 Lieder &amp; Griffiths (2020, <em>BBS</em>)</strong> [v3] (<span class="claim-ref" data-id="C095">C095</span>) adds the resource-rational account of cognition from a non-Lake group (MPI Tübingen / Princeton). ★★ <strong>P097 Dehaene, Lau &amp; Kouider (2017, <em>Science</em>)</strong> [v4] (<span class="claim-ref" data-id="C098">C098</span>) supplies the C1/C2 Global-Neuronal-Workspace framework for machine consciousness (Collège de France) — a French counterpart to P057 bridging SQ6↔SQ11↔SQ12.</li>
+<li><strong>P101 Centaur (2025, <em>Nature</em>) [R3]</strong> [v5] — a Llama-3.1-70B fine-tuned (QLoRA) on <strong>Psych-101</strong> (160 experiments, 60k participants, 10.7M choices) that predicts held-out human behavior across tasks, generalizes to new ones, and whose internal representations become <em>more aligned with human fMRI activity</em> after fine-tuning (<span class="claim-ref" data-id="C102">C102</span>). <em>Why (SQ6/SQ11/SQ5):</em> the first serious "foundation model of human cognition" — a direct fusion of the SQ6 human-like-learning agenda with the SQ11 foundation-model paradigm. <em>Limitation / live debate:</em> Bowers, Adolfi and others publicly contest whether predicting choices is <em>modeling cognition</em> (echoing the P070 prediction-vs-explanation critique) — cite with that caveat (tier R3, recent).</li>
+</ul>
+<h3 id="6i-bci-decoding-sq9">6.I BCI &amp; decoding (SQ9)<a class="section-anchor" href="#6i-bci-decoding-sq9" title="link">&para;</a></h3>
+<ul>
+<li><strong>P058 handwriting BCI (2021) [R3-clinical]</strong> — ~90 char/min imagined-handwriting decode (<span class="claim-ref" data-id="C057">C057</span>). <em>Why (SQ9):</em> showed intracortical BCIs can hit communication-relevant speeds.</li>
+<li><strong>P059 speech BCI (2023) [R3]</strong> (~62 wpm, C058) / <strong>P060 speech+avatar (2023) [R3]</strong> (~78 wpm, ECoG, C059) / <strong>P061 rapid speech BCI (2024) [R3]</strong> (high-accuracy, 125k-word vocab, day-1, C060). <em>Why (SQ9):</em> the speech-neuroprosthesis trajectory — each from a distinct lab (Stanford/UCSF/UC Davis). <em>Limit:</em> clinical N=1; not reproducible in the usual sense (§14).</li>
+<li><strong>P062 LDM image recon (2023) [R2]</strong> (<span class="claim-ref" data-id="C061">C061</span>) / <strong>P063 MindEye (2023) [R2]</strong> (<span class="claim-ref" data-id="C062">C062</span>) — rival fMRI→image reconstruction routes on NSD. <strong>P064 semantic language decoding (2023) [R2]</strong> (<span class="claim-ref" data-id="C063">C063</span>) — non-invasive reconstruction of language gist. <em>Why (SQ9):</em> the "mind-reading" frontier; raises the neuroethics flags in §10.</li>
+<li><strong>P091 NSD (2022) [R1, dataset]</strong> (<span class="claim-ref" data-id="C092">C092</span>) and <strong>P092 THINGS-data (2023) [R1, dataset]</strong> (<span class="claim-ref" data-id="C093">C093</span>) [v3] — the large fMRI(/MEG) datasets that <em>ground both SQ5 model↔brain and SQ9 decoding</em> evaluation; indexed in v3 to diversify the dataset dimension beyond MIT's Brain-Score (<span class="paper-ref" data-id="P040">P040</span>). NSD underpins P062/P063; both are non-MIT (Minnesota; MPI Leipzig).</li>
+<li><strong>P096 Défossez et al. (2023, <em>Nat. Machine Intelligence</em>) [R2]</strong> (<span class="claim-ref" data-id="C097">C097</span>) [v4] — contrastive decoding of <em>perceived speech from non-invasive MEG/EEG</em> across 175 subjects (Meta AI Paris / ENS). <em>Why (SQ9/SQ5):</em> a non-invasive, large-cohort French counterpoint to the intracortical single-subject US BCIs (P058–P061) — different risk/scalability profile.</li>
+<li><strong>P103 Benchetrit et al. (2024, ICLR) [R2]</strong> (<span class="claim-ref" data-id="C104">C104</span>) [v5], ★★ <strong>P104 Brain2Qwerty (2025) [R3]</strong> (<span class="claim-ref" data-id="C105">C105</span>) [v5], and <strong>P106 word-decoding (2025, <em>Nature Communications</em>) [R2]</strong> (<span class="claim-ref" data-id="C107">C107</span>) [v6] — the Meta "Brain &amp; AI" (J-R King, Paris) <em>non-invasive</em> decoding line: MEG image reconstruction ~7× over linear baselines (<span class="paper-ref" data-id="P103">P103</span>), sentence decoding from imagined typing (<span class="paper-ref" data-id="P104">P104</span>), and 723-participant word-level decoding (<span class="paper-ref" data-id="P106">P106</span>). <em>Why (SQ9):</em> extends non-invasive decoding from speech (<span class="paper-ref" data-id="P096">P096</span>) to vision, typing, and large-cohort word decoding — the scalable, ethically-lighter complement to intracortical BCIs.</li>
+</ul>
+<h3 id="6j-embodiment-agents-sq10">6.J Embodiment &amp; agents (SQ10)<a class="section-anchor" href="#6j-embodiment-agents-sq10" title="link">&para;</a></h3>
+<ul>
+<li><strong>P065 virtual rodent (2020) [R2]</strong> — Deep-RL virtual rodent analyzed with neuroscience methods (<span class="claim-ref" data-id="C064">C064</span>). <em>Why (SQ10):</em> "deep neuroethology" — treat an artificial agent's network as a brain to study.</li>
+<li><strong>P066 virtual rat (2024) [R3]</strong> — Full-body biomechanical rat whose network activity predicts <em>real</em> rat neural activity better than kinematics (<span class="claim-ref" data-id="C065">C065</span>). <em>Why (SQ10):</em> the strongest embodied AI↔brain link to date. ★★ <strong>P067 JEPA</strong> (<span class="claim-ref" data-id="C066">C066</span>) is LeCun's autonomous-agent blueprint; <strong>P018 World Models</strong> also serves this route.</li>
+</ul>
+<h3 id="6k-convergence-frontiers-sq11">6.K Convergence frontiers (SQ11)<a class="section-anchor" href="#6k-convergence-frontiers-sq11" title="link">&para;</a></h3>
+<ul>
+<li><strong>P046 connectome-constrained (2024) [R2]</strong> — Fix the fly connectome, optimize only dynamics; predict single-neuron activity (<span class="claim-ref" data-id="C045">C045</span>). <em>Why (SQ11):</em> fuses anatomy and function — a new modeling paradigm.</li>
+<li><strong>P047 digital twin (2025) [R3]</strong> — Foundation model of mouse V1 generalizing to novel stimuli (<span class="claim-ref" data-id="C046">C046</span>). <em>Why (SQ11):</em> the "brain foundation model" frontier; numbers are recent ⇒ caveat.</li>
+<li>★★★ <strong>P071 LLM↔brain review (2024) [R3]</strong> (<span class="claim-ref" data-id="C070">C070</span>) and ★★ <strong>P072 "if DL is the answer" (2021)</strong> (<span class="claim-ref" data-id="C071">C071</span>) are the convergence-frontier reviews; ★★ <strong>P048 manifold capacity</strong> (<span class="claim-ref" data-id="C047">C047</span>) and ★★ <strong>P049 circuits/mech-interp</strong> (<span class="claim-ref" data-id="C048">C048</span>) supply the theory and the "neuroscience-of-AI" interpretability bridge.</li>
+<li><strong>P102 TRIBE v1 (ICLR 2026) [R2]</strong> [v5] → <strong>P105 TRIBE v2 (2026) [R3]</strong> [v6] — a two-step lineage from the Meta Brain &amp; AI team (Paris). <strong>v1</strong> is the first non-linear, multi-subject, <strong>multimodal</strong> (text/audio/video) deep encoder of <em>whole-brain</em> fMRI, trained on 4 subjects' low-resolution data; it won the Algonauts 2025 challenge (1st of 263), with the multimodal advantage largest in associative cortex (<span class="claim-ref" data-id="C103">C103</span>). <strong>v2</strong> (<span class="claim-ref" data-id="C106">C106</span>) scales this into a genuine <em>foundation model of the human brain</em>: <strong>&gt;1,000 hours of fMRI across 720 subjects</strong>, high-resolution, <strong>zero-shot to new subjects/languages/tasks</strong>, with open weights+code — and crucially enables <strong>in-silico (silico-)neuroscience</strong>, recovering seminal visual and neuro-linguistic results without new human experiments and revealing the topography of multisensory integration. <em>Why (SQ5/SQ11/SQ8):</em> this is the clearest realization of the "brain foundation model / digital twin" frontier (cf. P047) on the <em>encoding</em> side — and v1→v2 (4 subjects → 720; benchmark winner → reusable scientific instrument) is itself a case study in how this subfield is scaling.</li>
+</ul>
+<h3 id="6l-critiques-sq12">6.L Critiques (SQ12)<a class="section-anchor" href="#6l-critiques-sq12" title="link">&para;</a></h3>
+<ul>
+<li><strong>P070 deep problems with DNN vision models (2023) [R3]</strong> — DNNs fail psychophysical/behavioral tests; Brain-Score-style benchmarks can be confounded (<span class="claim-ref" data-id="C067">C067</span>). <em>Why (SQ12):</em> the keystone critique that disciplines the §5/§6.E claims.</li>
+<li><strong>P076 texture bias (2019) [R1]</strong> — CNNs classify by texture, not shape, unlike humans; stylized-image training helps (<span class="claim-ref" data-id="C074">C074</span>). <em>Why (SQ5/SQ12):</em> a concrete, reproducible divergence between CNN and human vision. ★★ <strong>P068 theory deficit</strong> (<span class="claim-ref" data-id="C069">C069</span>) and ★★ <strong>P069 DL critical appraisal</strong> (<span class="claim-ref" data-id="C068">C068</span>) round out the critique route.</li>
+</ul>
+<h3 id="6m-visual-intelligence-world-models-sq13-v2-added">6.M Visual intelligence &amp; world models (SQ13, v2 added)<a class="section-anchor" href="#6m-visual-intelligence-world-models-sq13-v2-added" title="link">&para;</a></h3>
+<p><em>AI world models —</em>
+- <strong>P077 DreamerV3 (2025) [R3]</strong> — One world model + actor-critic that plans entirely in imagined latent rollouts, mastering 150+ tasks with fixed hyperparameters and mining Minecraft diamonds from scratch (<span class="claim-ref" data-id="C078">C078</span>). <em>Why (SQ13/SQ10):</em> the strongest demonstration that a learned, predictive internal world model suffices for general control. <em>Limit:</em> still task-suite, not open-world cognition.
+- <strong>P078 V-JEPA (2024) [R3]</strong> — Learns visual representations by predicting <em>masked features in latent space</em>, not pixels — LeCun's non-generative world-model thesis made empirical (<span class="claim-ref" data-id="C079">C079</span>). <em>Why (SQ13):</em> operationalizes "predict abstractions, not pixels"; <strong>P079 V-JEPA 2 (2025) [★★]</strong> scales it to ~1B params and zero-shot robot planning (<span class="claim-ref" data-id="C089">C089</span>). <em>Limit:</em> V-JEPA 2 is a preprint.
+- <strong>P080 Genie (2024, ICML Best Paper) [R3]</strong> — An 11B foundation world model that generates <em>action-controllable, playable</em> environments from a single image/sketch, learning a latent action space from unlabelled video (<span class="claim-ref" data-id="C080">C080</span>). <em>Why (SQ13):</em> world models become <em>generative and interactive</em>, not just predictive.
+- <strong>P081 Sora-as-world-simulator (2024) [★★, R4-report]</strong> — OpenAI's framing of large video-diffusion-transformers as "world simulators" (<span class="claim-ref" data-id="C086">C086</span>). <em>Why (SQ13/SQ12):</em> the anchor of the live debate — is pixel-level video generation a world model, or (per the V-JEPA camp) a dead end? <em>Limit:</em> non-peer-reviewed corporate report.</p>
+<p><em>World models in the brain (cognitive maps) —</em>
+- <strong>P082 Tolman-Eichenbaum Machine (2020, Cell) [R2]</strong> — Casts the hippocampal-entorhinal system as a world model that factorizes relational <em>structure</em> (entorhinal grid-like codes) from sensory <em>content</em> (hippocampal place codes), predicting non-random remapping confirmed in recordings (<span class="claim-ref" data-id="C081">C081</span>). <em>Why (SQ13):</em> the leading mechanistic theory of the brain's own world model, and a direct bridge to AI structure-learning.
+- <strong>P083 successor representation / predictive map (2017, Nat. Neuroscience) [R2]</strong> — Place cells encode a <em>predictive map</em> of future states (the successor representation); grid cells approximate its eigenvectors (<span class="claim-ref" data-id="C082">C082</span>). <em>Why (SQ13):</em> unifies cognitive maps with RL's value prediction — a brain↔AI keystone for world cognition.</p>
+<p><em>Object-centric &amp; relational visual reasoning —</em>
+- <strong>P084 Slot Attention (2020) [R2]</strong> — Iterative attention binds image features into permutation-invariant object "slots" for unsupervised object discovery (<span class="claim-ref" data-id="C083">C083</span>). <em>Why (SQ13):</em> gives vision systems explicit <em>object</em> representations, a prerequisite for relational world models.
+- <strong>P085 Neuro-Symbolic Concept Learner (2019, ICLR Oral) [R2]</strong> — Jointly learns visual concepts and a program executor over object-based scenes, achieving near-perfect, data-efficient CLEVR reasoning (<span class="claim-ref" data-id="C084">C084</span>). <em>Why (SQ13/SQ6):</em> compositional, interpretable visual reasoning — structure beats brute pattern-matching. ★★ <strong>P086 relational inductive biases</strong> (<span class="claim-ref" data-id="C088">C088</span>) is the framework statement.</p>
+<p><em>Vision-as-inverse-graphics &amp; intuitive physics —</em>
+- <strong>P089 DC-IGN (2015) [★★, R2]</strong> — Learns a disentangled "graphics code" and re-renders scenes under novel pose/lighting — vision as inverse graphics / analysis-by-synthesis (<span class="claim-ref" data-id="C087">C087</span>). <em>Why (SQ13):</em> the generative-model view of perception, ancestor of modern object-centric and world-model approaches.
+- <strong>P087 intuitive physics from video (2025) [R3]</strong> — A latent-prediction video model (V-JEPA) shows violation-of-expectation "surprise" on object permanence/continuity, while pixel-prediction and multimodal-LLM models stay near chance (<span class="claim-ref" data-id="C085">C085</span>); ★★ <strong>P088 IntPhys 2</strong> (<span class="claim-ref" data-id="C090">C090</span>) is its benchmark. <em>Why (SQ13):</em> evidence that <em>world-model-style latent prediction</em>, not pixel generation, is what yields physical intuition — directly informing the Sora debate (<span class="paper-ref" data-id="P081">P081</span>). <em>Limit:</em> both are 2025 preprints (tier R3).</p>
+<h2 id="7">§7 Downstream applications<a class="section-anchor" href="#7" title="link">&para;</a></h2>
+<ul>
+<li><strong>Clinical / assistive (SQ9):</strong> speech and handwriting neuroprostheses (P058–P061) restore communication to paralyzed and ALS patients; stimulus-reconstruction (P062–P064) points toward imagery-based interfaces. These are the field's most direct human impact.</li>
+<li><strong>Scientific instrumentation (SQ8):</strong> DeepLabCut (<span class="paper-ref" data-id="P043">P043</span>), LFADS (P042/P041), CEBRA, POYO, and flood-filling nets (<span class="paper-ref" data-id="P044">P044</span>) are now standard lab tools — AI as the microscope for behavior, dynamics, and connectomes.</li>
+<li><strong>Hardware / energy (SQ7):</strong> neuromorphic chips (P028/P029/P030/P073) target low-power edge inference and real-time brain simulation; SpikingJelly (<span class="paper-ref" data-id="P074">P074</span>) lowers the SNN engineering barrier.</li>
+<li><strong>AI capability transfer (SQ3/SQ4):</strong> experience replay (from CLS, P025), attention/memory modules (<span class="paper-ref" data-id="P017">P017</span>), meta-learning (<span class="paper-ref" data-id="P024">P024</span>), and world models (<span class="paper-ref" data-id="P018">P018</span>) are brain-derived ideas now standard in mainstream AI.</li>
+</ul>
+<h2 id="8">§8 Cross-cutting analysis<a class="section-anchor" href="#8" title="link">&para;</a></h2>
+<ul>
+<li><strong>The objective-function thesis.</strong> Sparse coding (<span class="paper-ref" data-id="P007">P007</span>), goal-driven vision (P032/P006), auditory (<span class="paper-ref" data-id="P034">P034</span>), language (<span class="paper-ref" data-id="P036">P036</span>), and grid cells (<span class="paper-ref" data-id="P019">P019</span>) all instantiate one idea (<span class="paper-ref" data-id="P003">P003</span>): optimize a network for a <em>task/objective</em> and brain-like representations <em>emerge</em>. This is the field's most reproduced empirical pattern and its strongest claim to explanatory (not just descriptive) power.</li>
+<li><strong>Scaling and "foundation models" reach neuroscience.</strong> POYO (<span class="paper-ref" data-id="P045">P045</span>), the digital twin (<span class="paper-ref" data-id="P047">P047</span>), and LLM↔brain alignment (P036/P071) import the foundation-model paradigm — pretrain broadly, transfer/few-shot — into neural data and brain modeling. This is the dominant 2023–2026 trend.</li>
+<li><strong>Anatomy re-enters.</strong> After a decade of architecture-agnostic fitting, connectome-constrained models (<span class="paper-ref" data-id="P046">P046</span>) put <em>wiring</em> back into the model, narrowing Marr's implementational gap.</li>
+<li><strong>Reproducibility splits by route.</strong> Tool/method routes (G, F-software, H) are largely open-source (R1); model routes (E) are R2; applied clinical and hardware routes (I, F-hardware) are inherently access-gated (R3/R4) — not for lack of rigor but because patients' neural data and custom silicon can't be shipped. §14 details this.</li>
+</ul>
+<h2 id="9">§9 Key research teams<a class="section-anchor" href="#9" title="link">&para;</a></h2>
+<p>The bias audit's residue (see <code>coverage_matrix.md</code>) surfaces here. Dominant clusters among ★★★ papers:
+- <strong>MIT / DiCarlo–McDermott–Tenenbaum–Fedorenko</strong> — goal-driven vision (<span class="paper-ref" data-id="P032">P032</span>), Brain-Score (<span class="paper-ref" data-id="P040">P040</span>), auditory (<span class="paper-ref" data-id="P034">P034</span>), LM↔brain (<span class="paper-ref" data-id="P036">P036</span>), BPL/cognition (P050/P051/P054), LLM↔brain review (<span class="paper-ref" data-id="P071">P071</span>). The single densest node (7/53 ★★★).
+- <strong>DeepMind / UCL</strong> — Hassabis manifesto (<span class="paper-ref" data-id="P002">P002</span>), DNC (<span class="paper-ref" data-id="P017">P017</span>), grid cells (<span class="paper-ref" data-id="P019">P019</span>), meta-RL (<span class="paper-ref" data-id="P024">P024</span>), CLS (<span class="paper-ref" data-id="P025">P025</span>), backprop-and-the-brain (<span class="paper-ref" data-id="P026">P026</span>), virtual rodent (P065/P066).
+- <strong>Stanford</strong> — population dynamics (<span class="paper-ref" data-id="P012">P012</span>), dynamical RNNs (<span class="paper-ref" data-id="P039">P039</span>), LFADS (Shenoy collab, P041), handwriting/speech BCI (P058/P059).
+- <strong>NYU (Lake/LeCun)</strong> — compositionality (P052/P053), JEPA (<span class="paper-ref" data-id="P067">P067</span>).
+- <strong>EPFL / Tübingen / CASIA / Tsinghua (non-US/UK)</strong> — CEBRA &amp; ultra-sparse SNN (P042/P031), DeepLabCut &amp; texture-bias (P043/P076), BrainCog (<span class="paper-ref" data-id="P075">P075</span>), Tianjic &amp; SpikingJelly (P073/P074), THINGS (<span class="paper-ref" data-id="P092">P092</span>).
+- <strong>France [v4/v5]</strong> — a distinct and substantial cluster: <strong>Meta AI Paris "Brain &amp; AI" team / ENS-PSL</strong> (J-R King's group — the densest French node: LM↔brain alignment P038, non-invasive speech decoding P096, MEG image decoding P103 [v5], brain-to-text typing P104 [v5], the multimodal whole-brain encoder TRIBE v1→v2 P102/P105 [v5/v6], the 723-subject word decoder P106 [v6], and intuitive-physics-from-video P087); <strong>Collège de France / NeuroSpin / ENS</strong> (Dehaene's consciousness framework P097; Denève's balanced-spiking efficient coding P098); <strong>CNRS CerCo Toulouse</strong> (Masquelier/Thorpe STDP spiking nets P099; VanRullen's Global Workspace P057); <strong>INRIA / NeuroSpin</strong> (Varoquaux–Thirion ML-for-neuroimaging / nilearn P100). France spans the AI→brain encoding/decoding, spiking, consciousness, and tooling routes — and the King group is, by v5, the survey's leading <em>non-invasive</em> decoding/encoding cluster.
+- <strong>Helmholtz Munich (Schulz lab) [v5]</strong> — Centaur (<span class="paper-ref" data-id="P101">P101</span>), the foundation-model-of-cognition program; a German node distinct from the Tübingen/Bethge vision cluster.</p>
+<p><strong>Geographic concentration (accepted limitation).</strong> ~85% of ★★★ papers are US/UK — a real reflection of the field's funding and lab geography, not only a search artifact (see §10 and <code>coverage_matrix.md</code>). Round 2 surfaced strong non-US/UK work (China's neuromorphic surge; German vision-model critique; German/Dutch convergence review), Round 4 [v3] added more — THINGS (P092, MPI Germany, ★★★), the resource-rational account (P094, MPI/Princeton), and a Japan cornerstone (Doya, P095, OIST) — and a v4 <strong>France</strong> pass [P096–P100] added a substantial French cluster (Meta-Paris/ENS, Collège de France/NeuroSpin, CNRS Toulouse, INRIA; see the France bullet above), raising French ★★★ to four (P038, P087, P096, P099). The residual US/UK majority persists and is documented rather than hidden.</p>
+<h2 id="10">§10 Open challenges<a class="section-anchor" href="#10" title="link">&para;</a></h2>
+<p>Each challenge cites a critical-review paper (authors' enthusiasm about their own work is not a challenge source).</p>
+<ol>
+<li><strong>Do deep nets actually <em>model</em> vision, or just <em>predict</em> it?</strong> P070 (<span class="claim-ref" data-id="C067">C067</span>) shows DNNs fail psychophysical tests humans pass and argues high Brain-Score (<span class="paper-ref" data-id="P040">P040</span>) can be confounded by dataset/regression choices. Prediction ≠ explanation.</li>
+<li><strong>CNN vision is texture-driven, not shape-driven.</strong> P076 (<span class="claim-ref" data-id="C074">C074</span>) gives a concrete, reproducible human-machine divergence — a counterexample to "CNNs see like us."</li>
+<li><strong>Biological plausibility of backprop is unsettled.</strong> P026 (<span class="claim-ref" data-id="C025">C025</span>) frames NGRAD as <em>plausible</em>, not <em>demonstrated</em>; PC≈backprop (<span class="paper-ref" data-id="P020">P020</span>) and feedback alignment (<span class="paper-ref" data-id="P022">P022</span>) each have restrictive scaling regimes.</li>
+<li><strong>Theory deficit.</strong> P068 (<span class="claim-ref" data-id="C069">C069</span>) argues much of the field fits data without committing to falsifiable theory — the same worry P005 (<span class="claim-ref" data-id="C006">C006</span>) addresses by demanding a Lakatosian hard core.</li>
+<li><strong>Brittleness &amp; missing cognition.</strong> P069 (<span class="claim-ref" data-id="C068">C068</span>) lists data-hunger, poor transfer, and weak compositional/causal handling — and ARC (P055, C054) remains unsaturated, with humans far above machines.</li>
+<li><strong>Evaluation fragmentation</strong> (§4.4) — no shared cross-modality model-brain benchmark; route-specific scoring makes cross-route claims unfalsifiable.</li>
+<li><strong>Geographic &amp; institutional concentration</strong> (§9) — ~85% US/UK ★★★ risks a monoculture of methods and questions.</li>
+<li><strong>Neuroethics of decoding</strong> — non-invasive language/image reconstruction (P062–P064) raises mental-privacy questions the technical literature does not resolve.</li>
+</ol>
+<p><strong>Critique attack graph</strong> (who attacks what):</p>
+<div class="mermaid">graph LR
+  P032["P032 HCNN→IT"]
+  P040["P040 Brain-Score"]
+  P070["P070 deep problems (BBS 2023)"]
+  P076["P076 texture bias (ICLR 2019)"]
+  P070 -.->|critique| P032
+  P070 -.->|critique| P040
+  P076 -.->|critique| P032
+  P040 -.->|evals| P032
+</div>
+<h2 id="11">§11 Frontiers / future directions<a class="section-anchor" href="#11" title="link">&para;</a></h2>
+<p>Each direction names a paper showing its seed (or the explicit gap):
+- <strong>Brain foundation models.</strong> POYO (<span class="paper-ref" data-id="P045">P045</span>) and the mouse-cortex digital twin (<span class="paper-ref" data-id="P047">P047</span>) seed a "pretrain-on-neural-data, transfer everywhere" future; the gap is a <em>cross-organism, cross-modality</em> foundation model and a shared benchmark (§4.4). [v5/v6] <strong>TRIBE (P102 → v2 P105)</strong> is the encoding-side advance — a multimodal <em>whole-brain</em> fMRI encoder that won Algonauts 2025, scaled in <strong>v2</strong> to a 720-subject foundation model enabling <strong>in-silico neuroscience</strong> (testing hypotheses on a digital brain model without new human experiments). Emerging companions from the same team — a NeuroAI benchmarking framework (NeuralBench, 2026) and scaling laws for brain decoding — signal the line is hardening into reusable infrastructure (flagged here as emerging, not yet indexed pending stable metadata).
+- <strong>Foundation models of cognition (not just neural data).</strong> [v5] <strong>Centaur (<span class="paper-ref" data-id="P101">P101</span>)</strong> fine-tunes a 70B LLM on a massive corpus of human psychology experiments to predict behavior across tasks and align to fMRI — a new frontier distinct from neural-data foundation models: a foundation model of <em>behavior/cognition</em>. Its reception (Bowers/Adolfi critiques) makes it the sharpest current test of the SQ12 prediction-vs-explanation question.
+- <strong>Connectome-constrained / anatomy-grounded modeling.</strong> P046 (fly) shows wiring can replace free parameters; the frontier is scaling to mammalian connectomes (MICrONS, P047 substrate).
+- <strong>LLMs ↔ language cortex.</strong> P036/P037/P038 and the P071 review establish alignment; the open question is <em>causal</em> — do shared objectives imply shared mechanism, or is alignment a regression artifact (the P070 worry, transposed to language)?
+- <strong>Mechanistic interpretability as a neuroscience of AI.</strong> P049 (circuits) imports neuroscience methods into ANNs; convergence with manifold-capacity theory (<span class="paper-ref" data-id="P048">P048</span>) could yield shared analysis tools for biological and artificial nets.
+- <strong>Embodied Turing test, operationalized.</strong> P004 names the goal; P065/P066 show virtual animals; the missing piece is a <em>dataset/benchmark</em> for sensorimotor competence (§4.4 gap).
+- <strong>Energy-efficient brain-inspired hardware.</strong> Ultra-sparse SNNs (<span class="paper-ref" data-id="P031">P031</span>), Tianjic (<span class="paper-ref" data-id="P073">P073</span>), and SpikingJelly (<span class="paper-ref" data-id="P074">P074</span>) point toward neuromorphic edge AI; the frontier is closing the accuracy gap with ANNs at scale.
+- <strong>Geographic broadening.</strong> China's neuromorphic ecosystem (P073/P074/P075) is the clearest non-US/UK growth pole; future surveys should track its model-brain and cognitive-modeling output.</p>
+<h2 id="12">§12 Direct Q&amp;A back to original question<a class="section-anchor" href="#12" title="link">&para;</a></h2>
+<ul>
+<li><strong>SQ1 (foundations/framing):</strong> NeuroAI is defined by the bidirectional brain↔AI program (P002, P004), organized analytically by Marr's levels (<span class="paper-ref" data-id="P001">P001</span>) and the objective/learning-rule/architecture decomposition (<span class="paper-ref" data-id="P003">P003</span>), and disciplined as a falsifiable program by the neuroconnectionist framing (<span class="paper-ref" data-id="P005">P005</span>). Its 2023 self-definition centers the embodied Turing test (P004, C001/C077).</li>
+<li><strong>SQ2 (classical theory):</strong> The field builds on normative principles — efficient/sparse coding (<span class="paper-ref" data-id="P007">P007</span>), predictive coding (<span class="paper-ref" data-id="P008">P008</span>), Bayesian inference (<span class="paper-ref" data-id="P010">P010</span>), the free-energy principle (<span class="paper-ref" data-id="P009">P009</span>), divisive normalization (<span class="paper-ref" data-id="P011">P011</span>) — and on the dynamical-systems/manifold view of populations (<span class="paper-ref" data-id="P012">P012</span>). These are the phenomena AI models must reproduce or explain.</li>
+<li><strong>SQ3 (brain→AI architecture):</strong> Visual cortex → Neocognitron → CNN (P014/P015/P016) is the deepest inheritance; attractor memory (<span class="paper-ref" data-id="P013">P013</span>), differentiable external memory (<span class="paper-ref" data-id="P017">P017</span>), world models (<span class="paper-ref" data-id="P018">P018</span>), and emergent grid codes (<span class="paper-ref" data-id="P019">P019</span>) extend it.</li>
+<li><strong>SQ4 (brain→AI learning):</strong> Biology motivates alternatives to weight-transport backprop — predictive coding (<span class="paper-ref" data-id="P020">P020</span>), feedback alignment (<span class="paper-ref" data-id="P022">P022</span>), the dopamine-RPE/TD link (<span class="paper-ref" data-id="P023">P023</span>), meta-RL (<span class="paper-ref" data-id="P024">P024</span>), CLS/replay (<span class="paper-ref" data-id="P025">P025</span>) — synthesized as NGRAD (<span class="paper-ref" data-id="P026">P026</span>). The dopamine-RPE correspondence (<span class="paper-ref" data-id="P023">P023</span>) is the field's strongest single success.</li>
+<li><strong>SQ5 (AI→brain models):</strong> Task-optimized deep nets predict neural activity across vision (P032/P006/P040), audition (<span class="paper-ref" data-id="P034">P034</span>), and language (P036/P037/P038), with grid cells (<span class="paper-ref" data-id="P019">P019</span>) and PFC dynamics (<span class="paper-ref" data-id="P039">P039</span>) as bonus emergent matches. <em>But</em> prediction is contested as explanation (P070, P076).</li>
+<li><strong>SQ6 (cognition):</strong> Structured, generative, compositional models (BPL P050; intuitive physics P054) and learning-to-learn (MLC P053, solving SCAN P052) capture human-like learning that plain pattern recognition misses; ARC (<span class="paper-ref" data-id="P055">P055</span>) shows a large residual gap.</li>
+<li><strong>SQ7 (spiking/neuromorphic):</strong> Surrogate gradients (<span class="paper-ref" data-id="P027">P027</span>) made deep SNNs trainable; Loihi/TrueNorth/SpiNNaker/Tianjic (P028–P030, P073) are the hardware substrates; ultra-sparse SNNs (<span class="paper-ref" data-id="P031">P031</span>) and SpikingJelly (<span class="paper-ref" data-id="P074">P074</span>) push the efficiency/usability frontier.</li>
+<li><strong>SQ8 (AI-for-data):</strong> Latent-dynamics models (P041/P042), pose estimation (<span class="paper-ref" data-id="P043">P043</span>), connectomics (<span class="paper-ref" data-id="P044">P044</span>), and spike-foundation models (<span class="paper-ref" data-id="P045">P045</span>) make AI the primary analysis instrument of modern neuroscience.</li>
+<li><strong>SQ9 (BCI/decoding):</strong> Communication BCIs reach usable speeds (P058–P061) and stimulus reconstruction recovers seen images and language gist (P062–P064) — the applied frontier, with clinical-N=1 evidence and neuroethics caveats.</li>
+<li><strong>SQ10 (embodiment):</strong> Virtual animals (P065/P066) realize "deep neuroethology" and now predict real neural activity; world-model/JEPA programs (P018/P067) sketch autonomous agents — but the embodied Turing test lacks a benchmark.</li>
+<li><strong>SQ11 (convergence):</strong> Connectome-constrained (<span class="paper-ref" data-id="P046">P046</span>) and digital-twin (<span class="paper-ref" data-id="P047">P047</span>) models, brain foundation models (<span class="paper-ref" data-id="P045">P045</span>), LLM↔brain alignment (P036/P071), and mech-interp-as-neuroscience (<span class="paper-ref" data-id="P049">P049</span>) are where the two fields are actively merging.</li>
+<li><strong>SQ12 (critiques):</strong> The field's main risks are conflating prediction with explanation (<span class="paper-ref" data-id="P070">P070</span>), human-machine divergences (<span class="paper-ref" data-id="P076">P076</span>), unsettled biological plausibility (<span class="paper-ref" data-id="P026">P026</span>), a theory deficit (<span class="paper-ref" data-id="P068">P068</span>), residual cognitive gaps (P069/P055), evaluation fragmentation, and US/UK concentration.</li>
+<li><strong>SQ13 (visual intelligence &amp; world models, v2):</strong> Both fields are converging on <em>world models</em> as the route to flexible intelligence. In AI, learned predictive world models support general control (DreamerV3, P077), and a sharp design split has opened between <em>latent-prediction</em> models (V-JEPA, P078; which yield emergent intuitive physics, P087) and <em>generative pixel</em> models (Sora-as-world-simulator, P081) — with Genie (<span class="paper-ref" data-id="P080">P080</span>) showing world models can be generative <em>and</em> interactive. In the brain, the hippocampal-entorhinal system is itself a world model: the Tolman-Eichenbaum Machine (<span class="paper-ref" data-id="P082">P082</span>) and the successor-representation predictive map (<span class="paper-ref" data-id="P083">P083</span>) cast cognitive maps as structure-factorizing, predictive models, bridging directly to AI. Visual intelligence beyond recognition is approached via object-centric (Slot Attention, P084), neuro-symbolic/relational (P085/P086), and inverse-graphics (<span class="paper-ref" data-id="P089">P089</span>) representations — structured world representations rather than flat pattern recognition. The open question (tying back to SQ12): does scaling video prediction yield genuine world understanding, or does it require the explicit structure that the brain's world model and neuro-symbolic systems build in?</li>
+</ul>
+<p><strong>Synthesis:</strong> NeuroAI is a genuine two-way street whose strongest, most reproducible result is that <em>task-optimized networks develop brain-like representations</em> — but the field's central open question, voiced by its own critics, is whether that correspondence is <em>mechanistic understanding</em> or <em>sophisticated curve-fitting</em>. The 2023–2026 frontier (foundation models for neural data, connectome-constrained models, LLM↔brain alignment) is a bet that scaling and anatomy together will turn correspondence into explanation.</p>
+<h2 id="13">§13 Recommended reading<a class="section-anchor" href="#13" title="link">&para;</a></h2>
+<h3 id="entry-tier-read-in-this-order-34-hours">Entry tier (read in this order; ~3–4 hours)<a class="section-anchor" href="#entry-tier-read-in-this-order-34-hours" title="link">&para;</a></h3>
+<ol>
+<li><strong>P004 NeuroAI roadmap (2023)</strong> — what the field is and why now (~45 min).</li>
+<li><strong>P003 three components (2019)</strong> — the analytic frame (~45 min).</li>
+<li><strong>P032 Yamins HCNN (2014)</strong> — the founding AI→brain result (~45 min).</li>
+<li><strong>P023 dopamine RPE (1997)</strong> — the founding brain↔AI success (~30 min).</li>
+<li><strong>P070 deep problems (2023)</strong> — read the keystone critique <em>before</em> believing the hype (~45 min).</li>
+</ol>
+<h3 id="deep-tier-per-route">Deep tier (per route)<a class="section-anchor" href="#deep-tier-per-route" title="link">&para;</a></h3>
+<ul>
+<li>Vision-model (E): P032 → P006 → P040; then P033/P035 for method.</li>
+<li>Learning/credit-assignment (D): P023 → P024; P022 → P020 → P026.</li>
+<li>Cognition (H): P050 → P051 → P052 → P053; P054, P055.</li>
+<li>Neuromorphic (F): P027 → P031; P029/P028/P073; P074.</li>
+<li>Neural-data tools (G): P041 → P042 → P045; P043.</li>
+<li>BCI/decoding (I): P058 → P059 → P061; P062/P063; P064.</li>
+<li>Frontiers (K): P046 → P047; P071.</li>
+<li>Visual intelligence &amp; world models (M, v2): P082 (TEM) → P083 (successor rep) for the brain side; P077 (DreamerV3) → P078 (V-JEPA) → P080 (Genie) for AI world models; P084/P085 (object-centric/neuro-symbolic) and P089 → P087 (inverse graphics → intuitive physics) for visual intelligence.</li>
+</ul>
+<h3 id="critical-tier-read-to-stay-honest">Critical tier (read to stay honest)<a class="section-anchor" href="#critical-tier-read-to-stay-honest" title="link">&para;</a></h3>
+<ul>
+<li><strong>P070</strong> (DNN-vision critique), <strong>P076</strong> (texture bias), <strong>P068</strong> (theory deficit), <strong>P069</strong> (DL critical appraisal), and <strong>P005</strong> (falsifiability framing).</li>
+</ul>
+<h3 id="overview-tier-other-surveys-for-cross-checking">Overview tier (other surveys, for cross-checking)<a class="section-anchor" href="#overview-tier-other-surveys-for-cross-checking" title="link">&para;</a></h3>
+<ul>
+<li><strong>P002</strong> (Hassabis bidirectional review), <strong>P006</strong> (goal-driven review), <strong>P012</strong> (population dynamics), <strong>P026</strong> (backprop &amp; the brain), <strong>P071</strong> (LLM↔brain), <strong>P072</strong> (if DL is the answer).</li>
+</ul>
+<h2 id="citation-graphs">Citation graphs <a class="section-anchor" href="#citation-graphs">¶</a></h2>
+<h3 id="cg-lineage">Citation graph — lineage</h3><div class="mermaid">graph LR
+  subgraph BCI_decoding["BCI-decoding"]
+    P058["P058 High-performance brain-to…<br/>2021 Nature"]
+    P059["P059 A high-performance speech…<br/>2023 Nature"]
+    P060["P060 Speech decoding & avatar…<br/>2023 Nature"]
+    P061["P061 An accurate, rapidly cali…<br/>2024 NEJM"]
+    P062["P062 Image reconstruction with…<br/>2023 CVPR"]
+    P063["P063 Reconstructing the mind's…<br/>2023 NeurIPS"]
+  end
+  subgraph CNN_lineage["CNN-lineage"]
+    P014["P014 Neocognitron<br/>1980 Biological Cybernetics"]
+    P015["P015 Gradient-based learning<br/>1998 Proc. IEEE"]
+    P016["P016 Robust object recognition…<br/>2007 IEEE TPAMI"]
+  end
+  subgraph Cognitive["Cognitive"]
+    P050["P050 Human-level concept learn…<br/>2015 Science"]
+    P051["P051 Building machines that le…<br/>2017 Behavioral & Brain Sciences"]
+    P052["P052 Generalization without sy…<br/>2018 ICML"]
+    P053["P053 Human-like systematic gen…<br/>2023 Nature"]
+  end
+  subgraph Convergence_frontier["Convergence-frontier"]
+    P046["P046 Connectome-constrained ne…<br/>2024 Nature"]
+    P047["P047 Foundation model of neura…<br/>2025 Nature"]
+  end
+  subgraph Credit_assignment["Credit-assignment"]
+    P020["P020 Predictive coding approxi…<br/>2017 Neural Computation"]
+    P022["P022 Random feedback weights s…<br/>2016 Nature Communications"]
+    P023["P023 A neural substrate of pre…<br/>1997 Science"]
+    P024["P024 Prefrontal cortex as a me…<br/>2018 Nat. Neuroscience"]
+    P026["P026 Backpropagation and the b…<br/>2020 Nat. Reviews Neuroscience"]
+  end
+  subgraph Embodied_agents["Embodied-agents"]
+    P065["P065 Deep neuroethology of a v…<br/>2020 ICLR"]
+    P066["P066 A virtual rodent predicts…<br/>2024 Nature"]
+  end
+  subgraph Foundations["Foundations"]
+    P002["P002 Neuroscience-Inspired AI<br/>2017 Neuron"]
+    P004["P004 Catalyzing next-gen AI th…<br/>2023 Nature Communications"]
+  end
+  subgraph Language_brain["Language-brain"]
+    P036["P036 Neural architecture of la…<br/>2021 PNAS"]
+    P037["P037 Shared computational prin…<br/>2022 Nat. Neuroscience"]
+    P038["P038 Brains and algorithms par…<br/>2022 Communications Biology"]
+  end
+  subgraph Memory_attractor["Memory-attractor"]
+    P013["P013 Neural networks and physi…<br/>1982 PNAS"]
+    P017["P017 Hybrid computing with dyn…<br/>2016 Nature"]
+    P018["P018 World Models<br/>2018 NeurIPS"]
+    P019["P019 Vector-based navigation w…<br/>2018 Nature"]
+  end
+  subgraph Neural_data_ML["Neural-data-ML"]
+    P041["P041 Single-trial neural popul…<br/>2018 Nat. Methods"]
+    P042["P042 Learnable latent embeddings<br/>2023 Nature"]
+    P045["P045 Unified framework for neu…<br/>2023 NeurIPS"]
+  end
+  subgraph Neuromorphic["Neuromorphic"]
+    P027["P027 Surrogate gradient learni…<br/>2019 IEEE Signal Processing Mag."]
+    P028["P028 Loihi: a neuromorphic man…<br/>2018 IEEE Micro"]
+    P029["P029 A million spiking-neuron IC<br/>2014 Science"]
+    P073["P073 Hybrid Tianjic chip archi…<br/>2019 Nature"]
+    P074["P074 SpikingJelly: open-source…<br/>2023 Science Advances"]
+  end
+  subgraph Normative_theory["Normative-theory"]
+    P008["P008 Predictive coding in the…<br/>1999 Nat. Neuroscience"]
+  end
+  subgraph Vision_models["Vision-models"]
+    P006["P006 Goal-driven deep learning…<br/>2016 Nat. Neuroscience"]
+    P032["P032 Performance-optimized hie…<br/>2014 PNAS"]
+    P033["P033 Deep supervised models ex…<br/>2014 PLOS Comput. Biology"]
+    P040["P040 Integrative benchmarking<br/>2020 Neuron"]
+  end
+  P015 --> P014
+  P016 --> P014
+  P032 --> P015
+  P032 --> P016
+  P006 -.->|same-team| P032
+  P040 -.->|same-team| P032
+  P033 ==>|competing| P032
+  P024 --> P023
+  P020 --> P008
+  P026 -.->|same-team| P022
+  P019 --> P013
+  P018 --> P017
+  P051 -.->|same-team| P050
+  P053 --> P052
+  P042 ==>|competing| P041
+  P045 --> P041
+  P059 -.->|same-team| P058
+  P061 ==>|competing| P059
+  P060 ==>|competing| P059
+  P063 ==>|competing| P062
+  P066 -.->|same-team| P065
+  P074 --> P027
+  P073 ==>|competing| P029
+  P073 ==>|competing| P028
+  P036 ==>|competing| P037
+  P038 ==>|competing| P036
+  P046 ==>|competing| P047
+  P004 --> P002</div>
+<h3 id="cg-critique">Citation graph — critique</h3><div class="mermaid">graph LR
+  P032["P032 Performance-optimized hie…<br/>2014 PNAS"]
+  P040["P040 Integrative benchmarking<br/>2020 Neuron"]
+  P070["P070 Deep problems with NN mod…<br/>2023 Behavioral & Brain Sciences"]
+  P076["P076 ImageNet-trained CNNs are…<br/>2019 ICLR"]
+  P070 -.->|critique| P032
+  P070 -.->|critique| P040
+  P076 -.->|critique| P032
+  P040 -.->|evals| P032</div>
+<h2 id="14">§14 Reproducibility tier<a class="section-anchor" href="#14" title="link">&para;</a></h2>
+<p>NeuroAI reproducibility has a twist absent from pure-ML surveys: a result can be methodologically gold-standard yet <em>non-reproducible by outsiders</em> because it depends on patient neural data (BCI) or proprietary silicon (neuromorphic). The tiers below grade <strong>evidence strength of the released artifact</strong>, with the access constraint noted. <em>Caveat:</em> tiers are a first-pass assessment from public release status and venue norms, <strong>not</strong> per-repository inspection; the <code>Repro</code> column in <code>paper_index.md</code> remains <code>pending</code> for that reason, and Tier-R3/R4 numeric claims in §4–§6 carry explicit caveats inline.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Definition</th>
+<th>★★★ papers (representative)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1 — gold</strong></td>
+<td>open-source code+recipes, active, widely reproduced</td>
+<td>P040 Brain-Score, P043 DeepLabCut, P041 LFADS, P042 CEBRA, P045 POYO, P027 surrogate-grad (ecosystem), P074 SpikingJelly, P015 LeNet, P052 SCAN, P053 MLC, P076 texture-bias (Stylized-ImageNet)</td>
+</tr>
+<tr>
+<td><strong>R2 — solid</strong></td>
+<td>code/models available; ≥4/5 repro dimensions positive</td>
+<td>P032 HCNN, P034 auditory, P036 LM↔brain, P038 Caucheteux, P020 PC≈backprop, P022 feedback alignment, P024 meta-RL, P018 World Models, P019 grid cells, P031 SNN, P046 connectome, P050 BPL, P054 intuitive physics, P062 LDM recon, P063 MindEye, P016 HMAX, P044 flood-filling</td>
+</tr>
+<tr>
+<td><strong>R3 — caveat</strong></td>
+<td>open-weights/partial, or data-access-gated; cite numbers with caveat</td>
+<td>P047 digital twin (recent; MICrONS-gated), P037 Goldstein (ECoG data restricted), P064 semantic decoding (fMRI-gated), P058/P059/P060/P061 BCIs (clinical N=1, non-shareable subject data), P003/P005/P026 (conceptual reviews), P071 LLM↔brain review, P006 goal-driven review, P012 dynamics review</td>
+</tr>
+<tr>
+<td><strong>R4 — evidence-weak / access-bound</strong></td>
+<td>closed hardware or no external reproduction path</td>
+<td>P028 Loihi, P029 TrueNorth, P030 SpiNNaker, P073 Tianjic (all proprietary neuromorphic hardware); P004 NeuroAI roadmap (programmatic, evidence=0)</td>
+</tr>
+</tbody>
+</table>
+<p>The split is <strong>route-structured</strong> (see §8): tool/software/cognition routes cluster in R1–R2; clinical-BCI and neuromorphic-hardware routes are structurally R3–R4 not for lack of rigor but because their evidence is access-bound. Weight numeric claims accordingly.</p>
+<hr />
+<p><em>Survey v6 generated 2026-06-02.</em></p>
+<p><strong>Delta from v5 → v6 (user correction — TRIBE v2; Round 7 <code>version</code> update):</strong>
+- <strong>Correction:</strong> v5 stated (per a prior verification pass) that TRIBE was a <em>single</em> paper with no successor. That was <strong>wrong</strong> — the user correctly flagged <strong>TRIBE v2</strong>. Added <strong>P105 TRIBE v2</strong> ("A foundation model of vision, audition &amp; language for in-silico neuroscience", Meta Brain &amp; AI, 2026): the scaled successor to TRIBE v1 (<span class="paper-ref" data-id="P102">P102</span>) — &gt;1,000 hrs fMRI / 720 subjects, high-resolution, zero-shot to new subjects/languages/tasks, open weights+code, enabling in-silico neuroscience. P102 re-labeled "TRIBE v1".
+- Also added <strong>P106</strong> ("Towards decoding individual words from non-invasive brain recordings", <em>Nature Communications</em> 2025, 723 participants) — now confirmed peer-reviewed (had been held as unverified in v5).
+- <strong>§6.K</strong> rewritten as a v1→v2 lineage; <strong>§6.I</strong> + <strong>§11</strong> + <strong>§9</strong> updated; NeuralBench (2026) and brain-decoding scaling laws noted as <em>emerging, not yet indexed</em> (metadata not yet stable).
+- <strong>New claims C106–C107</strong> (both <code>confidence: medium</code>, very recent). No prior claims superseded (v1's findings remain valid; v2 extends, not corrects).
+- Re-audit: 35/35 cells closed, 0 gaps; bias clean (70 ★★★).</p>
+<p><strong>Delta from v4 → v5 (user-flagged very-recent big-lab frontier; Round 6 — a <code>version</code> update):</strong>
+- Added <strong>P101–P104</strong> (3 ★★★, 1 ★★): <strong>Centaur</strong> (Binz et al., <em>Nature</em> 2025, Helmholtz Munich) — a foundation model of human cognition (Llama-70B on Psych-101); <strong>TRIBE</strong> (d'Ascoli et al., <em>ICLR</em> 2026, Meta Brain &amp; AI Paris) — multimodal whole-brain fMRI encoder, Algonauts-2025 winner; <strong>Benchetrit et al.</strong> (<em>ICLR</em> 2024) MEG image decoding; <strong>Brain2Qwerty</strong> (2025 preprint) non-invasive typing decoder.
+- <strong>§6.E/H/I/K</strong> supplemented; <strong>§11</strong> gained a "foundation models of cognition" frontier bullet (Centaur) and a TRIBE note under brain foundation models; <strong>§9</strong> France cluster expanded (King group now the leading non-invasive encode/decode node) + new Helmholtz-Munich node. The "TRIBE series" was checked: it is a <em>single</em> paper within Meta Brain &amp; AI's broader decoding/encoding line (clarified in prose), not a multi-paper series.
+- <strong>New claims C102–C105.</strong> Centaur cited with an explicit prediction-vs-explanation caveat (Bowers/Adolfi critiques), tying it to SQ12. No prior claims superseded; all anchors/IDs stable.
+- Re-audit: 35/35 cells closed, 0 gaps; bias clean (68 ★★★, top institution MIT 10%). SQ5/SQ6/SQ11 frontier materially strengthened.</p>
+<p><strong>Delta from v3 → v4 (user-directed France-coverage bias pass; Round 5 — a <code>version</code> update, not an audit round):</strong>
+- Added <strong>P096–P100</strong> (5 French papers: 2 ★★★, 3 ★★). ★★★: Défossez et al. non-invasive speech decoding (Nat. Machine Intelligence 2023, Meta-Paris/ENS) and Kheradpisheh et al. STDP spiking CNN (Neural Networks 2018, CNRS Toulouse). ★★: Dehaene consciousness C1/C2 (Science 2017), Denève balanced-spiking efficient coding (Nat. Neuro 2016), Abraham/nilearn ML-for-neuroimaging (INRIA 2014).
+- <strong>§9</strong> gained a dedicated <strong>France</strong> research-cluster bullet; <strong>§6.F/G/H/I</strong> supplemented; <strong>§9 geographic note</strong> updated. Mallat's scattering-transform theory was <em>considered and dropped</em> (relevance=1, no substantive brain angle) — recorded so the exclusion is auditable.
+- <strong>New claims C097–C101.</strong> No prior claims superseded. All v1–v3 anchors and paper IDs unchanged.
+- Re-audit: 35/35 cells closed, 0 gaps; bias clean (65 ★★★). French ★★★ 2→4; France now spans decoding, spiking, consciousness, and tooling routes.</p>
+<p><strong>Delta from v2 → v3 (Round 4 — weak-cell &amp; bias hardening, no new sub-question):</strong>
+- <strong>Weak-cell scan</strong> across all 35 active cells flagged single-lab coverage in SQ5-dataset, SQ9-dataset, SQ7-survey, SQ4-critical-review, and Lake/NYU clustering in SQ6.
+- <strong>Round 4 added P090–P095</strong> (6 papers: 2 ★★★, 4 ★★). <strong>NSD (<span class="paper-ref" data-id="P091">P091</span>) + THINGS (<span class="paper-ref" data-id="P092">P092</span>)</strong> [★★★] fixed the SQ5 <em>and</em> SQ9 dataset cells (now 3 ★★★ from 3 labs each). Roy SNN review (<span class="paper-ref" data-id="P090">P090</span>), Whittington-Bogacz backprop critique (<span class="paper-ref" data-id="P093">P093</span>), Lieder-Griffiths resource-rationality (<span class="paper-ref" data-id="P094">P094</span>), and Doya metalearning/neuromodulation (<span class="paper-ref" data-id="P095">P095</span>) added cross-lab + non-US/UK perspective as ★★.
+- <strong>§4</strong> dataset tables updated (NSD/THINGS now indexed); <strong>§6.D/F/H/I</strong> supplemented with the new corroborators; <strong>§9</strong> geographic note updated. All v1/v2 anchors and paper IDs unchanged.
+- <strong>New claims C091–C096.</strong> No prior claims superseded.
+- Re-audit: 35/35 cells closed, 0 gaps; bias clean (63 ★★★). Two cells (SQ7-survey, SQ4-critical-review) remain single-★★★ because review/position papers bin ★★ under the rubric (evidence=0); both now carry a cross-lab ★★ corroborator — documented, not silently closed.</p>
+<p><strong>Delta from v1 → v2:</strong>
+- <strong>New sub-question SQ13</strong> (visual intelligence &amp; world models) added as an explicit, changelogged frame amendment (not a silent edit), at the user's request.
+- <strong>New section §3.M</strong> (Route M taxonomy) and <strong>§6.M</strong> (13 deep-dives) added; <strong>§1, §12, §13</strong> supplemented with SQ13 content; all v1 section anchors (§1–§14) unchanged.
+- <strong>Round 3 added P077–P089</strong> (13 papers: 8 ★★★, 5 ★★) and <strong>cross-tagged P018/P019/P054/P067</strong> into SQ13. All v1 paper IDs immutable.
+- <strong>New claims C078–C090.</strong> No v1 claims superseded.
+- Re-audit: 35/35 active cells closed, 0 gaps; bias clean (61 ★★★). claims_validate + synthesize_self_check pass.</p>
+<p><em>Backing index: 100 papers (70 ★★★), 13 sub-questions, audit passed at Round 4; v4–v6 <code>version</code> additions in Rounds 5–7 (user-directed; audit-round cap of 4 reached at v3). Next phase: <code>version</code> (when new evidence arrives — e.g. NeuralBench, brain-decoding scaling laws) or a new sub-question to widen scope. Country-concentration limitation documented in §9/§10 and <code>coverage_matrix.md</code>.</em></p>
+    </main>
+  </div>
+
+  <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <script>
+    window.__SURVEY_DATA__ = {"papers": {"P001": {"title": "Vision (three levels of analysis)", "authors": "Marr D.", "inst": "MIT", "year": "1982", "venue": "W.H. Freeman (book)", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Source of computational/algorithmic/implementational levels"}, "P002": {"title": "Neuroscience-Inspired AI", "authors": "Hassabis D.", "inst": "DeepMind/UCL", "year": "2017", "venue": "Neuron", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Foundational bidirectional brain↔AI review"}, "P003": {"title": "A deep learning framework for neuroscience", "authors": "Richards B.", "inst": "Mila/McGill", "year": "2019", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Reframes neuro around objectives/learning-rules/architectures"}, "P004": {"title": "Catalyzing next-gen AI through NeuroAI", "authors": "Zador A.", "inst": "CSHL", "year": "2023", "venue": "Nature Communications", "stars": "★★★", "arxiv": "2210.08340", "repro": "pending", "note": "Field manifesto; proposes the embodied Turing test"}, "P005": {"title": "The neuroconnectionist research programme", "authors": "Doerig A.", "inst": "Osnabrück/Donders (DE/NL)", "year": "2023", "venue": "Nat. Reviews Neuroscience", "stars": "★★★", "arxiv": "2209.03718", "repro": "pending", "note": "Lakatosian programme view of ANNs-as-brain-models; covers frontier (non-US/UK)"}, "P006": {"title": "Goal-driven deep learning models of sensory cortex", "authors": "Yamins D.", "inst": "Stanford/MIT", "year": "2016", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Defines the goal-driven / task-optimized modeling paradigm"}, "P007": {"title": "Sparse coding of natural images (simple-cell RFs)", "authors": "Olshausen B.", "inst": "UC Berkeley", "year": "1996", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Sparse code yields V1-like Gabor receptive fields"}, "P008": {"title": "Predictive coding in the visual cortex", "authors": "Rao R.", "inst": "Salk", "year": "1999", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Hierarchical PC explains extra-classical RF effects"}, "P009": {"title": "The free-energy principle: a unified brain theory?", "authors": "Friston K.", "inst": "UCL", "year": "2010", "venue": "Nat. Reviews Neuroscience", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Perception/action/learning as free-energy minimization"}, "P010": {"title": "The Bayesian brain", "authors": "Knill D.", "inst": "Rochester", "year": "2004", "venue": "Trends in Neurosciences", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Canonical statement of probabilistic-population-coding"}, "P011": {"title": "Normalization as a canonical neural computation", "authors": "Carandini M.", "inst": "UCL/NYU", "year": "2012", "venue": "Nat. Reviews Neuroscience", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Divisive normalization as a cross-area canonical op"}, "P012": {"title": "Computation through neural population dynamics", "authors": "Vyas S.", "inst": "Stanford", "year": "2020", "venue": "Annu. Rev. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Defining review of the dynamical-systems/manifold view"}, "P013": {"title": "Neural networks and physical systems (Hopfield net)", "authors": "Hopfield J.", "inst": "Caltech", "year": "1982", "venue": "PNAS", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Attractor-network associative memory (2024 Nobel)"}, "P014": {"title": "Neocognitron", "authors": "Fukushima K.", "inst": "NHK Labs", "year": "1980", "venue": "Biological Cybernetics", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Hierarchical S/C-cell model; direct CNN ancestor"}, "P015": {"title": "Gradient-based learning (LeNet-5)", "authors": "LeCun Y.", "inst": "AT&T Bell Labs", "year": "1998", "venue": "Proc. IEEE", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Convolution+pooling+backprop realizing Neocognitron lineage"}, "P016": {"title": "Robust object recognition with cortex-like mechanisms (HMAX)", "authors": "Serre T.", "inst": "MIT", "year": "2007", "venue": "IEEE TPAMI", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Full feedforward HMAX benchmarked on natural scenes"}, "P017": {"title": "Hybrid computing with dynamic external memory (DNC)", "authors": "Graves A.", "inst": "DeepMind", "year": "2016", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Memory-augmented net; successor to Neural Turing Machine"}, "P018": {"title": "World Models", "authors": "Ha D.", "inst": "Google Brain", "year": "2018", "venue": "NeurIPS", "stars": "★★★", "arxiv": "1803.10122", "repro": "pending", "note": "VAE+RNN internal world model for policy learning"}, "P019": {"title": "Vector-based navigation with grid-like representations", "authors": "Banino A.", "inst": "DeepMind", "year": "2018", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Grid-cell-like codes emerge in path-integration RNN"}, "P020": {"title": "Predictive coding approximates backprop (local Hebbian)", "authors": "Whittington J.", "inst": "Oxford", "year": "2017", "venue": "Neural Computation", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "PC net approximates backprop with purely local updates"}, "P021": {"title": "Equilibrium propagation", "authors": "Scellier B.", "inst": "Mila/Montréal", "year": "2017", "venue": "Front. Comput. Neuroscience", "stars": "★★", "arxiv": "1602.05179", "repro": "pending", "note": "Local two-phase rule recovers backprop gradients"}, "P022": {"title": "Random feedback weights support error backprop (FA)", "authors": "Lillicrap T.", "inst": "Oxford", "year": "2016", "venue": "Nature Communications", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Feedback alignment: fixed random feedback still learns"}, "P023": {"title": "A neural substrate of prediction and reward", "authors": "Schultz W.", "inst": "U. Fribourg", "year": "1997", "venue": "Science", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Dopamine firing = TD reward-prediction-error"}, "P024": {"title": "Prefrontal cortex as a meta-RL system", "authors": "Wang J.", "inst": "DeepMind", "year": "2018", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Dopamine-trained recurrent PFC implements meta-RL"}, "P025": {"title": "Complementary learning systems theory updated", "authors": "Kumaran D.", "inst": "DeepMind/UCL", "year": "2016", "venue": "Trends in Cognitive Sciences", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Hippocampal replay ↔ experience replay"}, "P026": {"title": "Backpropagation and the brain", "authors": "Lillicrap T.", "inst": "DeepMind/UCL", "year": "2020", "venue": "Nat. Reviews Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "NGRAD: brain may approximate backprop-like gradients"}, "P027": {"title": "Surrogate gradient learning in SNNs", "authors": "Neftci E.", "inst": "UC Irvine", "year": "2019", "venue": "IEEE Signal Processing Mag.", "stars": "★★★", "arxiv": "1901.09948", "repro": "pending", "note": "Canonical recipe for training spiking nets"}, "P028": {"title": "Loihi: a neuromorphic manycore processor", "authors": "Davies M.", "inst": "Intel Labs", "year": "2018", "venue": "IEEE Micro", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "128-core SNN chip with on-chip learning"}, "P029": {"title": "A million spiking-neuron IC (TrueNorth)", "authors": "Merolla P.", "inst": "IBM Research", "year": "2014", "venue": "Science", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "1M neurons / 256M synapses at ~70 mW"}, "P030": {"title": "The SpiNNaker project", "authors": "Furber S.", "inst": "U. Manchester", "year": "2014", "venue": "Proc. IEEE", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Million-ARM-core real-time spiking simulator"}, "P031": {"title": "High-performance deep SNNs (<0.3 spikes/neuron)", "authors": "Stanojevic A.", "inst": "EPFL/IBM", "year": "2024", "venue": "Nature Communications", "stars": "★★★", "arxiv": "2306.08744", "repro": "pending", "note": "Time-to-first-spike SNN matching ANN accuracy"}, "P032": {"title": "Performance-optimized hierarchical models predict IT", "authors": "Yamins D.", "inst": "MIT", "year": "2014", "venue": "PNAS", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Founding goal-driven HCNN result; predicts V4/IT"}, "P033": {"title": "Deep supervised models explain IT representation", "authors": "Khaligh-Razavi S.", "inst": "MRC CBU", "year": "2014", "venue": "PLOS Comput. Biology", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "RSA over 37 models; supervised deep nets best fit IT"}, "P034": {"title": "Task-optimized network replicates auditory behavior", "authors": "Kell A.", "inst": "MIT", "year": "2018", "venue": "Neuron", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Goal-driven model of auditory cortex hierarchy"}, "P035": {"title": "Representational similarity analysis (RSA)", "authors": "Kriegeskorte N.", "inst": "NIH", "year": "2008", "venue": "Front. Syst. Neuroscience", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Defines RDM methodology for model-brain comparison"}, "P036": {"title": "Neural architecture of language converges on prediction", "authors": "Schrimpf M.", "inst": "MIT", "year": "2021", "venue": "PNAS", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": ">40 LMs; next-word-prediction skill predicts neural fit"}, "P037": {"title": "Shared computational principles: humans & LMs", "authors": "Goldstein A.", "inst": "Princeton", "year": "2022", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "ECoG; autoregressive prediction & contextual geometry"}, "P038": {"title": "Brains and algorithms partially converge in NLP", "authors": "Caucheteux C.", "inst": "Meta AI/INRIA", "year": "2022", "venue": "Communications Biology", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "fMRI+MEG; convergence scales with word-prediction acc."}, "P039": {"title": "Context-dependent computation by recurrent dynamics", "authors": "Mante V.", "inst": "Stanford", "year": "2013", "venue": "Nature", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Trained RNN reproduces macaque PFC dynamics"}, "P040": {"title": "Integrative benchmarking (Brain-Score)", "authors": "Schrimpf M.", "inst": "MIT", "year": "2020", "venue": "Neuron", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Benchmark aggregating V1/V2/V4/IT + behavior"}, "P041": {"title": "Single-trial neural population dynamics (LFADS)", "authors": "Pandarinath C.", "inst": "Emory/Georgia Tech", "year": "2018", "venue": "Nat. Methods", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Sequential VAE for single-trial motor dynamics"}, "P042": {"title": "Learnable latent embeddings (CEBRA)", "authors": "Schneider S.", "inst": "EPFL", "year": "2023", "venue": "Nature", "stars": "★★★", "arxiv": "2204.00673", "repro": "pending", "note": "Contrastive joint behavioral+neural embeddings"}, "P043": {"title": "DeepLabCut: markerless pose estimation", "authors": "Mathis A.", "inst": "Harvard/Tübingen", "year": "2018", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Transfer-learned pose tracking; field-standard tool"}, "P044": {"title": "Flood-filling networks for connectomics", "authors": "Januszewski M.", "inst": "Google/Max Planck", "year": "2018", "venue": "Nat. Methods", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Recurrent 3D CNN for EM neuron segmentation"}, "P045": {"title": "Unified framework for neural population decoding (POYO)", "authors": "Azabou M.", "inst": "Georgia Tech/Mila", "year": "2023", "venue": "NeurIPS", "stars": "★★★", "arxiv": "2310.16046", "repro": "pending", "note": "Transformer neural-data foundation model; few-shot transfer"}, "P046": {"title": "Connectome-constrained networks predict fly activity", "authors": "Lappalainen J.", "inst": "Tübingen/Janelia", "year": "2024", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Fixed wiring + optimized dynamics; single-neuron predictions"}, "P047": {"title": "Foundation model of neural activity (\"digital twin\")", "authors": "Wang E.", "inst": "Baylor/Stanford", "year": "2025", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Mouse-V1 transformer generalizing to novel stimuli"}, "P048": {"title": "Classification and geometry of perceptual manifolds", "authors": "Chung S.", "inst": "Harvard/Hebrew U.", "year": "2018", "venue": "Physical Review X", "stars": "★★", "arxiv": "1710.06487", "repro": "pending", "note": "Manifold-capacity theory (radius/dimension measures)"}, "P049": {"title": "Zoom In: an introduction to circuits", "authors": "Olah C.", "inst": "OpenAI", "year": "2020", "venue": "Distill", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Founding \"circuits\" framing of mechanistic interpretability"}, "P050": {"title": "Human-level concept learning via program induction (BPL)", "authors": "Lake B.", "inst": "NYU", "year": "2015", "venue": "Science", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "BPL one-shot Omniglot; passes visual Turing test"}, "P051": {"title": "Building machines that learn and think like people", "authors": "Lake B.", "inst": "NYU/MIT", "year": "2017", "venue": "Behavioral & Brain Sciences", "stars": "★★", "arxiv": "1604.00289", "repro": "pending", "note": "Manifesto: causal models + intuitive theories + compositionality"}, "P052": {"title": "Generalization without systematicity (SCAN)", "authors": "Lake B.", "inst": "NYU/Facebook AI", "year": "2018", "venue": "ICML", "stars": "★★★", "arxiv": "1711.00350", "repro": "pending", "note": "SCAN benchmark; seq2seq fails compositional generalization"}, "P053": {"title": "Human-like systematic generalization via meta-learning (MLC)", "authors": "Lake B.", "inst": "NYU/Pompeu Fabra", "year": "2023", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Meta-learning gives human-level systematic generalization"}, "P054": {"title": "Simulation as an engine of physical scene understanding", "authors": "Battaglia P.", "inst": "MIT", "year": "2013", "venue": "PNAS", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "\"Intuitive physics engine\": probabilistic mental simulation"}, "P055": {"title": "On the measure of intelligence (ARC)", "authors": "Chollet F.", "inst": "Google", "year": "2019", "venue": "arXiv (preprint)", "stars": "★★", "arxiv": "1911.01547", "repro": "pending", "note": "Skill-acquisition-efficiency def.; ARC-AGI benchmark"}, "P056": {"title": "An integrated theory of the mind (ACT-R)", "authors": "Anderson J.", "inst": "Carnegie Mellon", "year": "2004", "venue": "Psychological Review", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Canonical ACT-R cognitive architecture"}, "P057": {"title": "Deep learning and the Global Workspace Theory", "authors": "VanRullen R.", "inst": "CNRS Toulouse", "year": "2021", "venue": "Trends in Neurosciences", "stars": "★★", "arxiv": "2012.10390", "repro": "pending", "note": "Global latent workspace bringing GWT into deep nets"}, "P058": {"title": "High-performance brain-to-text via handwriting", "authors": "Willett F.", "inst": "Stanford/BrainGate", "year": "2021", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Imagined-handwriting BCI ~90 char/min, 94%+ acc. (N=1)"}, "P059": {"title": "A high-performance speech neuroprosthesis", "authors": "Willett F.", "inst": "Stanford", "year": "2023", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Attempted-speech decode at 62 wpm; 3.4× prior record"}, "P060": {"title": "Speech decoding & avatar control neuroprosthesis", "authors": "Metzger S.", "inst": "UCSF", "year": "2023", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "ECoG ~78 wpm + synthesized voice + facial avatar"}, "P061": {"title": "An accurate, rapidly calibrating speech neuroprosthesis", "authors": "Card N.", "inst": "UC Davis", "year": "2024", "venue": "NEJM", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "~97–99% acc., 125k-word vocab, day-1 use (ALS)"}, "P062": {"title": "Image reconstruction with latent diffusion from fMRI", "authors": "Takagi Y.", "inst": "Osaka U./NICT", "year": "2023", "venue": "CVPR", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Stable-Diffusion reconstruction of seen images (NSD)"}, "P063": {"title": "Reconstructing the mind's eye (MindEye)", "authors": "Scotti P.", "inst": "MedARC/Princeton", "year": "2023", "venue": "NeurIPS", "stars": "★★★", "arxiv": "2305.18274", "repro": "pending", "note": "Contrastive + diffusion-prior fMRI image reconstruction (NSD)"}, "P064": {"title": "Semantic reconstruction of continuous language", "authors": "Tang J.", "inst": "UT Austin", "year": "2023", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Non-invasive (fMRI) semantic language decoder"}, "P065": {"title": "Deep neuroethology of a virtual rodent", "authors": "Merel J.", "inst": "DeepMind/Harvard", "year": "2020", "venue": "ICLR", "stars": "★★★", "arxiv": "1911.09451", "repro": "pending", "note": "Deep-RL virtual rodent; analyzes artificial neural reps"}, "P066": {"title": "A virtual rodent predicts neural activity structure", "authors": "Aldarondo D.", "inst": "Harvard/DeepMind", "year": "2024", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Full-body MuJoCo rat; activations predict real M1/striatum"}, "P067": {"title": "A path towards autonomous machine intelligence (JEPA)", "authors": "LeCun Y.", "inst": "Meta AI/NYU", "year": "2022", "venue": "OpenReview (position)", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "JEPA + world-model configurator/actor/critic architecture"}, "P068": {"title": "How computational modeling forces theory building", "authors": "Guest O.", "inst": "Radboud/Donders", "year": "2021", "venue": "Persp. on Psychological Science", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "The theory-deficit critique; \"open theory\" framing"}, "P069": {"title": "Deep learning: a critical appraisal", "authors": "Marcus G.", "inst": "NYU", "year": "2018", "venue": "arXiv (preprint)", "stars": "★★", "arxiv": "1801.00631", "repro": "pending", "note": "Ten challenges for deep learning; preprint-only"}, "P070": {"title": "Deep problems with NN models of human vision", "authors": "Bowers J.", "inst": "Bristol", "year": "2023", "venue": "Behavioral & Brain Sciences", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Keystone critique: DNNs fail psychophysics; Brain-Score confounds"}, "P071": {"title": "Language in brains, minds, and machines", "authors": "Tuckute G.", "inst": "MIT", "year": "2024", "venue": "Annu. Rev. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Definitive review of LLM↔brain language alignment; closes SQ11 survey gap"}, "P072": {"title": "If deep learning is the answer, what is the question?", "authors": "Saxe A.", "inst": "UCL Gatsby/SWC", "year": "2021", "venue": "Nat. Reviews Neuroscience", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Canonical convergence-frontier roadmap review (UK)"}, "P073": {"title": "Hybrid Tianjic chip architecture toward AGI", "authors": "Pei J.", "inst": "Tsinghua (CN)", "year": "2019", "venue": "Nature", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "World-first hybrid ANN+SNN neuromorphic chip; non-US/UK cornerstone"}, "P074": {"title": "SpikingJelly: open-source deep-SNN platform", "authors": "Fang W.", "inst": "Peking U./CASIA (CN)", "year": "2023", "venue": "Science Advances", "stars": "★★★", "arxiv": "2310.16620", "repro": "pending", "note": "Most-used PyTorch deep-SNN framework; 11× training speedup (non-US/UK)"}, "P075": {"title": "BrainCog: SNN-based brain-inspired cognition engine", "authors": "Zeng Y.", "inst": "CASIA (CN)", "year": "2023", "venue": "Patterns (Cell Press)", "stars": "★★", "arxiv": "2207.08533", "repro": "pending", "note": "Full-SNN platform spanning brain simulation + brain-inspired AI (non-US/UK)"}, "P076": {"title": "ImageNet-trained CNNs are biased towards texture", "authors": "Geirhos R.", "inst": "U. Tübingen (DE)", "year": "2019", "venue": "ICLR", "stars": "★★★", "arxiv": "1811.12231", "repro": "pending", "note": "CNNs use texture not shape unlike humans; non-US/UK vision-model critique"}, "P077": {"title": "Mastering diverse domains through world models (DreamerV3)", "authors": "Hafner D.", "inst": "DeepMind/Toronto", "year": "2025", "venue": "Nature", "stars": "★★★", "arxiv": "2301.04104", "repro": "pending", "note": "World model + actor-critic from imagined rollouts; mines Minecraft diamonds from scratch"}, "P078": {"title": "Feature prediction for visual reps from video (V-JEPA)", "authors": "Bardes A.", "inst": "Meta AI", "year": "2024", "venue": "TMLR (ICLR'25 track)", "stars": "★★★", "arxiv": "2404.08471", "repro": "pending", "note": "Non-generative latent video world-model objective (predicts masked features)"}, "P079": {"title": "V-JEPA 2: understanding, prediction & planning", "authors": "Assran M.", "inst": "Meta AI", "year": "2025", "venue": "preprint", "stars": "★★", "arxiv": "2506.09985", "repro": "pending", "note": "Scales V-JEPA to 1B params + zero-shot robot planning (frontier preprint)"}, "P080": {"title": "Genie: generative interactive environments", "authors": "Bruce J.", "inst": "DeepMind/UCL", "year": "2024", "venue": "ICML (Best Paper)", "stars": "★★★", "arxiv": "2402.15391", "repro": "pending", "note": "11B world model generating action-controllable playable worlds from video"}, "P081": {"title": "Video generation models as world simulators (Sora report)", "authors": "OpenAI", "inst": "OpenAI", "year": "2024", "venue": "tech report", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Anchor of \"is video generation a world model?\" debate; non-peer-reviewed"}, "P082": {"title": "The Tolman-Eichenbaum Machine", "authors": "Whittington J.", "inst": "Oxford/UCL", "year": "2020", "venue": "Cell", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Hippocampal-entorhinal world model unifying space + relational memory"}, "P083": {"title": "The hippocampus as a predictive map (successor representation)", "authors": "Stachenfeld K.", "inst": "DeepMind/Princeton", "year": "2017", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Place cells encode successor representation; grid cells ≈ its eigenvectors"}, "P084": {"title": "Object-centric learning with slot attention", "authors": "Locatello F.", "inst": "Google/MPI-IS", "year": "2020", "venue": "NeurIPS", "stars": "★★★", "arxiv": "2006.15055", "repro": "pending", "note": "Binds image features into permutation-invariant object \"slots\""}, "P085": {"title": "The neuro-symbolic concept learner (NS-CL)", "authors": "Mao J.", "inst": "MIT/IBM", "year": "2019", "venue": "ICLR (Oral)", "stars": "★★★", "arxiv": "1904.12584", "repro": "pending", "note": "Joint visual-concept + program learning; near-perfect, data-efficient CLEVR VQA"}, "P086": {"title": "Relational inductive biases, deep learning & graph networks", "authors": "Battaglia P.", "inst": "DeepMind", "year": "2018", "venue": "arXiv (position)", "stars": "★★", "arxiv": "1806.01261", "repro": "pending", "note": "Graph-network framework; relational biases for human-like generalization"}, "P087": {"title": "Intuitive physics emerges from self-supervised video pretraining", "authors": "Garrido Q.", "inst": "Meta AI", "year": "2025", "venue": "preprint", "stars": "★★★", "arxiv": "2502.11831", "repro": "pending", "note": "Latent video prediction yields object-permanence \"surprise\"; pixel/MLLM models near chance"}, "P088": {"title": "IntPhys 2: benchmarking intuitive physics", "authors": "Bordes F.", "inst": "Meta AI", "year": "2025", "venue": "preprint", "stars": "★★", "arxiv": "2506.09849", "repro": "pending", "note": "Violation-of-expectation video benchmark; SOTA ~chance vs near-perfect humans"}, "P089": {"title": "Deep convolutional inverse graphics network (DC-IGN)", "authors": "Kulkarni T.", "inst": "MIT/MSR", "year": "2015", "venue": "NeurIPS", "stars": "★★", "arxiv": "1503.03167", "repro": "pending", "note": "Disentangled \"graphics code\" (pose/light/shape); vision-as-inverse-graphics"}, "P090": {"title": "Towards spike-based machine intelligence with neuromorphic computing", "authors": "Roy K.", "inst": "Purdue", "year": "2019", "venue": "Nature", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Seminal SNN/neuromorphic review (Purdue); algorithm+hardware co-design — diversifies SQ7 survey"}, "P091": {"title": "A massive 7T fMRI dataset (Natural Scenes Dataset)", "authors": "Allen E.", "inst": "U. Minnesota", "year": "2022", "venue": "Nat. Neuroscience", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "NSD: 7T fMRI over 70k+ natural scenes; substrate of modern fMRI image reconstruction (non-MIT)"}, "P092": {"title": "THINGS-data: multimodal object-representation datasets", "authors": "Hebart M.", "inst": "MPI CBS (DE)", "year": "2023", "venue": "eLife", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "fMRI+MEG+4.7M behavioral judgments over 1,854 concepts (non-US/UK dataset)"}, "P093": {"title": "Theories of error back-propagation in the brain", "authors": "Whittington J.", "inst": "Oxford", "year": "2019", "venue": "Trends in Cognitive Sciences", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Oxford (Bogacz); critically assesses biological plausibility of backprop theories — non-DeepMind"}, "P094": {"title": "Resource-rational analysis of human cognition", "authors": "Lieder F.", "inst": "MPI-IS Tübingen (DE)", "year": "2020", "venue": "Behavioral & Brain Sciences", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Cognition as optimal use of limited compute; non-Lake cognitive cornerstone (non-US/UK)"}, "P095": {"title": "Metalearning and neuromodulation", "authors": "Doya K.", "inst": "ATR/OIST (JP)", "year": "2002", "venue": "Neural Networks", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Maps RL metaparameters to neuromodulators; Japan cornerstone (country-bias fix)"}, "P096": {"title": "Decoding speech perception from non-invasive brain recordings", "authors": "Défossez A.", "inst": "Meta AI Paris/ENS (FR)", "year": "2023", "venue": "Nat. Machine Intelligence", "stars": "★★★", "arxiv": "2208.12266", "repro": "pending", "note": "Contrastive MEG/EEG→speech decoding, 175 subjects; non-invasive French counterpoint to intracortical BCIs"}, "P097": {"title": "What is consciousness, and could machines have it?", "authors": "Dehaene S.", "inst": "Collège de France/NeuroSpin (FR)", "year": "2017", "venue": "Science", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "C1/C2 framework for machine consciousness (Global Neuronal Workspace); French GWT anchor"}, "P098": {"title": "Efficient codes and balanced networks", "authors": "Denève S.", "inst": "ENS Paris (FR)", "year": "2016", "venue": "Nat. Neuroscience", "stars": "★★", "arxiv": "—", "repro": "pending", "note": "Balanced-spiking efficient-coding program (membrane voltage = prediction error); French theory"}, "P099": {"title": "STDP-based spiking deep convolutional networks", "authors": "Kheradpisheh S.", "inst": "CNRS CerCo Toulouse (FR)", "year": "2018", "venue": "Neural Networks", "stars": "★★★", "arxiv": "1611.01421", "repro": "pending", "note": "Unsupervised STDP + temporal coding deep SNN; French bio-plausible spiking learning"}, "P100": {"title": "Machine learning for neuroimaging with scikit-learn (nilearn)", "authors": "Abraham A.", "inst": "INRIA/NeuroSpin (FR)", "year": "2014", "venue": "Front. Neuroinformatics", "stars": "★★", "arxiv": "1412.3919", "repro": "pending", "note": "scikit-learn decoding/encoding for fMRI; seed of nilearn (French AI-for-neural-data tooling)"}, "P101": {"title": "Centaur: a foundation model of human cognition", "authors": "Binz M.", "inst": "Helmholtz Munich (DE)", "year": "2025", "venue": "Nature", "stars": "★★★", "arxiv": "2410.20268", "repro": "pending", "note": "Llama-3.1-70B+QLoRA on Psych-101 (160 exp/60k ppl/10.7M choices); predicts held-out human behavior; reps align to fMRI"}, "P102": {"title": "TRIBE (v1): trimodal brain encoder for whole-brain fMRI", "authors": "d'Ascoli S.", "inst": "Meta AI Paris (FR)", "year": "2026", "venue": "ICLR", "stars": "★★★", "arxiv": "2507.22229", "repro": "pending", "note": "First non-linear multi-subject multimodal (text/audio/video) fMRI encoder; won Algonauts 2025 (1st/263); superseded by TRIBE v2 (P105)"}, "P103": {"title": "Brain decoding: real-time reconstruction of visual perception", "authors": "Benchetrit Y.", "inst": "Meta AI/ENS (FR)", "year": "2024", "venue": "ICLR", "stars": "★★★", "arxiv": "2310.19812", "repro": "pending", "note": "MEG image decoding (THINGS-MEG), ~7× over linear; continuous reconstruction from temporally-resolved signals"}, "P104": {"title": "Brain-to-text via typing (Brain2Qwerty)", "authors": "Lévy J.", "inst": "Meta AI/ENS (FR)", "year": "2025", "venue": "preprint", "stars": "★★", "arxiv": "2502.17480", "repro": "pending", "note": "Non-invasive EEG/MEG sentence decoding via imagined typing; MEG CER 32% (best 19%)"}, "P105": {"title": "A foundation model of vision, audition & language for in-silico neuroscience (TRIBE v2)", "authors": "Banville H.", "inst": "Meta AI Paris (FR)", "year": "2026", "venue": "arXiv (Meta; weights+code CC BY-NC)", "stars": "★★★", "arxiv": "—", "repro": "pending", "note": "Successor to TRIBE v1 (P102): >1000 hrs fMRI / 720 subjects; high-res, zero-shot to new subjects/languages/tasks; enables in-silico experiments recovering classic results"}, "P106": {"title": "Towards decoding individual words from non-invasive brain recordings", "authors": "d'Ascoli S.", "inst": "Meta AI Paris (FR)", "year": "2025", "venue": "Nature Communications", "stars": "★★★", "arxiv": "2412.17829", "repro": "pending", "note": "723-participant MEG/EEG word decoding; large-N non-invasive decoding (Meta Brain&AI line)"}}, "claims": {"C001": {"claim_id": "C001", "kind": "finding", "paper_id": "P004", "section": "Abstract", "quote": "Calls for a NeuroAI research program and proposes an 'embodied Turing test' benchmarking AI against animal sensorimotor abilities rather than human language.", "status": "active", "superseded_by": null, "confidence": "high"}, "C002": {"claim_id": "C002", "kind": "finding", "paper_id": "P002", "section": "Abstract", "quote": "Reviews bidirectional exchange between neuroscience and AI; argues both fields benefit from continued interaction (attention, episodic memory, continual learning examples).", "status": "active", "superseded_by": null, "confidence": "high"}, "C003": {"claim_id": "C003", "kind": "finding", "paper_id": "P003", "section": "Abstract", "quote": "Proposes analyzing brains and ANNs along three components: objective functions, learning rules, and architectures.", "status": "active", "superseded_by": null, "confidence": "high"}, "C004": {"claim_id": "C004", "kind": "finding", "paper_id": "P001", "section": "Book", "quote": "Distinguishes three levels of analysis: computational, algorithmic/representational, and implementational.", "status": "active", "superseded_by": null, "confidence": "high"}, "C005": {"claim_id": "C005", "kind": "finding", "paper_id": "P006", "section": "Abstract", "quote": "Argues goal-driven (task-optimized) deep networks are the leading framework for predicting and understanding sensory cortical representations.", "status": "active", "superseded_by": null, "confidence": "high"}, "C006": {"claim_id": "C006", "kind": "finding", "paper_id": "P005", "section": "Abstract", "quote": "Frames artificial neural networks as models of brain function within a Lakatosian research programme, with a hard core and testable auxiliary hypotheses.", "status": "active", "superseded_by": null, "confidence": "high"}, "C007": {"claim_id": "C007", "kind": "finding", "paper_id": "P007", "section": "Abstract", "quote": "A sparse coding objective on natural images produces localized, oriented, bandpass receptive fields resembling V1 simple cells.", "status": "active", "superseded_by": null, "confidence": "high"}, "C008": {"claim_id": "C008", "kind": "finding", "paper_id": "P008", "section": "Abstract", "quote": "A hierarchical predictive-coding model in which feedback carries predictions and feedforward carries residual errors reproduces extra-classical receptive-field effects such as end-stopping.", "status": "active", "superseded_by": null, "confidence": "high"}, "C009": {"claim_id": "C009", "kind": "finding", "paper_id": "P009", "section": "Abstract", "quote": "Proposes the free-energy principle: the brain minimizes a variational free-energy bound, unifying perception, action, and learning.", "status": "active", "superseded_by": null, "confidence": "high"}, "C010": {"claim_id": "C010", "kind": "finding", "paper_id": "P010", "section": "Abstract", "quote": "States the Bayesian-coding hypothesis: neural computation represents and manipulates probability distributions to handle uncertainty.", "status": "active", "superseded_by": null, "confidence": "high"}, "C011": {"claim_id": "C011", "kind": "finding", "paper_id": "P011", "section": "Abstract", "quote": "Argues divisive normalization is a canonical neural computation recurring across brain regions, sensory modalities, and species.", "status": "active", "superseded_by": null, "confidence": "high"}, "C012": {"claim_id": "C012", "kind": "finding", "paper_id": "P012", "section": "Abstract", "quote": "Reviews the dynamical-systems / population-level framework: neural computation is understood through the low-dimensional dynamics of population activity (neural manifolds).", "status": "active", "superseded_by": null, "confidence": "high"}, "C013": {"claim_id": "C013", "kind": "finding", "paper_id": "P013", "section": "Abstract", "quote": "A recurrent network of binary units with symmetric weights has stable attractor states usable as content-addressable associative memory.", "status": "active", "superseded_by": null, "confidence": "high"}, "C014": {"claim_id": "C014", "kind": "architecture", "paper_id": "P014", "section": "Abstract", "quote": "The Neocognitron is a hierarchical multilayer network of S-cells and C-cells achieving position-invariant pattern recognition, inspired by Hubel-Wiesel simple/complex cells.", "status": "active", "superseded_by": null, "confidence": "high"}, "C015": {"claim_id": "C015", "kind": "architecture", "paper_id": "P015", "section": "Abstract", "quote": "Gradient-based learning with convolution and subsampling (LeNet-5) recognizes handwritten digits end-to-end via backpropagation.", "status": "active", "superseded_by": null, "confidence": "high"}, "C016": {"claim_id": "C016", "kind": "architecture", "paper_id": "P016", "section": "Abstract", "quote": "A feedforward HMAX-style model with alternating template-matching and max-pooling layers performs robust object recognition comparable to human rapid categorization.", "status": "active", "superseded_by": null, "confidence": "high"}, "C017": {"claim_id": "C017", "kind": "architecture", "paper_id": "P017", "section": "Abstract", "quote": "The Differentiable Neural Computer couples a neural network controller to an external memory matrix with differentiable read/write attention, solving algorithmic and graph tasks.", "status": "active", "superseded_by": null, "confidence": "high"}, "C018": {"claim_id": "C018", "kind": "architecture", "paper_id": "P018", "section": "Abstract", "quote": "A 'World Model' (VAE + recurrent dynamics) learns a compressed internal model of the environment; agents can train inside the model's hallucinated rollouts.", "status": "active", "superseded_by": null, "confidence": "high"}, "C019": {"claim_id": "C019", "kind": "finding", "paper_id": "P019", "section": "Abstract", "quote": "Grid-like representations emerge in a recurrent network trained to path-integrate, and support vector-based navigation in a deep RL agent.", "status": "active", "superseded_by": null, "confidence": "high"}, "C020": {"claim_id": "C020", "kind": "finding", "paper_id": "P020", "section": "Abstract", "quote": "A predictive-coding network with local Hebbian plasticity can approximate the backpropagation algorithm's weight updates.", "status": "active", "superseded_by": null, "confidence": "high"}, "C021": {"claim_id": "C021", "kind": "finding", "paper_id": "P022", "section": "Abstract", "quote": "Fixed random feedback weights (feedback alignment) can deliver useful learning signals, showing exact symmetric weight transport is not required for error-driven learning.", "status": "active", "superseded_by": null, "confidence": "high"}, "C022": {"claim_id": "C022", "kind": "finding", "paper_id": "P023", "section": "Abstract", "quote": "Midbrain dopamine neurons fire in a pattern matching a temporal-difference reward-prediction error.", "status": "active", "superseded_by": null, "confidence": "high"}, "C023": {"claim_id": "C023", "kind": "finding", "paper_id": "P024", "section": "Abstract", "quote": "A recurrent network trained by dopamine-like RL gives rise to a second, faster reinforcement-learning process in its activity dynamics — casting prefrontal cortex as a meta-RL system.", "status": "active", "superseded_by": null, "confidence": "high"}, "C024": {"claim_id": "C024", "kind": "finding", "paper_id": "P025", "section": "Abstract", "quote": "Complementary Learning Systems theory: a fast hippocampal system and a slow neocortical system; interleaved replay mitigates catastrophic interference — a basis for experience replay.", "status": "active", "superseded_by": null, "confidence": "high"}, "C025": {"claim_id": "C025", "kind": "finding", "paper_id": "P026", "section": "Abstract", "quote": "Proposes the NGRAD hypothesis: the brain may approximate backpropagation-like credit assignment using differences in neural activity driven by feedback.", "status": "active", "superseded_by": null, "confidence": "high"}, "C026": {"claim_id": "C026", "kind": "finding", "paper_id": "P027", "section": "Abstract", "quote": "Surrogate-gradient methods train spiking neural networks by replacing the non-differentiable spike with a smooth surrogate during backpropagation.", "status": "active", "superseded_by": null, "confidence": "high"}, "C027": {"claim_id": "C027", "kind": "architecture", "paper_id": "P028", "section": "Abstract", "quote": "Loihi is a 128-core neuromorphic processor implementing spiking neurons with on-chip programmable synaptic learning rules.", "status": "active", "superseded_by": null, "confidence": "high"}, "C028": {"claim_id": "C028", "kind": "scale", "paper_id": "P029", "section": "Abstract", "quote": "TrueNorth integrates 1 million spiking neurons and 256 million synapses, consuming about 70 mW in real-time operation.", "status": "active", "superseded_by": null, "confidence": "high"}, "C029": {"claim_id": "C029", "kind": "architecture", "paper_id": "P030", "section": "Abstract", "quote": "SpiNNaker is a massively parallel ARM-core machine designed for real-time simulation of large-scale spiking neural networks.", "status": "active", "superseded_by": null, "confidence": "high"}, "C030": {"claim_id": "C030", "kind": "metric", "paper_id": "P031", "section": "Abstract", "quote": "A time-to-first-spike deep SNN matches ANN accuracy while using on the order of 0.3 spikes per neuron, demonstrating extreme sparsity.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C031": {"claim_id": "C031", "kind": "finding", "paper_id": "P032", "section": "Abstract", "quote": "Performance-optimized hierarchical convolutional models, optimized for object recognition, predict neural responses in macaque V4 and IT better than prior models.", "status": "active", "superseded_by": null, "confidence": "high"}, "C032": {"claim_id": "C032", "kind": "finding", "paper_id": "P033", "section": "Abstract", "quote": "Across 37 models compared by representational similarity, only deep supervised networks closely matched inferior temporal cortex representational geometry; unsupervised models did not.", "status": "active", "superseded_by": null, "confidence": "high"}, "C033": {"claim_id": "C033", "kind": "finding", "paper_id": "P034", "section": "Abstract", "quote": "A task-optimized deep network predicts human auditory cortical responses and reveals a hierarchy from primary to non-primary auditory cortex.", "status": "active", "superseded_by": null, "confidence": "high"}, "C034": {"claim_id": "C034", "kind": "finding", "paper_id": "P035", "section": "Abstract", "quote": "Representational similarity analysis (RSA) compares representations via representational dissimilarity matrices, enabling model-to-brain comparison independent of feature spaces.", "status": "active", "superseded_by": null, "confidence": "high"}, "C035": {"claim_id": "C035", "kind": "finding", "paper_id": "P036", "section": "Abstract", "quote": "Across >40 language models, a model's next-word-prediction performance predicts how well it fits human neural and behavioral language responses; the best models approach noise-ceiling fit.", "status": "active", "superseded_by": null, "confidence": "high"}, "C036": {"claim_id": "C036", "kind": "finding", "paper_id": "P037", "section": "Abstract", "quote": "Human (ECoG) and autoregressive deep language models share computational principles: spontaneous pre-onset next-word prediction and contextual embedding geometry.", "status": "active", "superseded_by": null, "confidence": "high"}, "C037": {"claim_id": "C037", "kind": "finding", "paper_id": "P038", "section": "Abstract", "quote": "Brain (fMRI/MEG) and transformer language-model representations partially converge; convergence increases with the model's word-prediction accuracy and depth.", "status": "active", "superseded_by": null, "confidence": "high"}, "C038": {"claim_id": "C038", "kind": "dataset", "paper_id": "P040", "section": "Abstract", "quote": "Brain-Score is an integrative benchmark aggregating neural (V1/V2/V4/IT) and behavioral metrics to score how brain-like a model is.", "status": "active", "superseded_by": null, "confidence": "high"}, "C039": {"claim_id": "C039", "kind": "finding", "paper_id": "P039", "section": "Abstract", "quote": "A trained recurrent network reproduces the population dynamics of prefrontal cortex during context-dependent decision-making; selection arises from recurrent dynamics, not input gating.", "status": "active", "superseded_by": null, "confidence": "high"}, "C040": {"claim_id": "C040", "kind": "finding", "paper_id": "P041", "section": "Abstract", "quote": "LFADS, a sequential variational autoencoder, infers single-trial neural population dynamics and yields high behavioral decoding accuracy from motor cortex.", "status": "active", "superseded_by": null, "confidence": "high"}, "C041": {"claim_id": "C041", "kind": "finding", "paper_id": "P042", "section": "Abstract", "quote": "CEBRA learns consistent, behavior- and time-aligned latent embeddings of neural data via a contrastive objective, validated across visual cortex, hippocampus, and motor reach data.", "status": "active", "superseded_by": null, "confidence": "high"}, "C042": {"claim_id": "C042", "kind": "finding", "paper_id": "P043", "section": "Abstract", "quote": "DeepLabCut achieves near human-level markerless pose tracking from a few hundred labeled frames via transfer learning on a pretrained deep network.", "status": "active", "superseded_by": null, "confidence": "high"}, "C043": {"claim_id": "C043", "kind": "finding", "paper_id": "P044", "section": "Abstract", "quote": "Flood-filling networks (recurrent 3D CNNs) perform automated neuron reconstruction in electron-microscopy connectomics with long error-free path lengths.", "status": "active", "superseded_by": null, "confidence": "high"}, "C044": {"claim_id": "C044", "kind": "finding", "paper_id": "P045", "section": "Abstract", "quote": "POYO is a transformer pretrained across many neural recording sessions that tokenizes individual spikes and transfers to new sessions with few-shot decoding.", "status": "active", "superseded_by": null, "confidence": "high"}, "C045": {"claim_id": "C045", "kind": "finding", "paper_id": "P046", "section": "Abstract", "quote": "Networks whose connectivity is fixed to the fly connectome, with only dynamics optimized, predict neural activity across the Drosophila visual system at single-neuron resolution.", "status": "active", "superseded_by": null, "confidence": "high"}, "C046": {"claim_id": "C046", "kind": "finding", "paper_id": "P047", "section": "Abstract", "quote": "A foundation model ('digital twin') of mouse visual cortex trained on large neural recordings generalizes to predict responses to novel stimulus types.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C047": {"claim_id": "C047", "kind": "finding", "paper_id": "P048", "section": "Abstract", "quote": "Manifold-capacity theory characterizes object manifolds by geometric measures (manifold radius, dimension) that determine linear separability.", "status": "active", "superseded_by": null, "confidence": "high"}, "C048": {"claim_id": "C048", "kind": "finding", "paper_id": "P049", "section": "Abstract", "quote": "Articulates the 'circuits' programme for mechanistic interpretability: features and weight-defined circuits inside neural networks can be reverse-engineered, framed as a neuroscience of artificial networks.", "status": "active", "superseded_by": null, "confidence": "high"}, "C049": {"claim_id": "C049", "kind": "finding", "paper_id": "P050", "section": "Abstract", "quote": "Bayesian Program Learning represents concepts as probabilistic programs, learning to recognize and generate handwritten characters from a single example and passing a visual Turing test.", "status": "active", "superseded_by": null, "confidence": "high"}, "C050": {"claim_id": "C050", "kind": "finding", "paper_id": "P051", "section": "Abstract", "quote": "Argues human-like machines need intuitive physics, intuitive psychology, compositionality, causality, and learning-to-learn — not just pattern recognition.", "status": "active", "superseded_by": null, "confidence": "high"}, "C051": {"claim_id": "C051", "kind": "dataset", "paper_id": "P052", "section": "Abstract", "quote": "Introduces SCAN and shows standard seq2seq recurrent networks fail at systematic compositional generalization to novel combinations.", "status": "active", "superseded_by": null, "confidence": "high"}, "C052": {"claim_id": "C052", "kind": "finding", "paper_id": "P053", "section": "Abstract", "quote": "Meta-learning for compositionality (MLC) gives a standard neural network human-level systematic generalization, matching human error patterns.", "status": "active", "superseded_by": null, "confidence": "high"}, "C053": {"claim_id": "C053", "kind": "finding", "paper_id": "P054", "section": "Abstract", "quote": "An 'intuitive physics engine' based on probabilistic simulation predicts human judgments about physical scenes such as tower stability.", "status": "active", "superseded_by": null, "confidence": "high"}, "C054": {"claim_id": "C054", "kind": "dataset", "paper_id": "P055", "section": "Abstract", "quote": "Defines intelligence as skill-acquisition efficiency and introduces the Abstraction and Reasoning Corpus (ARC) as a benchmark resistant to memorization.", "status": "active", "superseded_by": null, "confidence": "high"}, "C055": {"claim_id": "C055", "kind": "architecture", "paper_id": "P056", "section": "Abstract", "quote": "ACT-R is a unified cognitive architecture with modular components (declarative/procedural memory, perceptual-motor modules) mappable to brain regions.", "status": "active", "superseded_by": null, "confidence": "high"}, "C056": {"claim_id": "C056", "kind": "finding", "paper_id": "P057", "section": "Abstract", "quote": "Proposes a 'global latent workspace' to bring Global Workspace Theory of consciousness into deep-learning architectures coordinating specialist modules.", "status": "active", "superseded_by": null, "confidence": "high"}, "C057": {"claim_id": "C057", "kind": "metric", "paper_id": "P058", "section": "Abstract", "quote": "An intracortical BCI decoded imagined handwriting into text at about 90 characters per minute with high accuracy in a paralyzed participant.", "status": "active", "superseded_by": null, "confidence": "high"}, "C058": {"claim_id": "C058", "kind": "metric", "paper_id": "P059", "section": "Abstract", "quote": "An intracortical speech neuroprosthesis decoded attempted speech at about 62 words per minute, several times faster than prior records.", "status": "active", "superseded_by": null, "confidence": "high"}, "C059": {"claim_id": "C059", "kind": "metric", "paper_id": "P060", "section": "Abstract", "quote": "An ECoG speech neuroprosthesis decoded attempted speech to text, synthesized voice, and drove a facial avatar at roughly 78 words per minute.", "status": "active", "superseded_by": null, "confidence": "high"}, "C060": {"claim_id": "C060", "kind": "metric", "paper_id": "P061", "section": "Abstract", "quote": "A speech neuroprosthesis achieved high accuracy with a large (125,000-word) vocabulary and was usable from the first day, in an ALS participant.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C061": {"claim_id": "C061", "kind": "finding", "paper_id": "P062", "section": "Abstract", "quote": "Seen natural images were reconstructed from fMRI using a latent diffusion (Stable Diffusion) model without fine-tuning the generative model.", "status": "active", "superseded_by": null, "confidence": "high"}, "C062": {"claim_id": "C062", "kind": "finding", "paper_id": "P063", "section": "Abstract", "quote": "MindEye reconstructs and retrieves seen images from fMRI using contrastive learning plus a diffusion prior, on the Natural Scenes Dataset.", "status": "active", "superseded_by": null, "confidence": "high"}, "C063": {"claim_id": "C063", "kind": "finding", "paper_id": "P064", "section": "Abstract", "quote": "A non-invasive (fMRI) decoder reconstructs the semantic gist of perceived and imagined continuous language, leveraging a language model.", "status": "active", "superseded_by": null, "confidence": "high"}, "C064": {"claim_id": "C064", "kind": "finding", "paper_id": "P065", "section": "Abstract", "quote": "A virtual rodent controlled by a deep-RL network performs multiple motor tasks; its artificial neural activity is analyzed with neuroscience methods ('deep neuroethology').", "status": "active", "superseded_by": null, "confidence": "high"}, "C065": {"claim_id": "C065", "kind": "finding", "paper_id": "P066", "section": "Abstract", "quote": "A full-body biomechanical virtual rat trained in simulation produces network activity that predicts real rat neural activity (motor cortex, striatum) better than kinematic variables.", "status": "active", "superseded_by": null, "confidence": "high"}, "C066": {"claim_id": "C066", "kind": "finding", "paper_id": "P067", "section": "Position paper", "quote": "Proposes Joint Embedding Predictive Architectures (JEPA) and a modular configurator/actor/critic/world-model design for autonomous machine intelligence.", "status": "active", "superseded_by": null, "confidence": "high"}, "C067": {"claim_id": "C067", "kind": "finding", "paper_id": "P070", "section": "Abstract", "quote": "Argues current deep neural network models of human vision fail key psychophysical and behavioral tests and that benchmark scores like Brain-Score can be confounded.", "status": "active", "superseded_by": null, "confidence": "high"}, "C068": {"claim_id": "C068", "kind": "finding", "paper_id": "P069", "section": "Abstract", "quote": "Lists challenges for deep learning including data hunger, brittleness/poor transfer, opacity, and weak handling of compositional and causal structure.", "status": "active", "superseded_by": null, "confidence": "high"}, "C069": {"claim_id": "C069", "kind": "finding", "paper_id": "P068", "section": "Abstract", "quote": "Argues computational modeling forces theory-building and that much of psychological/cognitive science suffers a theory deficit.", "status": "active", "superseded_by": null, "confidence": "high"}, "C070": {"claim_id": "C070", "kind": "finding", "paper_id": "P071", "section": "Abstract", "quote": "Reviews how large language models are used as models of human language processing in the brain, including encoding models and methodological caveats.", "status": "active", "superseded_by": null, "confidence": "high"}, "C071": {"claim_id": "C071", "kind": "finding", "paper_id": "P072", "section": "Abstract", "quote": "Reviews deep learning as a framework for neuroscience and argues the value lies in asking which computational problem the brain solves, not just fitting activity.", "status": "active", "superseded_by": null, "confidence": "high"}, "C072": {"claim_id": "C072", "kind": "architecture", "paper_id": "P073", "section": "Abstract", "quote": "The Tianjic chip is a hybrid architecture supporting both ANN and SNN paradigms on one substrate, demonstrated controlling an autonomous bicycle.", "status": "active", "superseded_by": null, "confidence": "high"}, "C073": {"claim_id": "C073", "kind": "finding", "paper_id": "P074", "section": "Abstract", "quote": "SpikingJelly is an open-source deep-learning framework for spiking neural networks reporting large training-speed improvements and full-stack neuromorphic support.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C074": {"claim_id": "C074", "kind": "finding", "paper_id": "P076", "section": "Abstract", "quote": "ImageNet-trained CNNs are biased toward texture rather than shape, unlike humans; training on stylized images increases shape bias and improves robustness.", "status": "active", "superseded_by": null, "confidence": "high"}, "C075": {"claim_id": "C075", "kind": "finding", "paper_id": "P075", "section": "Abstract", "quote": "BrainCog is an open-source spiking-neural-network platform spanning brain simulation and brain-inspired cognitive functions with multi-scale plasticity rules.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C076": {"claim_id": "C076", "kind": "timeline", "paper_id": "P032", "section": "Abstract", "quote": "The 2014 demonstration that ImageNet-optimized deep nets predict ventral-stream responses marks the empirical onset of the modern goal-driven NeuroAI program.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C077": {"claim_id": "C077", "kind": "timeline", "paper_id": "P004", "section": "Abstract", "quote": "The 2023 NeuroAI roadmap consolidated the field's identity and named the embodied Turing test as an organizing goal.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C078": {"claim_id": "C078", "kind": "finding", "paper_id": "P077", "section": "Abstract", "quote": "DreamerV3 learns a world model and an actor-critic that plans in imagined latent rollouts, mastering 150+ tasks with fixed hyperparameters and collecting diamonds in Minecraft from scratch.", "status": "active", "superseded_by": null, "confidence": "high"}, "C079": {"claim_id": "C079", "kind": "finding", "paper_id": "P078", "section": "Abstract", "quote": "V-JEPA learns visual representations by predicting masked features in latent space (not pixels), a non-generative video world-model objective.", "status": "active", "superseded_by": null, "confidence": "high"}, "C080": {"claim_id": "C080", "kind": "finding", "paper_id": "P080", "section": "Abstract", "quote": "Genie is a foundation world model that generates action-controllable, playable interactive environments from images or video, learning a latent action space from unlabelled video alone.", "status": "active", "superseded_by": null, "confidence": "high"}, "C081": {"claim_id": "C081", "kind": "finding", "paper_id": "P082", "section": "Abstract", "quote": "The Tolman-Eichenbaum Machine models the hippocampal-entorhinal system as a world model that factorizes relational structure (entorhinal grid-like codes) from sensory content (hippocampal place-like codes), predicting non-random remapping.", "status": "active", "superseded_by": null, "confidence": "high"}, "C082": {"claim_id": "C082", "kind": "finding", "paper_id": "P083", "section": "Abstract", "quote": "The hippocampus is proposed to encode a predictive map (the successor representation) of future states, explaining biased place fields, with grid cells as its low-dimensional eigenvectors.", "status": "active", "superseded_by": null, "confidence": "high"}, "C083": {"claim_id": "C083", "kind": "finding", "paper_id": "P084", "section": "Abstract", "quote": "Slot Attention binds image features into a fixed set of permutation-invariant 'slots' via iterative attention, enabling unsupervised object discovery.", "status": "active", "superseded_by": null, "confidence": "high"}, "C084": {"claim_id": "C084", "kind": "finding", "paper_id": "P085", "section": "Abstract", "quote": "The Neuro-Symbolic Concept Learner jointly learns visual concepts and a semantic program executor over an object-based scene representation, achieving near-perfect, data-efficient CLEVR visual question answering.", "status": "active", "superseded_by": null, "confidence": "high"}, "C085": {"claim_id": "C085", "kind": "finding", "paper_id": "P087", "section": "Abstract", "quote": "A self-supervised video model (V-JEPA) trained only to predict in latent space exhibits violation-of-expectation 'surprise' on intuitive-physics tests (object permanence, continuity), whereas pixel-prediction and multimodal-LLM models remain near chance.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C086": {"claim_id": "C086", "kind": "finding", "paper_id": "P081", "section": "Technical report", "quote": "OpenAI frames large video generation models as 'world simulators', the centerpiece of the debate over whether pixel-level video generation constitutes a world model.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C087": {"claim_id": "C087", "kind": "finding", "paper_id": "P089", "section": "Abstract", "quote": "The Deep Convolutional Inverse Graphics Network learns a disentangled 'graphics code' (pose, lighting, shape) and re-renders scenes under novel transformations — vision as inverse graphics / analysis-by-synthesis.", "status": "active", "superseded_by": null, "confidence": "high"}, "C088": {"claim_id": "C088", "kind": "finding", "paper_id": "P086", "section": "Abstract", "quote": "Argues relational and combinatorial inductive biases, unified under a general 'graph network' block, are key to human-like generalization.", "status": "active", "superseded_by": null, "confidence": "high"}, "C089": {"claim_id": "C089", "kind": "finding", "paper_id": "P079", "section": "Abstract", "quote": "V-JEPA 2 scales the latent video-prediction objective to ~1B parameters and over a million hours of video, then post-trains on robot trajectories to enable zero-shot planning.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C090": {"claim_id": "C090", "kind": "dataset", "paper_id": "P088", "section": "Abstract", "quote": "IntPhys 2 is a violation-of-expectation video benchmark (permanence, immutability, spatio-temporal continuity, solidity) on which state-of-the-art models score near chance while humans are near-perfect.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C091": {"claim_id": "C091", "kind": "finding", "paper_id": "P090", "section": "Abstract", "quote": "Reviews spike-based machine intelligence and neuromorphic computing, arguing for algorithm-hardware co-design of energy-efficient spiking systems.", "status": "active", "superseded_by": null, "confidence": "high"}, "C092": {"claim_id": "C092", "kind": "dataset", "paper_id": "P091", "section": "Abstract", "quote": "The Natural Scenes Dataset is a massive 7-tesla fMRI dataset over tens of thousands of natural scenes, built to bridge cognitive neuroscience and AI.", "status": "active", "superseded_by": null, "confidence": "high"}, "C093": {"claim_id": "C093", "kind": "dataset", "paper_id": "P092", "section": "Abstract", "quote": "THINGS-data is a multimodal collection (fMRI, MEG, and 4.7M behavioral similarity judgments) over 1,854 object concepts for studying object representations in brain and behavior.", "status": "active", "superseded_by": null, "confidence": "high"}, "C094": {"claim_id": "C094", "kind": "finding", "paper_id": "P093", "section": "Abstract", "quote": "Critically reviews theories of how the brain might approximate error backpropagation (predictive coding, target propagation, etc.) and assesses where each is biologically plausible or breaks down.", "status": "active", "superseded_by": null, "confidence": "high"}, "C095": {"claim_id": "C095", "kind": "finding", "paper_id": "P094", "section": "Abstract", "quote": "Resource-rational analysis frames human cognition as the optimal use of limited computational resources, unifying rationality with cognitive constraints.", "status": "active", "superseded_by": null, "confidence": "high"}, "C096": {"claim_id": "C096", "kind": "finding", "paper_id": "P095", "section": "Abstract", "quote": "Proposes that reinforcement-learning metaparameters (learning rate, inverse temperature, discount factor) are controlled by neuromodulators (dopamine, serotonin, acetylcholine, noradrenaline).", "status": "active", "superseded_by": null, "confidence": "high"}, "C097": {"claim_id": "C097", "kind": "finding", "paper_id": "P096", "section": "Abstract", "quote": "A contrastive model decodes perceived speech from non-invasive MEG/EEG recordings across 175 subjects, identifying the correct speech segment with up to ~41% top-1 accuracy among >1000 candidates.", "status": "active", "superseded_by": null, "confidence": "high"}, "C098": {"claim_id": "C098", "kind": "finding", "paper_id": "P097", "section": "Abstract", "quote": "Distinguishes two senses of machine consciousness — global availability (C1) and self-monitoring (C2) — within a Global Neuronal Workspace framework, arguing current AI implements neither.", "status": "active", "superseded_by": null, "confidence": "high"}, "C099": {"claim_id": "C099", "kind": "finding", "paper_id": "P098", "section": "Abstract", "quote": "Reviews the balanced spiking-network theory of efficient coding, in which tightly balanced excitation/inhibition implements an efficient predictive code and membrane voltage represents prediction error.", "status": "active", "superseded_by": null, "confidence": "high"}, "C100": {"claim_id": "C100", "kind": "finding", "paper_id": "P099", "section": "Abstract", "quote": "A deep convolutional spiking network trained with unsupervised STDP and temporal (rank-order) coding performs object recognition with one spike per neuron.", "status": "active", "superseded_by": null, "confidence": "high"}, "C101": {"claim_id": "C101", "kind": "finding", "paper_id": "P100", "section": "Abstract", "quote": "Presents practical machine-learning patterns for neuroimaging decoding/encoding with scikit-learn, seeding the nilearn library.", "status": "active", "superseded_by": null, "confidence": "high"}, "C102": {"claim_id": "C102", "kind": "finding", "paper_id": "P101", "section": "Abstract", "quote": "Centaur, a large language model (Llama 3.1 70B) fine-tuned on Psych-101 (160 experiments, 60,092 participants, 10.7M choices), predicts held-out human behavior across many cognitive tasks and generalizes to new ones; its internal representations become more aligned with human neural activity after fine-tuning.", "status": "active", "superseded_by": null, "confidence": "high"}, "C103": {"claim_id": "C103", "kind": "finding", "paper_id": "P102", "section": "Abstract", "quote": "TRIBE is the first non-linear, multi-subject, multimodal (text/audio/video) deep encoder of whole-brain fMRI responses; it won the Algonauts 2025 challenge (1st of 263 teams), with the multimodal advantage largest in associative cortex.", "status": "active", "superseded_by": null, "confidence": "high"}, "C104": {"claim_id": "C104", "kind": "finding", "paper_id": "P103", "section": "Abstract", "quote": "A model decodes images from MEG, reconstructing perceived visual stimuli from temporally-resolved non-invasive brain signals roughly 7x better than linear baselines, toward real-time decoding.", "status": "active", "superseded_by": null, "confidence": "high"}, "C105": {"claim_id": "C105", "kind": "finding", "paper_id": "P104", "section": "Abstract", "quote": "Brain2Qwerty decodes sentences from non-invasive EEG/MEG recorded while participants type, reaching a character error rate around 32% (best 19%) for MEG.", "status": "active", "superseded_by": null, "confidence": "medium"}, "C106": {"claim_id": "C106", "kind": "finding", "paper_id": "P105", "section": "Abstract/Meta release", "quote": "TRIBE v2, a tri-modal (video/audio/language) foundation model trained on over 1,000 hours of fMRI across 720 subjects, predicts high-resolution brain responses to novel stimuli, tasks and subjects, enables in-silico experimentation that recovers seminal visual and neuro-linguistic results, and reveals the topography of multisensory integration; built on the Algonauts-2025-winning TRIBE.", "status": "active", "superseded_by": null, "confidence": "medium", "notes": "Successor to P102 (TRIBE v1); Meta release with open weights+code (CC BY-NC). Recent 2026 work — venue arXiv/Meta, exact arXiv ID not captured."}, "C107": {"claim_id": "C107", "kind": "finding", "paper_id": "P106", "section": "Abstract", "quote": "Decodes individual words from non-invasive brain recordings (MEG/EEG) across 723 participants, a large-cohort step toward non-invasive word-level decoding.", "status": "active", "superseded_by": null, "confidence": "medium", "notes": "Published Nature Communications 2025 (16:10521); arXiv 2412.17829."}}, "chart_data": [], "chart_specs": {"01": {"title": "Params (M) vs Accuracy (zero-shot Mean ↓)", "x": "params_M", "y": "accuracy_inv", "x_label": "Params (M)", "y_label": "zero-shot Mean (lower is better)", "x_type": "log"}, "02": {"title": "Torch latency (ms) vs Accuracy", "x": "latency_torch_ms", "y": "accuracy_inv", "x_label": "Torch latency (ms)", "y_label": "zero-shot Mean (lower is better)", "x_type": "log"}, "03": {"title": "TensorRT latency (ms) vs Accuracy", "x": "latency_trt_ms", "y": "accuracy_inv", "x_label": "TensorRT latency (ms)", "y_label": "zero-shot Mean (lower is better)", "x_type": "log"}}, "toc": [{"id": "neuroai-foundations-and-frontiers-neuroai-foundations-frontiers-v6", "level": 2, "text": "NeuroAI: Foundations and Frontiers (neuroai-foundations-frontiers) v6"}, {"id": "contents", "level": 3, "text": "Contents"}, {"id": "1", "level": 3, "text": "§1 Research question and scope"}, {"id": "2", "level": 3, "text": "§2 Domain background"}, {"id": "3", "level": 3, "text": "§3 Taxonomy and timeline"}, {"id": "4", "level": 3, "text": "§4 Datasets and benchmarks"}, {"id": "5", "level": 3, "text": "§5 Method-route comparison"}, {"id": "6", "level": 3, "text": "§6 Per-paper deep-dives"}, {"id": "7", "level": 3, "text": "§7 Downstream applications"}, {"id": "8", "level": 3, "text": "§8 Cross-cutting analysis"}, {"id": "9", "level": 3, "text": "§9 Key research teams"}, {"id": "10", "level": 3, "text": "§10 Open challenges"}, {"id": "11", "level": 3, "text": "§11 Frontiers / future directions"}, {"id": "12", "level": 3, "text": "§12 Direct Q&amp;A back to original question"}, {"id": "13", "level": 3, "text": "§13 Recommended reading"}, {"id": "14", "level": 3, "text": "§14 Reproducibility tier"}]};
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+
+  <script>
+/* deep-survey-bfs HTML viewer client-side runtime
+   Reads window.__SURVEY_DATA__ which is injected by render_html.py:
+     papers:       { Pxxx: {title, authors, year, venue, stars, repro, arxiv, ...}, ... }
+     claims:       { Cxxx: {paper_id, kind, section, quote, confidence, depends_on, ...}, ... }
+     chart_data:   array of rows from chart_data.csv (key/value objects)
+     chart_specs:  { chart_id: {title, x, y, hover_template, ...} }
+     toc:          [{id, level, text}, ...]
+*/
+(function () {
+  "use strict";
+  const data = window.__SURVEY_DATA__ || { papers: {}, claims: {}, chart_data: [], chart_specs: {}, toc: [] };
+
+  /* ---------- theme toggle ---------- */
+  const themeBtn = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+  const stored = localStorage.getItem("dsb-theme");
+  if (stored) root.dataset.theme = stored;
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      const next = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("dsb-theme", next);
+      // Re-render mermaid + plotly to pick up theme
+      reRenderMermaid();
+      reRenderPlotly();
+    });
+  }
+
+  /* ---------- tooltip ---------- */
+  const tip = document.getElementById("tooltip");
+  function showTooltip(el, html) {
+    tip.innerHTML = html;
+    tip.setAttribute("aria-hidden", "false");
+    const rect = el.getBoundingClientRect();
+    const tipRect = tip.getBoundingClientRect();
+    const margin = 6;
+    let top = rect.bottom + window.scrollY + margin;
+    let left = rect.left + window.scrollX;
+    if (left + tipRect.width > window.scrollX + window.innerWidth - 12) {
+      left = window.scrollX + window.innerWidth - tipRect.width - 12;
+    }
+    if (top + tipRect.height > window.scrollY + window.innerHeight - 12) {
+      top = rect.top + window.scrollY - tipRect.height - margin;
+    }
+    tip.style.top = top + "px";
+    tip.style.left = left + "px";
+  }
+  function hideTooltip() { tip.setAttribute("aria-hidden", "true"); }
+
+  function paperCardHTML(pid) {
+    const p = data.papers[pid];
+    if (!p) return `<div class="t-title">${pid}</div><div class="t-meta">unknown paper</div>`;
+    const stars = p.stars || "";
+    const venue = [p.year, p.venue].filter(Boolean).join(" · ");
+    const arxiv = p.arxiv ? `<a class="t-link" href="https://arxiv.org/abs/${p.arxiv}" target="_blank" rel="noopener">arXiv:${p.arxiv}</a>` : "";
+    const repro = p.repro && p.repro !== "pending" ? `<div class="t-meta">Repro: ${escapeHtml(p.repro)}</div>` : "";
+    return `<div class="t-title">${pid} ${stars} ${escapeHtml(p.title || "")}</div>
+            <div class="t-meta">${escapeHtml(venue)}${p.authors ? " · " + escapeHtml(p.authors) : ""}</div>
+            ${repro}
+            ${arxiv}`;
+  }
+  function claimCardHTML(cid) {
+    const c = data.claims[cid];
+    if (!c) return `<div class="t-title">${cid}</div><div class="t-meta">unknown claim</div>`;
+    const paper = data.papers[c.paper_id] || {};
+    const kind = c.kind ? `<span style="background:rgba(255,255,255,0.12);padding:1px 5px;border-radius:3px;">${escapeHtml(c.kind)}</span>` : "";
+    const conf = c.confidence ? ` · confidence: ${escapeHtml(c.confidence)}` : "";
+    const truncated = (c.quote || "").slice(0, 280) + ((c.quote || "").length > 280 ? "…" : "");
+    return `<div class="t-title">${cid} ${kind}</div>
+            <div class="t-meta">${c.paper_id}${paper.title ? " — " + escapeHtml(paper.title) : ""} · ${escapeHtml(c.section || "")}${conf}</div>
+            <div class="t-quote">${escapeHtml(truncated)}</div>`;
+  }
+  function escapeHtml(s) {
+    return String(s || "").replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[ch]));
+  }
+
+  document.addEventListener("mouseover", (e) => {
+    const el = e.target.closest(".paper-ref, .claim-ref");
+    if (!el) return;
+    const isPaper = el.classList.contains("paper-ref");
+    const id = el.dataset.id;
+    if (!id) return;
+    showTooltip(el, isPaper ? paperCardHTML(id) : claimCardHTML(id));
+  });
+  document.addEventListener("mouseout", (e) => {
+    const el = e.target.closest(".paper-ref, .claim-ref");
+    if (el) hideTooltip();
+  });
+  document.addEventListener("scroll", hideTooltip, { passive: true });
+
+  /* ---------- TOC scroll-spy ---------- */
+  const tocLinks = Array.from(document.querySelectorAll(".toc a"));
+  const headings = tocLinks
+    .map(a => document.getElementById(a.getAttribute("href").slice(1)))
+    .filter(Boolean);
+  function updateActiveTOC() {
+    const y = window.scrollY + 100;
+    let active = headings[0];
+    for (const h of headings) {
+      if (h.offsetTop <= y) active = h;
+      else break;
+    }
+    tocLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + active.id));
+  }
+  if (headings.length) {
+    window.addEventListener("scroll", updateActiveTOC, { passive: true });
+    updateActiveTOC();
+  }
+
+  /* ---------- search (FlexSearch when available, fallback to regex) ---------- */
+  const searchInput = document.getElementById("search-input");
+  const searchResults = document.getElementById("search-results");
+  let searchIndex = null;
+
+  function buildSearchEntries() {
+    const entries = [];
+    Object.entries(data.papers).forEach(([pid, p]) => {
+      entries.push({
+        id: "paper:" + pid,
+        kind: "paper",
+        title: pid + " " + (p.title || ""),
+        body: [p.authors, p.venue, p.year, p.note].filter(Boolean).join(" "),
+        anchor: "paper-" + pid
+      });
+    });
+    Object.entries(data.claims).forEach(([cid, c]) => {
+      entries.push({
+        id: "claim:" + cid,
+        kind: "claim",
+        title: cid + " (" + (c.paper_id || "") + ")",
+        body: (c.quote || "") + " " + (c.section || ""),
+        anchor: "claim-" + cid
+      });
+    });
+    (data.toc || []).forEach((h) => {
+      entries.push({ id: "section:" + h.id, kind: "section", title: h.text, body: "", anchor: h.id });
+    });
+    return entries;
+  }
+  const entries = buildSearchEntries();
+  if (window.FlexSearch && entries.length) {
+    searchIndex = new FlexSearch.Document({
+      tokenize: "forward",
+      document: { id: "id", index: ["title", "body"], store: ["kind", "title", "body", "anchor"] }
+    });
+    entries.forEach(e => searchIndex.add(e));
+  }
+  function fallbackSearch(q) {
+    const re = new RegExp(q.split(/\s+/).map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"), "i");
+    return entries.filter(e => re.test(e.title) || re.test(e.body)).slice(0, 30);
+  }
+  function flexSearchQuery(q) {
+    const out = [];
+    const seen = new Set();
+    const results = searchIndex.search(q, { limit: 25, enrich: true });
+    results.forEach(field => {
+      field.result.forEach(r => {
+        if (seen.has(r.id)) return;
+        seen.add(r.id);
+        out.push(r.doc);
+      });
+    });
+    return out.slice(0, 30);
+  }
+  function renderResults(items, q) {
+    if (!items.length) {
+      searchResults.innerHTML = `<div class="res"><span class="res-snippet">no matches</span></div>`;
+    } else {
+      searchResults.innerHTML = items.map(it => {
+        const snippet = (it.body || "").slice(0, 140);
+        return `<div class="res" data-anchor="${it.anchor}">
+                  <span class="res-kind">${it.kind}</span>
+                  <span class="res-title">${escapeHtml(it.title)}</span>
+                  <div class="res-snippet">${escapeHtml(snippet)}</div>
+                </div>`;
+      }).join("");
+    }
+    searchResults.hidden = false;
+  }
+  let searchTimer = null;
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      const q = searchInput.value.trim();
+      clearTimeout(searchTimer);
+      if (!q) { searchResults.hidden = true; return; }
+      searchTimer = setTimeout(() => {
+        const items = searchIndex ? flexSearchQuery(q) : fallbackSearch(q);
+        renderResults(items, q);
+      }, 100);
+    });
+    searchInput.addEventListener("blur", () => setTimeout(() => searchResults.hidden = true, 200));
+    searchInput.addEventListener("focus", () => { if (searchInput.value.trim()) searchResults.hidden = false; });
+  }
+  if (searchResults) {
+    searchResults.addEventListener("mousedown", (e) => {
+      const r = e.target.closest(".res");
+      if (!r) return;
+      const a = r.dataset.anchor;
+      if (a) {
+        const target = document.getElementById(a);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      searchResults.hidden = true;
+    });
+  }
+
+  /* ---------- sortable tables ---------- */
+  document.querySelectorAll(".content table").forEach(tbl => {
+    const ths = tbl.tHead ? Array.from(tbl.tHead.rows[0].cells) : [];
+    if (!ths.length || !tbl.tBodies[0]) return;
+    ths.forEach((th, idx) => {
+      th.classList.add("sortable");
+      th.addEventListener("click", () => {
+        const tbody = tbl.tBodies[0];
+        const rows = Array.from(tbody.rows);
+        const dir = th.classList.contains("sort-asc") ? -1 : 1;
+        ths.forEach(t => t.classList.remove("sort-asc", "sort-desc"));
+        th.classList.add(dir === 1 ? "sort-asc" : "sort-desc");
+        rows.sort((a, b) => {
+          const av = a.cells[idx] ? a.cells[idx].textContent.trim() : "";
+          const bv = b.cells[idx] ? b.cells[idx].textContent.trim() : "";
+          const an = parseFloat(av), bn = parseFloat(bv);
+          if (!isNaN(an) && !isNaN(bn)) return (an - bn) * dir;
+          return av.localeCompare(bv) * dir;
+        });
+        rows.forEach(r => tbody.appendChild(r));
+      });
+    });
+  });
+
+  /* ---------- mermaid ---------- */
+  function reRenderMermaid() {
+    if (!window.mermaid) return;
+    document.querySelectorAll(".mermaid").forEach(el => {
+      if (el.dataset.processed === "true") {
+        // Mermaid v10+ does not auto re-render; replace with original source.
+        if (el.dataset.src) {
+          el.innerHTML = el.dataset.src;
+          el.removeAttribute("data-processed");
+        }
+      } else {
+        el.dataset.src = el.textContent;
+      }
+    });
+    try {
+      window.mermaid.initialize({
+        startOnLoad: false,
+        theme: root.dataset.theme === "dark" ? "dark" : "default",
+        securityLevel: "loose",
+        flowchart: { htmlLabels: true, curve: "basis" }
+      });
+      window.mermaid.run({ querySelector: ".mermaid:not([data-processed=true])" });
+    } catch (e) { console.warn("mermaid render failed", e); }
+  }
+  if (window.mermaid) {
+    document.querySelectorAll(".mermaid").forEach(el => { el.dataset.src = el.textContent; });
+    reRenderMermaid();
+  } else {
+    document.querySelectorAll(".mermaid").forEach(el => {
+      const fallback = document.createElement("div");
+      fallback.className = "chart-fallback";
+      fallback.textContent = "(Mermaid not loaded — diagram source below)";
+      el.parentNode.insertBefore(fallback, el);
+    });
+  }
+
+  /* ---------- plotly charts ---------- */
+  function reRenderPlotly() {
+    if (!window.Plotly) return;
+    document.querySelectorAll(".plotly-chart").forEach(div => {
+      const cid = div.dataset.chart;
+      const spec = (data.chart_specs || {})[cid];
+      if (!spec) return;
+      const rows = (data.chart_data || []).filter(r => !spec.filter || spec.filter.split(",").every(f => {
+        const [k, v] = f.split("=");
+        return String(r[k] || "") === v;
+      }));
+      const xField = spec.x, yField = spec.y;
+      const x = rows.map(r => parseFloat(r[xField])).map(v => isNaN(v) ? null : v);
+      const y = rows.map(r => parseFloat(r[yField])).map(v => isNaN(v) ? null : v);
+      const text = rows.map(r => {
+        const parts = [r.paper_id, r.model, r.architecture];
+        if (r.hardware) parts.push(r.hardware);
+        return parts.filter(Boolean).join(" · ");
+      });
+      const dark = root.dataset.theme === "dark";
+      const layout = {
+        title: spec.title || "",
+        xaxis: { title: spec.x_label || xField, type: spec.x_type || "linear" },
+        yaxis: { title: spec.y_label || yField, type: spec.y_type || "linear" },
+        margin: { t: 40, l: 60, r: 20, b: 50 },
+        paper_bgcolor: dark ? "#18181b" : "#f7f7f4",
+        plot_bgcolor: dark ? "#0a0a0a" : "#ffffff",
+        font: { color: dark ? "#e4e4e7" : "#18181b", size: 12 },
+        hovermode: "closest"
+      };
+      const trace = {
+        type: "scatter", mode: "markers+text",
+        x, y, text,
+        textposition: "top center",
+        textfont: { size: 10 },
+        marker: { size: 12, color: spec.color || (dark ? "#60a5fa" : "#2563eb"), line: { width: 1, color: dark ? "#27272a" : "#e4e4e7" } },
+        hovertemplate: "<b>%{text}</b><br>" + (spec.x_label || xField) + ": %{x}<br>" + (spec.y_label || yField) + ": %{y}<extra></extra>"
+      };
+      try {
+        window.Plotly.newPlot(div, [trace], layout, { displaylogo: false, responsive: true });
+      } catch (e) { console.warn("plotly render failed", cid, e); }
+    });
+  }
+  if (window.Plotly) reRenderPlotly();
+  else {
+    document.querySelectorAll(".plotly-chart").forEach(div => {
+      div.innerHTML = `<div class="chart-fallback">(Plotly not loaded — chart data available in __SURVEY_DATA__.chart_data)</div>`;
+    });
+  }
+})();
+
+  </script>
+</body>
+</html>
