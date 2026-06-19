@@ -32,6 +32,18 @@ This is a documentation, research, and knowledge-base repository with a small ex
 - Do not add secrets, local machine state, or unresolved hypotheses to committed project memory.
 - Before jumping into a task, check whether an available skill or best-practice reference clearly applies, and use it when it reduces risk or repeated work.
 
+## Agent Learning-System Workflow
+
+- For learning tasks, create or update durable Markdown artifacts.
+- Do not produce only conversational summaries.
+- Route outputs to one of `learning-log/`, `notes/`, `experiments/`, `papers/`, `indexes/`, or `curricula/`.
+- Use templates when available.
+- Keep concept notes modular.
+- Mark uncertain claims explicitly.
+- For code experiments, include minimal verification commands.
+- Prefer scaffolding with TODOs over fabricated completed content.
+- When importing course material, record source URLs and avoid copying long passages.
+
 ## Validation
 
 There is no project-wide build or test command yet. For documentation-only changes, validate by checking:
