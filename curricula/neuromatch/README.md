@@ -9,6 +9,7 @@ The directory is a source-control layer for curriculum inputs, not a course summ
 ## Registry
 
 - [`source-registry.md`](source-registry.md) is the canonical registry for official Neuromatch coursebook and prerequisite sources used in this learning path.
+- [`content-index/`](content-index/) is a structured per-tutorial index of all learning content across the three coursebooks (title, objectives, sections, source URL). It is a catalog, not a content copy.
 
 ## Use Guidelines
 
