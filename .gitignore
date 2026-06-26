@@ -4,3 +4,9 @@
 
 # Local editor state
 /.obsidian/
+
+# Downloaded Neuromatch materials — re-fetchable via each experiment's SOURCES.md.
+# Slide decks (large PDFs) and the upstream NMA notebooks (W#D#_*.ipynb) stay
+# local; notebooks you author yourself (other names) are still tracked.
+experiments/*/*/slides/
+experiments/*/*/notebooks/W[0-9]D[0-9]_*.ipynb
