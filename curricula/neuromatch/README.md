@@ -8,6 +8,7 @@ The directory is a source-control layer for curriculum inputs, not a course summ
 
 ## Registry
 
+- [`daily-plan-2026-06-30-to-2026-07-13.md`](daily-plan-2026-06-30-to-2026-07-13.md) is the active prep-phase plan: 2 weeks, 5 days/week, 4 hours/day (40h). It recompresses the original 15-day / 3-hour plan in [`daily-plan-2026-06-18-to-2026-07-10.md`](daily-plan-2026-06-18-to-2026-07-10.md), which is now cancelled and kept only as a historical record.
 - [`source-registry.md`](source-registry.md) is the canonical registry for official Neuromatch coursebook and prerequisite sources used in this learning path.
 - [`pre-neuroai-source-extract.md`](pre-neuroai-source-extract.md) maps the prep-phase daily plan to exact official source pages.
 - [`resource-manifest.md`](resource-manifest.md) routes companion resources such as notebooks, slides, datasets, videos, figures, and raw page captures into dedicated directories under [`resources/`](resources/).

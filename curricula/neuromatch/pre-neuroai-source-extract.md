@@ -15,7 +15,7 @@ Companion resources mentioned by these course pages, including notebooks, slides
 | Neuromatch Computational Neuroscience Coursebook | <https://compneuro.neuromatch.io/> | Main foundation source for measurement, modeling, fitting, dimensionality reduction, dynamics, decisions, RL, and causality. |
 | Neuromatch Computational Neuroscience Schedule | <https://compneuro.neuromatch.io/tutorials/Schedule/daily_schedules.html> | Sequencing reference for official course day structure. |
 | Neuromatch Deep Learning Coursebook | <https://deeplearning.neuromatch.io/tutorials/intro.html> | Bridge from computational neuroscience foundations to modern AI methods. |
-| Neuromatch NeuroAI Prerequisites | <https://neuroai.neuromatch.io/prereqs/NeuroAI.html> | Readiness and gap-analysis lens for the prep phase. |
+| Neuromatch NeuroAI Prerequisites | <https://neuroai.neuromatch.io/neuroai> | Readiness and gap-analysis lens for the prep phase. |
 
 ## Cycle 1: Neuroscience Measurements and Model Types
 
@@ -108,10 +108,9 @@ Use for Days 8 and 9.
 
 | Topic | Tutorial | Source |
 |---|---|---|
-| CNNs | W2D2 Tutorial 1: Introduction to CNNs | <https://deeplearning.neuromatch.io/tutorials/W2D2_ConvnetsAndDlThinking/student/W2D2_Tutorial1.html> |
-| Cost functions and representation tasks | W2D2 Tutorial 2: Deep Learning Thinking 1: Cost Functions | <https://deeplearning.neuromatch.io/tutorials/W2D2_ConvnetsAndDlThinking/student/W2D2_Tutorial2.html> |
-| Modern ConvNets and transfer learning | W2D3 Tutorial 1: Learn how to use modern convnets | <https://deeplearning.neuromatch.io/tutorials/W2D3_ModernConvnets/student/W2D3_Tutorial1.html> |
-| Facial recognition embeddings | W2D3 Bonus Tutorial: Facial recognition using modern convnets | <https://deeplearning.neuromatch.io/tutorials/W2D3_ModernConvnets/student/W2D3_Tutorial2.html> |
+| CNNs | W2D2 Tutorial 1: Introduction to CNNs | <https://deeplearning.neuromatch.io/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.html> |
+| Modern ConvNets, transfer learning, and facial recognition embeddings | W2D2 Bonus Tutorial 3: Modern ConvNets and Facial Recognition | <https://deeplearning.neuromatch.io/tutorials/W2D2_Convnets/student/W2D2_Tutorial3.html> |
+| Cost functions and representation tasks | W2D3 Tutorial 2: Deep Learning Discussion 1: Cost Functions | <https://deeplearning.neuromatch.io/tutorials/W2D3_GenerativeModelsAndDeepLearningDiscussion1/student/W2D3_Tutorial2.html> |
 | Self-supervised representation learning | W3D3 Tutorial 1: Un/Self-supervised learning methods | <https://deeplearning.neuromatch.io/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/student/W3D3_Tutorial1.html> |
 
 ## Cycle 4: Linear Systems, Neuron Models, and Dynamics
@@ -154,9 +153,9 @@ Use for Days 10 and 12.
 
 | Topic | Tutorial | Source |
 |---|---|---|
-| Time series processing | W3D1 Tutorial 1: Introduction to processing time series | <https://deeplearning.neuromatch.io/tutorials/W3D1_TimeSeriesAndNaturalLanguageProcessing/student/W3D1_Tutorial1.html> |
-| Attention and transformers | W2D5 Tutorial 1: Learn how to work with Transformers | <https://deeplearning.neuromatch.io/tutorials/W2D5_AttentionAndTransformers/student/W2D5_Tutorial1.html> |
-| Transformer pretraining, fine-tuning, robustness | W2D5 Bonus Tutorial | <https://deeplearning.neuromatch.io/tutorials/W2D5_AttentionAndTransformers/student/W2D5_Tutorial2.html> |
+| Time series processing | W2D5 Tutorial 1: Introduction to processing time series | <https://deeplearning.neuromatch.io/tutorials/W2D5_TimeSeriesAndNaturalLanguageProcessing/student/W2D5_Tutorial1.html> |
+| Attention and transformers | W3D1 Tutorial 1: Learn how to work with Transformers | <https://deeplearning.neuromatch.io/tutorials/W3D1_AttentionAndTransformers/student/W3D1_Tutorial1.html> |
+| Transformer pretraining, fine-tuning, robustness | W3D1 Bonus Tutorial | <https://deeplearning.neuromatch.io/tutorials/W3D1_AttentionAndTransformers/student/W3D1_Tutorial2.html> |
 
 ## Cycle 5: Decisions, Hidden Dynamics, RL, and Causality
 
@@ -211,9 +210,8 @@ Use for Day 14.
 | Topic | Tutorial | Source |
 |---|---|---|
 | Basic reinforcement learning | W3D4 Tutorial 1: Basic Reinforcement Learning | <https://deeplearning.neuromatch.io/tutorials/W3D4_BasicReinforcementLearning/student/W3D4_Tutorial1.html> |
-| Reinforcement learning for games | W3D5 Tutorial 1: Reinforcement Learning For Games | <https://deeplearning.neuromatch.io/tutorials/W3D5_ReinforcementLearningForGamesAndDlThinking3/student/W3D5_Tutorial1.html> |
-| Deep RL thinking | W3D5 Tutorial 2 | <https://deeplearning.neuromatch.io/tutorials/W3D5_ReinforcementLearningForGamesAndDlThinking3/student/W3D5_Tutorial2.html> |
-| Bonus / wrap-up material | W3D5 Tutorial 3 | <https://deeplearning.neuromatch.io/tutorials/W3D5_ReinforcementLearningForGamesAndDlThinking3/student/W3D5_Tutorial3.html> |
+| Deep RL discussion / synthesis | W3D5 Tutorial 1: Deep Learning Discussion 3 | <https://deeplearning.neuromatch.io/tutorials/W3D5_AdvancedReinforcementLearningAndDeepLearningDiscussion3/student/W3D5_Tutorial1.html> |
+| Reinforcement learning for games | W3D5 Bonus Tutorial: Reinforcement Learning For Games | <https://deeplearning.neuromatch.io/tutorials/W3D5_AdvancedReinforcementLearningAndDeepLearningDiscussion3/student/W3D5_Tutorial2.html> |
 
 ## Day-to-Source Checklist
 

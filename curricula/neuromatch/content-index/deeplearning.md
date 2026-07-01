@@ -1,7 +1,7 @@
 # Neuromatch Deep Learning — Content Index
 
 Source coursebook: <https://deeplearning.neuromatch.io/tutorials/intro.html>  
-Extracted: 2026-06-19 · 28 tutorial pages
+Extracted: 2026-06-19 · W2–W3 days re-extracted 2026-07-01 after Neuromatch site restructure · 27 tutorial pages
 
 > Structured per-tutorial index: title, learning objectives, and section structure with source URLs. Per repo policy, no long passages are copied — open the linked page for full text, equations, and code.
 
@@ -12,15 +12,15 @@ Extracted: 2026-06-19 · 28 tutorial pages
 - [W1D3 — Multi Layer Perceptrons](#w1d3) (2 pages)
 - [W1D4 — Optimization](#w1d4) (1 pages)
 - [W2D1 — Regularization](#w2d1) (2 pages)
-- [W2D2 — Convnets And Dl Thinking](#w2d2) (2 pages)
-- [W2D3 — Modern Convnets](#w2d3) (2 pages)
-- [W2D4 — Generative Models](#w2d4) (3 pages)
-- [W2D5 — Attention And Transformers](#w2d5) (2 pages)
-- [W3D1 — Time Series And Natural Language Processing](#w3d1) (3 pages)
-- [W3D2 — Dl Thinking2](#w3d2) (1 pages)
+- [W2D2 — Convnets](#w2d2) (3 pages)
+- [W2D3 — Generative Models And Deep Learning Discussion 1](#w2d3) (2 pages)
+- [W2D4 — Diffusion Generative Models](#w2d4) (2 pages)
+- [W2D5 — Time Series And Natural Language Processing](#w2d5) (3 pages)
+- [W3D1 — Attention And Transformers](#w3d1) (2 pages)
+- [W3D2 — Deep Learning Discussion 2](#w3d2) (1 pages)
 - [W3D3 — Unsupervised And Self Supervised Learning](#w3d3) (1 pages)
 - [W3D4 — Basic Reinforcement Learning](#w3d4) (1 pages)
-- [W3D5 — Reinforcement Learning For Games And Dl Thinking3](#w3d5) (3 pages)
+- [W3D5 — Advanced Reinforcement Learning And Deep Learning Discussion 3](#w3d5) (2 pages)
 - [Bonus — Deploy Models (Bonus)](#bonus) (1 pages)
 
 
@@ -425,24 +425,19 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Video 6: Adversarial Attacks
 
 
-## W2D2 — Convnets And Dl Thinking
+## W2D2 — Convnets
 
 ### Tutorial 1: Introduction to CNNs
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D2_ConvnetsAndDlThinking/student/W2D2_Tutorial1.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D2_Convnets/student/W2D2_Tutorial1.html>
 - Objectives:
   - Define what convolution is
   - Implement convolution as an operation
-  - Train a CNN by writing your own train loop
-  - Recognize the symptoms of overfitting and how to cure them
 - Sections:
-  - Code for Dense Network
-  - Code for Conv Network
   - Set random seed
   - Set device (GPU or CPU). Execute set_device()
-  - Section 0: Recap the Experience from Last Week
+  - Section 0: Recap
   - Video 1: Introduction to CNNs and RNNs
-  - Think! 0: Regularization & effective number of params
   - Section 1: Neuroscience motivation, General CNN structure
   - Video 2: Representations & Visual processing in the brain
   - Think! 1: What makes a representation good?
@@ -457,9 +452,11 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Load images (run me)
   - Section 2.1: Demonstration of a CNN in PyTorch
   - Section 2.2: Padding and Edge Detection
+  - Interactive Demo 2.2: Visualization of Convolution with Padding and Stride
   - Think! 2.2.1: Edge Detection
   - Think! 2.2.2 Kernel structure
   - Section 3: Kernels, Pooling and Subsampling
+  - Download EMNIST dataset
   - Dataset/DataLoader Functions (Run me!)
   - Interactive Demo 3: Visualization of Convolution with Multiple Filters
   - Section 3.1: Multiple Filters
@@ -471,173 +468,145 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Coding Exercise 3.3: Implement MaxPooling
   - Section 4: Putting it all together
   - Video 5: Putting it all together
+  - Section 4.1: Number of Parameters in Convolutional vs. Fully-connected Models
   - Interactive Demo 4.1: Number of Parameters
   - Video 6: Implement your own CNN
   - Coding Exercise 4: Implement your own CNN
   - Train/Test Functions (Run Me)
-  - Summary
-  - Bonus 1: Write your own training loop revisited
-  - Video 7: Writing your own training loop
-  - Bonus 1.1: Understand the Dataset
-  - Video 8: The Training Loop
-  - Bonus 1.2: Backpropagation Reminder
-  - Load a sample dataset (EMNIST)
-  - Bonus 1.3: Fashion-MNIST dataset
-  - Getting the DataLoaders (Run Me)
-  - Coding Exercise Bonus 1: Code the training loop
-  - Think! Bonus 1: Overfitting
-  - Bonus 2: Overfitting - symptoms and cures
-  - Bonus 2.1: Regularization
-  - Coding Exercise Bonus 2.1: Adding Regularization
-  - Think! Bonus 2.1: Regularization
-  - Interactive Demo Bonus 2.1: Dropout exploration
-  - Coding Exercise Bonus 2.2: How much does augmentation help?
-  - Think! Bonus 2.2: Data Augmentation
-
-### Tutorial 2: Deep Learning Thinking 1: Cost Functions
-
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D2_ConvnetsAndDlThinking/student/W2D2_Tutorial2.html>
-- Objectives:
-  - Appreciate the importance of cost function engineering
-  - Translate domain knowledge into cost functions
-  - Ask questions about DL systems and customer needs
-- Sections:
-  - Section 1: Intro to Deep Learning Thinking
-  - Video 1: Intro to DL Thinking
-  - Section 2: Cost function for neurons
-  - Video 2: Spiking Neuron Predictions Vignette
-  - Video 3: Spiking Neuron Predictions Set-up
-  - Think! 1: Designing a cost function to predict neural activities
-  - Video 4: Spiking Neurons Wrap-up
-  - (Bonus) Think!: Non-Poisson neurons
-  - Section 3: How can an ANN know its uncertainty
-  - Video 5: ANN Uncertainty Vignette
-  - Video 6: ANN Uncertainty Set-up
-  - Think! 2: Designing a cost function so we measure uncertainty
-  - Video 7: ANN Uncertainty Wrap-up
-  - (Bonus) Think!: Negative standard deviations
-  - Section 4: Embedding faces
-  - Video 8: Embedding Faces Vignette
-  - Video 9: Embedding Faces Set-up
-  - Think! 3: Designing a cost function for face embedding
-  - Video 10: Embedding Faces Wrap-up
-  - Summary
-
-
-## W2D3 — Modern Convnets
-
-### Tutorial 1: Learn how to use modern convnets
-
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D3_ModernConvnets/student/W2D3_Tutorial1.html>
-- Objectives:
-  - Learn about modern CNNs and Transfer Learning.
-  - Understand how architectures incorporate ideas we have about the world.
-  - Understand the operating principles underlying the basic building blocks of modern CNNs.
-  - Understand the concept of transfer learning and learn to recognize opportunities for applying it.
-  - (Bonus) Understand the speed vs. accuracy trade-off.
-- Sections:
-  - Set random seed
-  - Set device (GPU or CPU). Execute set_device()
-  - Section 1: Modern CNNs and Transfer Learning
-  - Video 1: Modern CNNs and Transfer Learning
-  - Coding Exercise 1: Calculate number of parameters in FCNN vs ConvNet
-  - Interactive Demo 1: Check your results
-  - Parameter Calculator
-  - Section 2: The History of Convnets
-  - Video 2: History of convnets
-  - Think! 2: Challenges of improving CNNs
-  - Section 3: Big and Deep Convnets
-  - Video 3: AlexNet & VGG
-  - Section 3.1: Introduction to AlexNet
-  - Section 3.2: What does AlexNet learn?
-  - Think! 3.2.1: Filter Similarity
-  - Interactive Demo 3.2: What does AlexNet see?
-  - Think! 3.2.2 Filter Purpose
-  - Further Reading
-  - Section 4: Convnets After AlexNet
-  - Video 4: Residual Networks (ResNets)
-  - Map Imagenette Labels to Imagenet Labels
-  - eval_imagenette function
-  - Imagenette Train Loop
-  - Coding Exercise 4.1: Use the ResNet model
-  - Out-of-distribution examples
-  - Section 5: Inception + ResNeXt
-  - Video 5: Improving efficiency: Inception and ResNeXt
-  - ResNet vs ResNeXt
-  - Interactive Demo 5: ResNet vs. ResNeXt
-  - Think! 5: ResNet vs. ResNeXt
-  - Section 6: Depthwise separable convolutions
-  - Video 6: Improving efficiency: MobileNet
-  - Section 6.1: Depthwise separable convolutions
-  - Coding Exercise 6.1: Calculation of parameters
-  - Section 7: Transfer Learning
+  - Section 5: Transfer Learning
   - Video 7: Transfer Learning
-  - Section 7.1: Download and prepare the data
+  - Section 5.1: Download and prepare the data
+  - Download Data
   - Determine number of classes
   - Display Example Images
-  - Section 7.2: Fine-tuning a ResNet
+  - Section 5.2: Fine-tuning a ResNet
   - Finetune ResNet
-  - Section 7.3: Train only classification layer
+  - Section 5.3: Train only classification layer
   - Finetune readout of ResNet
-  - Section 7.4: Training ResNet from scratch
+  - Section 5.4: Training ResNet from scratch
   - Train ResNet from scratch
-  - Section 7.5: Head to Head Comparison
+  - Section 5.5: Head to Head Comparison
   - Plot Accuracies
-  - Exercise 7.5.1: Pretrained ResNet vs. ResNet trained from scratch
-  - Exercise 7.5.2: Training only the classification layer
+  - Exercise 5.5.1: Pretrained ResNet vs. ResNet trained from scratch
+  - Exercise 5.5.2: Training only the classification layer
+  - Further Reading
   - Summary
-  - Video 8: Summary and Outlook
-  - Bonus: Speed-Accuracy Trade-Off / Different Backbones
-  - Video 9: Speed-accuracy trade-off
-  - Run the models: run_models(models, lr_rates)
-  - Plot accuracies vs. training speed
-  - Bonus Exercise 1: Finding the best model
-  - Bonus Exercise 2: Speed and accuracy correlation
 
-### Bonus Tutorial: Facial recognition using modern convnets
+### Bonus Tutorial: Writing Your Own Training Loop (Bonus)
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D3_ModernConvnets/student/W2D3_Tutorial2.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D2_Convnets/student/W2D2_Tutorial2.html>
 - Objectives:
-  - An application of modern CNNs in facial recognition.
-  - Ethical aspects of facial recognition.
+  - Train a CNN by writing your own training loop
+  - Recognize the symptoms of overfitting and how to combat them
 - Sections:
   - Set random seed
   - Set device (GPU or CPU). Execute set_device()
-  - Section 1: Face Recognition
-  - Section 1.1: Download and prepare the data
-  - Video 1: Face Recognition using CNNs
-  - Section 1.2: View and transform the data
+  - Section 1: Write Your Own Training Loop
+  - Video 1: Writing your own training loop
+  - Section 1.1: Understand the Dataset
+  - Download Fashion MNIST dataset
+  - Loading Fashion-MNIST Data
+  - Video 2: The Training Loop
+  - Section 1.2: Backpropagation Reminder
+  - Load a sample dataset (EMNIST)
+  - Section 1.3: Fashion-MNIST Dataset
+  - Getting the DataLoaders (Run Me)
+  - Coding Exercise 1: Code the Training Loop
+  - Think! 1: Overfitting
+
+### Bonus Tutorial: Modern ConvNets and Facial Recognition (Bonus)
+
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D2_Convnets/student/W2D2_Tutorial3.html>
+- Objectives:
+  - Learn about the history of CNNs and modern CNN architectures (AlexNet, ResNet, Inception, ResNeXt, MobileNet)
+  - Compare accuracy and training speed across different model backbones
+  - Apply modern ConvNets to facial recognition
+  - Understand ethical considerations in facial recognition systems
+- Sections:
+  - Set random seed
+  - Set device (GPU or CPU). Execute set_device()
+  - Section 1: The History of Convnets
+  - Video 1: History of convnets
+  - Think! 1: Challenges of improving CNNs
+  - Section 2: Big and Deep Convnets
+  - Video 2: AlexNet & VGG
+  - Section 2.1: Introduction to AlexNet
+  - Import Alexnet
+  - Section 2.2: What does AlexNet learn?
+  - Think! 2.2.1: Filter Similarity
+  - Interactive Demo 3.2: What does AlexNet see?
+  - Think! 2.2.2 Filter Purpose
+  - Further Reading
+  - Section 3: Convnets After AlexNet
+  - Video 3: Residual Networks (ResNets)
+  - Download imagenette
+  - Set Up Textual ImageNet labels
+  - Map Imagenette Labels to Imagenet Labels
+  - Prepare Imagenette Data
+  - eval_imagenette function
+  - Imagenette Train Loop
+  - Coding Exercise 3.1: Use the ResNet model
+  - Out-of-distribution examples
+  - Section 4: Inception + ResNeXt
+  - Video 4: Improving efficiency: Inception and ResNeXt
+  - ResNet vs ResNeXt
+  - Interactive Demo 4: ResNet vs. ResNeXt
+  - Parameter Calculator
+  - Think! 4: ResNet vs. ResNeXt
+  - Section 5: Depthwise separable convolutions
+  - Video 5: Improving efficiency: MobileNet
+  - Section 5.1: Depthwise separable convolutions
+  - Coding Exercise 5.1: Calculation of parameters
+  - Think! 5.1: How do parameter savings depend the on number of input feature maps, 4 vs. 64?
+  - Summary
+  - Video 6: Summary and Outlook
+  - Section 6: Speed-Accuracy Trade-Off / Different Backbones
+  - Video 7: Speed-accuracy trade-off
+  - Coding Exercise 6: Compare accuracy and training speed of different models
+  - Imagenette Train Loop: train_loop(model, optimizer, train_loader, loss_fn, device)
+  - Run the models: run_models(models, lr_rates)
+  - Plot accuracies vs. training speed
+  - Exercise 6.1: Finding the best model
+  - Exercise 6.2: Speed and accuracy correlation
+  - Section 7: Face Recognition
+  - Section 7.1: Download and prepare the data
+  - Download Faces Data
+  - Video 8: Face Recognition using CNNs
+  - Section 7.2: View and transform the data
   - Display Images
   - Image Preprocessing Function
-  - Section 1.3: Embedding with a pretrained network
-  - Think! 1.3: Embedding vectors
-  - Section 2: Ethics – bias/discrimination due to pre-training datasets
-  - Video 2: Ethical aspects
-  - Section 2.2: Load, view and transform the data
+  - Section 7.3: Embedding with a pretrained network
+  - Think! 7.3: Embedding vectors
+  - Section 8: Ethics – bias/discrimination due to pre-training datasets
+  - Video 9: Ethical aspects
+  - Section 8.1: Download the Data
+  - Run this cell to get the data
+  - Section 8.2: Load, view and transform the data
   - Visualize some example faces
-  - Section 2.3: Calculate embeddings
+  - Section 8.3: Calculate embeddings
   - Function to calculate pairwise distances
   - Visualize the distances
-  - Exercise 2.1: Face similarity
-  - Exercise 2.2: Embeddings
-  - Section 3: Within Sum of Squares
+  - Exercise 8.1: Face similarity
+  - Exercise 8.2: Embeddings
+  - Section 8.4: Within Sum of Squares
   - Function to calculate WSS
   - Summary
 
 
-## W2D4 — Generative Models
+## W2D3 — Generative Models And Deep Learning Discussion 1
 
-### Tutorial 1: Variational Autoencoders (VAEs)
+### Tutorial 1: Introduction to generative models
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D4_GenerativeModels/student/W2D4_Tutorial1.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D3_GenerativeModelsAndDeepLearningDiscussion1/student/W2D3_Tutorial1.html>
 - Objectives:
-  - Think about unsupervised learning / Generative Models and get a bird’s eye view of why it is useful
+  - Think about unsupervised learning / Generative Models and get a bird's eye view of why it is useful
   - Build intuition about latent variables
   - See the connection between AutoEncoders and PCA
   - Start thinking about neural networks as generative models by contrasting AutoEncoders and Variational AutoEncoders
 - Sections:
   - Set random seed
   - Set device (GPU or CPU). Execute set_device()
+  - Download wordnet dataset
   - Section 1: Generative models
   - Video 1: Generative Modeling
   - Section 1.1: Generating Images from BigGAN
@@ -664,20 +633,50 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Section 4.2: Generating novel images from the decoder
   - Coding Exercise 4.2: Generating images
   - Think! 4.2: AutoEncoders vs. Variational AutoEncoders
-  - Section 5: State of the art VAEs and Wrap-up
+  - Section 5 (Bonus): State of the art VAEs and Wrap-up
   - Video 5: State-Of-The-Art VAEs
   - Summary
 
-### Tutorial 2: Diffusion models
+### Tutorial 2: Deep Learning Discussion 1: Cost Functions
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D4_GenerativeModels/student/W2D4_Tutorial2.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D3_GenerativeModelsAndDeepLearningDiscussion1/student/W2D3_Tutorial2.html>
+- Objectives:
+  - Appreciate the importance of cost function engineering
+  - Translate domain knowledge into cost functions
+  - Ask questions about DL systems and customer needs
+- Sections:
+  - Section 1: Intro to Deep Learning Discussion
+  - Video 1: Intro to DL Discussion
+  - Section 2: Cost function for neurons
+  - Video 2: Spiking Neuron Predictions Vignette
+  - Video 3: Spiking Neuron Predictions Set-up
+  - Think! 1: Designing a cost function to predict neural activities
+  - Video 4: Spiking Neurons Wrap-up
+  - (Bonus) Think!: Non-Poisson neurons
+  - Section 3: How can an ANN know its uncertainty
+  - Video 5: ANN Uncertainty Vignette
+  - Video 6: ANN Uncertainty Set-up
+  - Think! 2: Designing a cost function so we measure uncertainty
+  - Video 7: ANN Uncertainty Wrap-up
+  - (Bonus) Think!: Negative standard deviations
+  - Section 4: Embedding faces
+  - Video 8: Embedding Faces Vignette
+  - Video 9: Embedding Faces Set-up
+  - Think! 3: Designing a cost function for face embedding
+  - Video 10: Embedding Faces Wrap-up
+  - Summary
+
+
+## W2D4 — Diffusion Generative Models
+
+### Tutorial 1: Diffusion models
+
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D4_DiffusionGenerativeModels/student/W2D4_Tutorial1.html>
 - Objectives:
   - Understand the idea behind Diffusion generative models: using score to enable reversal of diffusion process.
   - Learn the score function by learning to denoise data.
   - Hands-on experience in learning the score to a generate certain distribution.
 - Sections:
-  - Set random seed
-  - Set device (GPU or CPU). Execute set_device()
   - Section 1: Understanding Score and Diffusion
   - Notes: score-based model vs. diffusion model
   - Video 1: Intro and Principles
@@ -694,9 +693,10 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Visualize Score
   - Score for Gaussian mixture
   - Score for each Gaussian mode
+  - Compare Score of individual mode with that of the mixture.
   - Think! 1.2: What does score tell us?
   - Section 1.3: Reverse Diffusion
-  - Coding Exercise 1.3: Score enables reversal of diffusion
+  - Bonus Exercise 1.3 (Optional): Score enables reversal of diffusion
   - Section 2: Learning the score by denoising
   - Think! 2: Denoising objective
   - Coding Exercise 2: Implementing Denoising Score Matching Objective
@@ -708,17 +708,15 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Summary
   - Bonus: The Math behind Score Matching Objective
 
-### Tutorial 3: Image, Conditional Diffusion and Beyond
+### Tutorial 2: Image Diffusion
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D4_GenerativeModels/student/W2D4_Tutorial3.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D4_DiffusionGenerativeModels/student/W2D4_Tutorial2.html>
 - Objectives:
   - Understand the idea behind Diffusion generative models: score and reversal of diffusion process.
   - Learn the score function by denoising data.
   - Hands-on experience in learning the score to generate certain distributions.
 - Sections:
-  - Set random seed
-  - Set device (GPU or CPU). Execute set_device()
-  - Neural Network Architecture
+  - Section 1: Neural Network Architecture
   - Video 1: Network architecture
   - Coding Exercise 1: Train Diffusion for MNIST
   - Network architecture
@@ -731,26 +729,96 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Training the model
   - Define the Sampler
   - Sampling
-  - Section 2: Conditional Diffusion Model
-  - Video 2: Conditional Diffusion Model
-  - Video 3: Advanced Techinque - Stable Diffusion
-  - Interactive Demo 2: Stable Diffusion
-  - Think! 2: Architecture of Stable Diffusion Model
-  - Section 3: Ethical Considerations
-  - Video 4: Ethical Consideration
+  - Section 2: Ethical Considerations
+  - Video 2: Ethical Consideration
+  - Think! 2: Copyright of imagery generated from diffusion generated models
   - Summary
-  - Bonus: Train Conditional Diffusion for MNIST
-  - UNet score model with conditional modulation
-  - Loss for conditional diffusion
-  - Training conditional diffusion model
-  - Sample Conditional Diffusion
 
 
-## W2D5 — Attention And Transformers
+## W2D5 — Time Series And Natural Language Processing
+
+### Tutorial 1: Introduction to processing time series
+
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D5_TimeSeriesAndNaturalLanguageProcessing/student/W2D5_Tutorial1.html>
+- Sections:
+  - Load Dataset from nltk
+  - Set random seed
+  - Set device (GPU or CPU). Execute set_device()
+  - Section 1: Intro: What time series are there?
+  - Video 1: Time Series and NLP
+  - Video 2: What is NLP?
+  - Section 2: Embeddings
+  - Video 3: NLP Tokenization
+  - Section 2.1: Introduction
+  - Creating Word Embeddings
+  - Visualizing Word Embeddings
+  - Think! 2.1: Similarity
+  - Section 2.2: Embedding exploration
+  - Video 4: Embeddings rule!
+  - Video 5: Distributional Similarity and Vector Embeddings
+  - Embedding Manipulation
+  - Word Similarity
+  - Interactive Demo 2.2.1: Check similarity between words
+  - Homonym Similarity
+  - Interactive Demo 2.2.2: Explore homonyms
+  - Word Analogies
+  - Section 2.3: Neural Net with word embeddings
+  - Video 6: Using Embeddings
+  - Coding Exercise 1: Simple feed forward net
+  - Summary
+
+### Tutorial 2: Natural Language Processing and LLMs
+
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D5_TimeSeriesAndNaturalLanguageProcessing/student/W2D5_Tutorial2.html>
+- Sections:
+  - Set random seed
+  - Set device (GPU or CPU). Execute set_device()
+  - Section 1: NLP architectures
+  - Video 1: Intro to NLPs and LLMs
+  - Section 2: The NLP pipeline
+  - Video 2: NLP pipeline
+  - Tokenizers
+  - Learning Goals
+  - Generating a dataset
+  - Tokenizer Features
+  - Special Tokens
+  - Think 2.1! Tokenizer good practices
+  - Think 2.2: Chinese and English tokenizer
+  - Section 3: Using BERT
+  - Learning Goals
+  - Video 3: BERT
+  - Section 4: NLG with GPT
+  - Learning goals
+  - Video 4: NLG
+  - Using state-of-the-art (SOTA) Models
+  - Think 4.1! Tokenizers
+  - Think 4.2! Using SOTA models
+  - Fine-Tuning
+  - Implement the code to fine-tune the model
+  - Coding Exercise 4.1: Implement the code to generate text after fine-tuning.
+  - Think 4.3! Accuracy metric observations
+  - Section 5: GPT Today and Tomorrow
+  - Video 5: Conclusion
+  - Summary
+  - Bonus Section: Using Large Language Models (LLMs)
+  - Video 6: Using GPT
+
+### Bonus Tutorial: Multilingual Embeddings
+
+- Source: <https://deeplearning.neuromatch.io/tutorials/W2D5_TimeSeriesAndNaturalLanguageProcessing/student/W2D5_Tutorial3.html>
+- Sections:
+  - Install fastText
+  - Set random seed
+  - Set device (GPU or CPU). Execute set_device()
+  - Section 1 : Multilingual Embeddings
+  - Training multilingual embeddings
+
+
+## W3D1 — Attention And Transformers
 
 ### Tutorial 1: Learn how to work with Transformers
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D5_AttentionAndTransformers/student/W2D5_Tutorial1.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W3D1_AttentionAndTransformers/student/W3D1_Tutorial1.html>
 - Objectives:
   - Explain the general attention mechanism using keys, queries, values
   - Name three applications where attention is useful
@@ -804,7 +872,7 @@ Extracted: 2026-06-19 · 28 tutorial pages
 
 ### Bonus Tutorial: Understanding Pre-training, Fine-tuning and Robustness of Transformers
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W2D5_AttentionAndTransformers/student/W2D5_Tutorial2.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W3D1_AttentionAndTransformers/student/W3D1_Tutorial2.html>
 - Objectives:
   - Write down the objective of language model pre-training
   - Understand the framework of pre-training then fine-tuning
@@ -820,6 +888,7 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Bonus 1.1: Load Yelp reviews dataset ⌛🤗
   - Bonus 1.2: Setting up a text context ✍️
   - Bonus 1.3: Extending the review with pre-trained models 🤖
+  - Bonus 1.4: Sentiment binary-classification with likelihood of positive and negative extensions of the review 👍👎
   - Bonus 2: Light-weight fine-tuning
   - Video 2: Fine-tuning
   - Bonus 2.1: Data Processing
@@ -833,111 +902,34 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Bonus 3.3: Check model predictions
 
 
-## W3D1 — Time Series And Natural Language Processing
+## W3D2 — Deep Learning Discussion 2
 
-### Tutorial 1: Introduction to processing time series
+### Tutorial 1: Deep Learning Discussion 2: Architectures and Multimodal DL
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W3D1_TimeSeriesAndNaturalLanguageProcessing/student/W3D1_Tutorial1.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W3D2_DeepLearningDiscussion2/student/W3D2_Tutorial1.html>
 - Sections:
-  - Load Dataset from nltk
-  - Set random seed
-  - Set device (GPU or CPU). Execute set_device()
-  - Section 1: Intro: What time series are there?
-  - Video 1: Time Series and NLP
-  - Video 2: What is NLP?
-  - Section 2: Embeddings
-  - Video 3: NLP Tokenization
-  - Section 2.1: Introduction
-  - Creating Word Embeddings
-  - Visualizing Word Embeddings
-  - Think! 2.1: Similarity
-  - Section 2.2: Embedding exploration
-  - Video 4: Embeddings rule!
-  - Video 5: Distributional Similarity and Vector Embeddings
-  - Embedding Manipulation
-  - Word Similarity
-  - Interactive Demo 2.2.1: Check similarity between words
-  - Homonym Similarity
-  - Interactive Demo 2.2.2: Explore homonyms
-  - Word Analogies
-  - Section 2.3: Neural Net with word embeddings
-  - Video 6: Using Embeddings
-  - Coding Exercise 1: Simple feed forward net
-  - Summary
-
-### Tutorial 2: Natural Language Processing and LLMs
-
-- Source: <https://deeplearning.neuromatch.io/tutorials/W3D1_TimeSeriesAndNaturalLanguageProcessing/student/W3D1_Tutorial2.html>
-- Objectives: This tutorial provides a comprehensive overview of modern natural language processing (NLP). It introduces two influential NLP architectures, BERT and GPT, along with a detailed exploration of the underlying NLP pipeline. Participants will learn about the core concepts, functionalities, and applications of these architectures, as well as gain insights into prompt engineering and the current and future developments of GPT. {"version_major": 2, "version_minor": 0, "model_id": "d9bd9e83512241b3acde
-- Sections:
-  - Set random seed
-  - Set device (GPU or CPU). Execute set_device()
-  - Section 1: NLP architectures
-  - Video 1: Intro to NLPs and LLMs
-  - Section 2: The NLP pipeline
-  - Video 2: NLP pipeline
-  - Tokenizers
-  - Learning Goals
-  - Generating a dataset
-  - Tokenizer Features
-  - Special Tokens
-  - Think 2.1! Tokenizer good practices
-  - Think 2.2: Chinese and English tokenizer
-  - Section 3: Using BERT
-  - Video 3: BERT
-  - Section 4: NLG with GPT
-  - Learning goals
-  - Video 4: NLG
-  - Using state-of-the-art (SOTA) Models
-  - Think 4.1! Tokenizers
-  - Think 4.2! Using SOTA models
-  - Fine-Tuning
-  - Implement the code to fine-tune the model
-  - Think 4.3! Accuracy metric observations
-  - Section 5: GPT Today and Tomorrow
-  - Video 5: Conclusion
-  - Play around with LLMs
-  - Summary
-  - Bonus Section: Using Large Language Models (LLMs)
-  - Video 6: Using GPT
-
-### Bonus Tutorial: Multilingual Embeddings
-
-- Source: <https://deeplearning.neuromatch.io/tutorials/W3D1_TimeSeriesAndNaturalLanguageProcessing/student/W3D1_Tutorial3.html>
-- Sections:
-  - Set random seed
-  - Set device (GPU or CPU). Execute set_device()
-  - Section 1 : Multilingual Embeddings
-  - Training multilingual embeddings
-
-
-## W3D2 — Dl Thinking2
-
-### Tutorial 1: Deep Learning Thinking 2: Architectures and Multimodal DL thinking
-
-- Source: <https://deeplearning.neuromatch.io/tutorials/W3D2_DlThinking2/student/W3D2_Tutorial1.html>
-- Objectives:
-  - Know how to proceed when low on data
-  - Have a toolbox of what to do in non-standard situations
-- Sections:
-  - Section 1: Intro Deep Learning Thinking 2
-  - Video 1: Intro to DL Thinking 2
+  - Section 1: Intro Deep Learning Discussion 2
+  - Video 1: Intro to DL Discussion 2
   - Section 2: Getting More Data
   - Video 2: Getting More Data Vignette
   - Think! 1: Designing a strategy to get more data
   - Wrap-up
   - Video 3: Getting More Data Wrap-up
   - (Bonus) Think!: Class-based strategies
+  - Section 3: Detecting Tumors - What to do if there still isn't enough data
   - Video 4: Detecting Tumors Vignette
   - Video 5: Detecting Tumors Set-up
   - Think! 2: Designing a strategy for detecting tumors
+  - Wrap-up
   - Video 6: Detecting Tumors Wrap-up
   - Section 4: Brains on Forrest Gump
   - Video 7: Brains on Forrest Gump Vignette
   - Video 8: Brains on Forrest Gump Set-up
+  - Think! 3: Designing a strategy for pulling shared info about brain data and Forrest Gump
+  - Wrap-up
   - Video 9: Brains on Forrest Gump Wrap-up
   - Summary
-  - Video 10: Wrap-up of DL thinking
+  - Video 10: Wrap-up of DL Discussion 2
 
 
 ## W3D3 — Unsupervised And Self Supervised Learning
@@ -1025,11 +1017,34 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Summary
 
 
-## W3D5 — Reinforcement Learning For Games And Dl Thinking3
+## W3D5 — Advanced Reinforcement Learning And Deep Learning Discussion 3
 
-### Tutorial 1: Reinforcement Learning For Games
+### Tutorial 1: Deep Learning Discussion 3
 
-- Source: <https://deeplearning.neuromatch.io/tutorials/W3D5_ReinforcementLearningForGamesAndDlThinking3/student/W3D5_Tutorial1.html>
+- Source: <https://deeplearning.neuromatch.io/tutorials/W3D5_AdvancedReinforcementLearningAndDeepLearningDiscussion3/student/W3D5_Tutorial1.html>
+- Sections:
+  - Section 1: Intro to Deep Learning Discussion 3
+  - Video 1: Intro to DL Discussion 3
+  - Section 2: The Future
+  - Video 2: The Future Vignette
+  - Think! 1: The Future
+  - Section 3: In-context Learning
+  - Video 3: In-context Learning Vignette
+  - Think! 2: In-context Learning
+  - Section 4: Memories
+  - Video 4: Memories Vignette
+  - Think! 3: Memories
+  - Section 5: Multiple Information Sources
+  - Video 5: Multiple Information Sources Vignette
+  - Think! 4: Multiple Information Sources
+  - Section 6: Language for Robotics
+  - Video 6: Language for Robotics Vignette
+  - Think! 5: Language for Robotics
+  - Summary
+
+### Bonus Tutorial: Reinforcement Learning For Games
+
+- Source: <https://deeplearning.neuromatch.io/tutorials/W3D5_AdvancedReinforcementLearningAndDeepLearningDiscussion3/student/W3D5_Tutorial2.html>
 - Objectives:
   - Understand the format of two-players games, Othello specifically
   - Understand how to create random players
@@ -1037,8 +1052,6 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Understand how to implement a policy-based player
   - Understand how to implement a player with Monte Carlo planner
 - Sections:
-  - Set random seed
-  - Set device (GPU or CPU). Execute set_device()
   - Section 0: Introduction
   - Video 0: Introduction
   - Section 1: Create a game/agent loop for RL
@@ -1084,49 +1097,6 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Video 9: Unbeatable opponents
   - Summary
   - Video 19: Outro
-
-### Tutorial 2: Deep Learning Thinking 3
-
-- Source: <https://deeplearning.neuromatch.io/tutorials/W3D5_ReinforcementLearningForGamesAndDlThinking3/student/W3D5_Tutorial2.html>
-- Objectives: {"version_major": 2, "version_minor": 0, "model_id": "8ac37b3c6130450fb0f31b82210775d2"}
-- Sections:
-  - Section 1: Intro to Deep Learning Thinking 3
-  - Video 1: Intro to DL Thinking 3
-  - Section 2: The Future
-  - Video 2: The Future Vignette
-  - Think! 1: The Future
-  - Section 3: In-context Learning
-  - Video 3: In-context Learning Vignette
-  - Think! 2: In-context Learning
-  - Section 4: Memories
-  - Video 4: Memories Vignette
-  - Think! 3: Memories
-  - Section 5: Multiple Information Sources
-  - Video 5: Multiple Information Sources Vignette
-  - Think! 4: Multiple Information Sources
-  - Section 6: Language for Robotics
-  - Video 6: Language for Robotics Vignette
-  - Think! 5: Language for Robotics
-  - Summary
-
-### Bonus Tutorial: Planning with Monte Carlo Tree Search
-
-- Source: <https://deeplearning.neuromatch.io/tutorials/W3D5_ReinforcementLearningForGamesAndDlThinking3/student/W3D5_Tutorial3.html>
-- Objectives: In this tutorial, you will learn about Monte Carlo Tree Search (MCTS) and compare its performance to policy-based, value-based players, and Monte Carlo planners. {"version_major": 2, "version_minor": 0, "model_id": "9d717b361b7342eeafbadd7c5d5d2083"} These are the slides for the videos in the tutorial. If you want to locally download the slides, click here.
-- Sections:
-  - Set random seed
-  - Set device (GPU or CPU). Execute set_device()
-  - Section 1: Plan using Monte Carlo Tree Search (MCTS)
-  - Video 1: Plan with MCTS
-  - Coding Exercise 1: MCTS planner
-  - Section 2: Use MCTS to play games
-  - Video 2: Play with MCTS
-  - Coding Exercise 2: Agent that uses an MCTS planner
-  - Load in trained value and policy networks
-  - MCTS player against Value-based player
-  - MCTS player against Policy-based player
-  - MCTS player against Monte-Carlo player
-  - Summary
 
 
 ## Bonus — Deploy Models (Bonus)
@@ -1175,4 +1145,3 @@ Extracted: 2026-06-19 · 28 tutorial pages
   - Video 14: Deploying on Heroku
   - Summary
   - Video 15: Summary
-
