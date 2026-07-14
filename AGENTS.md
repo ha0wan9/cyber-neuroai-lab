@@ -32,6 +32,14 @@ This is a documentation, research, and knowledge-base repository with a small ex
 - Do not add secrets, local machine state, or unresolved hypotheses to committed project memory.
 - Before jumping into a task, check whether an available skill or best-practice reference clearly applies, and use it when it reduces risk or repeated work.
 
+## Parallel Subagent Authorization
+
+- Subagents are authorized for concrete, bounded, independent subtasks when parallel execution improves speed, coverage, or verification quality. No per-task confirmation is required.
+- Use the available concurrency capacity sensibly. Avoid delegation for trivial work, tightly sequential work, or tasks likely to create overlapping edits.
+- The primary agent remains responsible for task decomposition, coordination, synthesis, conflict avoidance, and final validation.
+- Prefer assigning distinct files or read-only investigation scopes to different subagents. Coordinate explicitly before allowing multiple agents to edit related artifacts.
+- This authorization does not expand the task scope or bypass approval requirements for destructive actions, external side effects, credentials, publishing, commits, or pushes.
+
 ## Agent Learning-System Workflow
 
 - For learning tasks, create or update durable Markdown artifacts.
