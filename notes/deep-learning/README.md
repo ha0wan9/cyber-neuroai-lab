@@ -35,14 +35,14 @@ Each note should answer:
 1. `gradient-descent.md`
 2. `pytorch-autograd.md`
 3. `mlp.md`
-4. `optimization.md`
-5. `regularization.md`
-6. `cnns.md`
-7. `transformers.md`
-8. `self-supervised-learning.md`
-9. `reinforcement-learning.md`
+4. `softmax-cross-entropy.md`
+5. `optimization.md`
+6. `regularization.md`
+7. `cnns.md`
+8. `transformers.md`
+9. `self-supervised-learning.md`
+10. `reinforcement-learning.md`
 
 ## Boundary Rule
 
 Add implementation details only when they support a NeuroAI comparison, experiment, or modeling question.
-

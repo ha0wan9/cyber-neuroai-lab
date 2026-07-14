@@ -1,0 +1,96 @@
+{
+  "video": "10-stimulus-representation",
+  "frame_count": 156,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-03-07.jpg",
+      "timestamp": "00:03:07",
+      "seconds": 187.9,
+      "storyboard_index": 19
+    },
+    {
+      "file": "03-00-05-26.jpg",
+      "timestamp": "00:05:26",
+      "seconds": 326.4,
+      "storyboard_index": 33
+    },
+    {
+      "file": "04-00-05-56.jpg",
+      "timestamp": "00:05:56",
+      "seconds": 356.1,
+      "storyboard_index": 36
+    },
+    {
+      "file": "05-00-06-25.jpg",
+      "timestamp": "00:06:25",
+      "seconds": 385.8,
+      "storyboard_index": 39
+    },
+    {
+      "file": "06-00-07-05.jpg",
+      "timestamp": "00:07:05",
+      "seconds": 425.3,
+      "storyboard_index": 43
+    },
+    {
+      "file": "07-00-07-25.jpg",
+      "timestamp": "00:07:25",
+      "seconds": 445.1,
+      "storyboard_index": 45
+    },
+    {
+      "file": "08-00-09-33.jpg",
+      "timestamp": "00:09:33",
+      "seconds": 573.7,
+      "storyboard_index": 58
+    },
+    {
+      "file": "09-00-10-42.jpg",
+      "timestamp": "00:10:42",
+      "seconds": 642.9,
+      "storyboard_index": 65
+    },
+    {
+      "file": "10-00-12-02.jpg",
+      "timestamp": "00:12:02",
+      "seconds": 722.0,
+      "storyboard_index": 73
+    },
+    {
+      "file": "11-00-12-51.jpg",
+      "timestamp": "00:12:51",
+      "seconds": 771.5,
+      "storyboard_index": 78
+    },
+    {
+      "file": "12-00-15-59.jpg",
+      "timestamp": "00:15:59",
+      "seconds": 959.4,
+      "storyboard_index": 97
+    },
+    {
+      "file": "13-00-19-07.jpg",
+      "timestamp": "00:19:07",
+      "seconds": 1147.4,
+      "storyboard_index": 116
+    },
+    {
+      "file": "14-00-22-25.jpg",
+      "timestamp": "00:22:25",
+      "seconds": 1345.2,
+      "storyboard_index": 136
+    },
+    {
+      "file": "15-00-25-33.jpg",
+      "timestamp": "00:25:33",
+      "seconds": 1533.1,
+      "storyboard_index": 155
+    }
+  ]
+}

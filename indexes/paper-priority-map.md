@@ -28,6 +28,21 @@ Read these after the computational-neuroscience basics are usable. Do not read t
 | 9 | P082, P083, P077, P078, P080 | Brain and AI world models. | P1 | World-model route note |
 | 10 | P046, P047, P105 | Connectome/digital-twin/brain-foundation frontier. | P2 until foundations are stable | Frontier brief |
 
+## W1D1 Candidate Credit-Assignment Cluster
+
+These papers were added from the 2026-07-13 direction-selection exercise. They
+are direct sources for
+[`research-project-phase-1-credit-assignment.md`](research-project-phase-1-credit-assignment.md),
+not replacements for the earlier foundation papers.
+
+| Order | Paper | Read for | Priority | Output |
+|---:|---|---|---|---|
+| 1 | Liu, Yang, and Cueva (2025), [e-prop and neural similarity](https://arxiv.org/abs/2506.06904) | Primary result, initialization confound, similarity metrics, public reproduction path | P0 | `papers/reading-notes/e-prop-neural-similarity.md` |
+| 2 | Bellec et al. (2020), [e-prop mechanism paper](https://www.nature.com/articles/s41467-020-17236-y) | Eligibility traces, learning signals, and the exact locality claim | P0 | Biological-credit-assignment concept note |
+| 3 | Lv et al. (2025), [Dendritic Localized Learning](https://proceedings.mlr.press/v267/lv25c.html) | Compare operational definitions of biological plausibility | P1 | Cross-method comparison section |
+| 4 | Kao and Hariharan (2024), [Counter-Current Learning](https://proceedings.neurips.cc/paper_files/paper/2024/hash/82f05a105c928c10706213952bf0c8b7-Abstract-Conference.html) | Dual-network alternative and possible future baseline | P1 | Short orientation note |
+| 5 | Berriche, Adjal, and Baghdadi (2025), [Sign-Symmetry fine-tuning](https://arxiv.org/abs/2502.05925) | Low-cost fallback project; robustness versus gradient obfuscation risk | P1 | Fallback experiment memo |
+
 ## Topic Priority
 
 | Topic | Candidate papers | Priority | Read for | Defer condition |
@@ -89,4 +104,3 @@ Every P0 or P1 paper should update at least one of:
 - `indexes/research-frontiers.md`
 - a concept note in `notes/`
 - a paper note in `papers/`
-

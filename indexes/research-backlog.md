@@ -33,6 +33,7 @@ Purpose: separate learning needs, experiment ideas, paper-reading targets, resea
 
 | Direction | Core question | First concrete move | Status |
 | --- | --- | --- | --- |
+| Learning-rule signatures in recurrent representations | At matched architecture, initialization, and task performance, do e-prop and BPTT reach similarly brain-aligned representations through distinguishable learning trajectories? | Use [`research-project-phase-1-credit-assignment.md`](research-project-phase-1-credit-assignment.md) for W1D1–D2 group discussion and feasibility triage. | working candidate — W1D1 |
 | Brain-model alignment with behavioral constraints | Can alignment claims improve when behavior is treated as evidence, not metadata? | Build a paper map. | exploratory |
 | Neural representation alignment | Which alignment metrics support mechanistic hypotheses? | Compare metric assumptions. | exploratory |
 | Human-AI research interfaces | Which interface structures improve scientific reasoning loops? | Document current workflow bottlenecks. | exploratory |

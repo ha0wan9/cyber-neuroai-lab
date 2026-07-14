@@ -46,6 +46,13 @@ Candidate notes:
 
 ### 3. Cognitive Modeling
 
+Existing notes:
+
+- [`predictive-coding-and-active-learning.md`](predictive-coding-and-active-learning.md)
+  — separates predictive coding, ML active learning, active sensing, and
+  active inference; includes a future experiment and current-project scope
+  decision.
+
 Candidate notes:
 
 - `behavioral-modeling.md`

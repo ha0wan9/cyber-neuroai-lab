@@ -1,0 +1,240 @@
+{
+  "video": "04-live-in-lab",
+  "frame_count": 88,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-00-24.jpg",
+      "timestamp": "00:00:24",
+      "seconds": 24.6,
+      "storyboard_index": 5
+    },
+    {
+      "file": "03-00-00-34.jpg",
+      "timestamp": "00:00:34",
+      "seconds": 34.4,
+      "storyboard_index": 7
+    },
+    {
+      "file": "04-00-00-54.jpg",
+      "timestamp": "00:00:54",
+      "seconds": 54.1,
+      "storyboard_index": 11
+    },
+    {
+      "file": "05-00-01-03.jpg",
+      "timestamp": "00:01:03",
+      "seconds": 64.0,
+      "storyboard_index": 13
+    },
+    {
+      "file": "06-00-01-13.jpg",
+      "timestamp": "00:01:13",
+      "seconds": 73.8,
+      "storyboard_index": 15
+    },
+    {
+      "file": "07-00-01-23.jpg",
+      "timestamp": "00:01:23",
+      "seconds": 83.6,
+      "storyboard_index": 17
+    },
+    {
+      "file": "08-00-01-33.jpg",
+      "timestamp": "00:01:33",
+      "seconds": 93.5,
+      "storyboard_index": 19
+    },
+    {
+      "file": "09-00-01-43.jpg",
+      "timestamp": "00:01:43",
+      "seconds": 103.3,
+      "storyboard_index": 21
+    },
+    {
+      "file": "10-00-01-48.jpg",
+      "timestamp": "00:01:48",
+      "seconds": 108.3,
+      "storyboard_index": 22
+    },
+    {
+      "file": "11-00-01-58.jpg",
+      "timestamp": "00:01:58",
+      "seconds": 118.1,
+      "storyboard_index": 24
+    },
+    {
+      "file": "12-00-02-07.jpg",
+      "timestamp": "00:02:07",
+      "seconds": 127.9,
+      "storyboard_index": 26
+    },
+    {
+      "file": "13-00-02-17.jpg",
+      "timestamp": "00:02:17",
+      "seconds": 137.8,
+      "storyboard_index": 28
+    },
+    {
+      "file": "14-00-02-27.jpg",
+      "timestamp": "00:02:27",
+      "seconds": 147.6,
+      "storyboard_index": 30
+    },
+    {
+      "file": "15-00-02-37.jpg",
+      "timestamp": "00:02:37",
+      "seconds": 157.5,
+      "storyboard_index": 32
+    },
+    {
+      "file": "16-00-02-42.jpg",
+      "timestamp": "00:02:42",
+      "seconds": 162.4,
+      "storyboard_index": 33
+    },
+    {
+      "file": "17-00-02-52.jpg",
+      "timestamp": "00:02:52",
+      "seconds": 172.2,
+      "storyboard_index": 35
+    },
+    {
+      "file": "18-00-03-02.jpg",
+      "timestamp": "00:03:02",
+      "seconds": 182.1,
+      "storyboard_index": 37
+    },
+    {
+      "file": "19-00-03-11.jpg",
+      "timestamp": "00:03:11",
+      "seconds": 191.9,
+      "storyboard_index": 39
+    },
+    {
+      "file": "20-00-03-21.jpg",
+      "timestamp": "00:03:21",
+      "seconds": 201.7,
+      "storyboard_index": 41
+    },
+    {
+      "file": "21-00-03-31.jpg",
+      "timestamp": "00:03:31",
+      "seconds": 211.6,
+      "storyboard_index": 43
+    },
+    {
+      "file": "22-00-03-36.jpg",
+      "timestamp": "00:03:36",
+      "seconds": 216.5,
+      "storyboard_index": 44
+    },
+    {
+      "file": "23-00-03-46.jpg",
+      "timestamp": "00:03:46",
+      "seconds": 226.3,
+      "storyboard_index": 46
+    },
+    {
+      "file": "24-00-03-56.jpg",
+      "timestamp": "00:03:56",
+      "seconds": 236.2,
+      "storyboard_index": 48
+    },
+    {
+      "file": "25-00-04-06.jpg",
+      "timestamp": "00:04:06",
+      "seconds": 246.0,
+      "storyboard_index": 50
+    },
+    {
+      "file": "26-00-04-20.jpg",
+      "timestamp": "00:04:20",
+      "seconds": 260.8,
+      "storyboard_index": 53
+    },
+    {
+      "file": "27-00-04-25.jpg",
+      "timestamp": "00:04:25",
+      "seconds": 265.7,
+      "storyboard_index": 54
+    },
+    {
+      "file": "28-00-04-45.jpg",
+      "timestamp": "00:04:45",
+      "seconds": 285.4,
+      "storyboard_index": 58
+    },
+    {
+      "file": "29-00-04-55.jpg",
+      "timestamp": "00:04:55",
+      "seconds": 295.2,
+      "storyboard_index": 60
+    },
+    {
+      "file": "30-00-05-05.jpg",
+      "timestamp": "00:05:05",
+      "seconds": 305.1,
+      "storyboard_index": 62
+    },
+    {
+      "file": "31-00-05-19.jpg",
+      "timestamp": "00:05:19",
+      "seconds": 319.8,
+      "storyboard_index": 65
+    },
+    {
+      "file": "32-00-05-29.jpg",
+      "timestamp": "00:05:29",
+      "seconds": 329.7,
+      "storyboard_index": 67
+    },
+    {
+      "file": "33-00-05-39.jpg",
+      "timestamp": "00:05:39",
+      "seconds": 339.5,
+      "storyboard_index": 69
+    },
+    {
+      "file": "34-00-05-49.jpg",
+      "timestamp": "00:05:49",
+      "seconds": 349.4,
+      "storyboard_index": 71
+    },
+    {
+      "file": "35-00-06-13.jpg",
+      "timestamp": "00:06:13",
+      "seconds": 374.0,
+      "storyboard_index": 76
+    },
+    {
+      "file": "36-00-06-23.jpg",
+      "timestamp": "00:06:23",
+      "seconds": 383.8,
+      "storyboard_index": 78
+    },
+    {
+      "file": "37-00-06-33.jpg",
+      "timestamp": "00:06:33",
+      "seconds": 393.6,
+      "storyboard_index": 80
+    },
+    {
+      "file": "38-00-06-53.jpg",
+      "timestamp": "00:06:53",
+      "seconds": 413.3,
+      "storyboard_index": 84
+    },
+    {
+      "file": "39-00-07-08.jpg",
+      "timestamp": "00:07:08",
+      "seconds": 428.1,
+      "storyboard_index": 87
+    }
+  ]
+}

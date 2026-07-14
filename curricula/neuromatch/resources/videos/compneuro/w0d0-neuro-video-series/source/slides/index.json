@@ -1,0 +1,1328 @@
+[
+  {
+    "slug": "01-intro",
+    "title": "Intro",
+    "key_frame_count": 17,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-49.jpg",
+        "timestamp": "00:00:49",
+        "seconds": 49.4,
+        "storyboard_index": 5
+      },
+      {
+        "file": "03-00-01-58.jpg",
+        "timestamp": "00:01:58",
+        "seconds": 118.7,
+        "storyboard_index": 12
+      },
+      {
+        "file": "04-00-03-17.jpg",
+        "timestamp": "00:03:17",
+        "seconds": 197.8,
+        "storyboard_index": 20
+      },
+      {
+        "file": "05-00-03-57.jpg",
+        "timestamp": "00:03:57",
+        "seconds": 237.3,
+        "storyboard_index": 24
+      },
+      {
+        "file": "06-00-06-05.jpg",
+        "timestamp": "00:06:05",
+        "seconds": 365.9,
+        "storyboard_index": 37
+      },
+      {
+        "file": "07-00-08-04.jpg",
+        "timestamp": "00:08:04",
+        "seconds": 484.6,
+        "storyboard_index": 49
+      },
+      {
+        "file": "08-00-08-44.jpg",
+        "timestamp": "00:08:44",
+        "seconds": 524.1,
+        "storyboard_index": 53
+      },
+      {
+        "file": "09-00-10-03.jpg",
+        "timestamp": "00:10:03",
+        "seconds": 603.2,
+        "storyboard_index": 61
+      },
+      {
+        "file": "10-00-10-52.jpg",
+        "timestamp": "00:10:52",
+        "seconds": 652.7,
+        "storyboard_index": 66
+      },
+      {
+        "file": "11-00-12-11.jpg",
+        "timestamp": "00:12:11",
+        "seconds": 731.8,
+        "storyboard_index": 74
+      },
+      {
+        "file": "12-00-13-21.jpg",
+        "timestamp": "00:13:21",
+        "seconds": 801.0,
+        "storyboard_index": 81
+      },
+      {
+        "file": "13-00-14-10.jpg",
+        "timestamp": "00:14:10",
+        "seconds": 850.4,
+        "storyboard_index": 86
+      },
+      {
+        "file": "14-00-14-30.jpg",
+        "timestamp": "00:14:30",
+        "seconds": 870.2,
+        "storyboard_index": 88
+      },
+      {
+        "file": "15-00-14-50.jpg",
+        "timestamp": "00:14:50",
+        "seconds": 890.0,
+        "storyboard_index": 90
+      },
+      {
+        "file": "16-00-15-39.jpg",
+        "timestamp": "00:15:39",
+        "seconds": 939.4,
+        "storyboard_index": 95
+      },
+      {
+        "file": "17-00-16-09.jpg",
+        "timestamp": "00:16:09",
+        "seconds": 969.1,
+        "storyboard_index": 98
+      }
+    ]
+  },
+  {
+    "slug": "02-human-psychophysics",
+    "title": "Human Psychophysics",
+    "key_frame_count": 20,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-29.jpg",
+        "timestamp": "00:00:29",
+        "seconds": 29.6,
+        "storyboard_index": 3
+      },
+      {
+        "file": "03-00-01-38.jpg",
+        "timestamp": "00:01:38",
+        "seconds": 98.7,
+        "storyboard_index": 10
+      },
+      {
+        "file": "04-00-01-58.jpg",
+        "timestamp": "00:01:58",
+        "seconds": 118.5,
+        "storyboard_index": 12
+      },
+      {
+        "file": "05-00-02-37.jpg",
+        "timestamp": "00:02:37",
+        "seconds": 158.0,
+        "storyboard_index": 16
+      },
+      {
+        "file": "06-00-04-06.jpg",
+        "timestamp": "00:04:06",
+        "seconds": 246.8,
+        "storyboard_index": 25
+      },
+      {
+        "file": "07-00-04-46.jpg",
+        "timestamp": "00:04:46",
+        "seconds": 286.3,
+        "storyboard_index": 29
+      },
+      {
+        "file": "08-00-05-25.jpg",
+        "timestamp": "00:05:25",
+        "seconds": 325.8,
+        "storyboard_index": 33
+      },
+      {
+        "file": "09-00-06-05.jpg",
+        "timestamp": "00:06:05",
+        "seconds": 365.3,
+        "storyboard_index": 37
+      },
+      {
+        "file": "10-00-06-34.jpg",
+        "timestamp": "00:06:34",
+        "seconds": 394.9,
+        "storyboard_index": 40
+      },
+      {
+        "file": "11-00-08-13.jpg",
+        "timestamp": "00:08:13",
+        "seconds": 493.6,
+        "storyboard_index": 50
+      },
+      {
+        "file": "12-00-10-51.jpg",
+        "timestamp": "00:10:51",
+        "seconds": 651.6,
+        "storyboard_index": 66
+      },
+      {
+        "file": "13-00-13-29.jpg",
+        "timestamp": "00:13:29",
+        "seconds": 809.5,
+        "storyboard_index": 82
+      },
+      {
+        "file": "14-00-16-17.jpg",
+        "timestamp": "00:16:17",
+        "seconds": 977.3,
+        "storyboard_index": 99
+      },
+      {
+        "file": "15-00-16-37.jpg",
+        "timestamp": "00:16:37",
+        "seconds": 997.1,
+        "storyboard_index": 101
+      },
+      {
+        "file": "16-00-16-56.jpg",
+        "timestamp": "00:16:56",
+        "seconds": 1016.8,
+        "storyboard_index": 103
+      },
+      {
+        "file": "17-00-17-16.jpg",
+        "timestamp": "00:17:16",
+        "seconds": 1036.6,
+        "storyboard_index": 105
+      },
+      {
+        "file": "18-00-17-36.jpg",
+        "timestamp": "00:17:36",
+        "seconds": 1056.3,
+        "storyboard_index": 107
+      },
+      {
+        "file": "19-00-19-05.jpg",
+        "timestamp": "00:19:05",
+        "seconds": 1145.2,
+        "storyboard_index": 116
+      },
+      {
+        "file": "20-00-21-43.jpg",
+        "timestamp": "00:21:43",
+        "seconds": 1303.1,
+        "storyboard_index": 132
+      }
+    ]
+  },
+  {
+    "slug": "03-behavioral-readout",
+    "title": "Behavioral Readout",
+    "key_frame_count": 17,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-01-19.jpg",
+        "timestamp": "00:01:19",
+        "seconds": 79.1,
+        "storyboard_index": 8
+      },
+      {
+        "file": "03-00-01-58.jpg",
+        "timestamp": "00:01:58",
+        "seconds": 118.6,
+        "storyboard_index": 12
+      },
+      {
+        "file": "04-00-02-28.jpg",
+        "timestamp": "00:02:28",
+        "seconds": 148.3,
+        "storyboard_index": 15
+      },
+      {
+        "file": "05-00-03-57.jpg",
+        "timestamp": "00:03:57",
+        "seconds": 237.2,
+        "storyboard_index": 24
+      },
+      {
+        "file": "06-00-05-55.jpg",
+        "timestamp": "00:05:55",
+        "seconds": 355.9,
+        "storyboard_index": 36
+      },
+      {
+        "file": "07-00-07-14.jpg",
+        "timestamp": "00:07:14",
+        "seconds": 435.0,
+        "storyboard_index": 44
+      },
+      {
+        "file": "08-00-07-54.jpg",
+        "timestamp": "00:07:54",
+        "seconds": 474.5,
+        "storyboard_index": 48
+      },
+      {
+        "file": "09-00-08-14.jpg",
+        "timestamp": "00:08:14",
+        "seconds": 494.3,
+        "storyboard_index": 50
+      },
+      {
+        "file": "10-00-09-43.jpg",
+        "timestamp": "00:09:43",
+        "seconds": 583.2,
+        "storyboard_index": 59
+      },
+      {
+        "file": "11-00-11-31.jpg",
+        "timestamp": "00:11:31",
+        "seconds": 692.0,
+        "storyboard_index": 70
+      },
+      {
+        "file": "12-00-11-41.jpg",
+        "timestamp": "00:11:41",
+        "seconds": 701.9,
+        "storyboard_index": 71
+      },
+      {
+        "file": "13-00-12-11.jpg",
+        "timestamp": "00:12:11",
+        "seconds": 731.5,
+        "storyboard_index": 74
+      },
+      {
+        "file": "14-00-13-40.jpg",
+        "timestamp": "00:13:40",
+        "seconds": 820.5,
+        "storyboard_index": 83
+      },
+      {
+        "file": "15-00-14-20.jpg",
+        "timestamp": "00:14:20",
+        "seconds": 860.0,
+        "storyboard_index": 87
+      },
+      {
+        "file": "16-00-15-19.jpg",
+        "timestamp": "00:15:19",
+        "seconds": 919.3,
+        "storyboard_index": 93
+      },
+      {
+        "file": "17-00-15-39.jpg",
+        "timestamp": "00:15:39",
+        "seconds": 939.1,
+        "storyboard_index": 95
+      }
+    ]
+  },
+  {
+    "slug": "04-live-in-lab",
+    "title": "Live in Lab",
+    "key_frame_count": 39,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-24.jpg",
+        "timestamp": "00:00:24",
+        "seconds": 24.6,
+        "storyboard_index": 5
+      },
+      {
+        "file": "03-00-00-34.jpg",
+        "timestamp": "00:00:34",
+        "seconds": 34.4,
+        "storyboard_index": 7
+      },
+      {
+        "file": "04-00-00-54.jpg",
+        "timestamp": "00:00:54",
+        "seconds": 54.1,
+        "storyboard_index": 11
+      },
+      {
+        "file": "05-00-01-03.jpg",
+        "timestamp": "00:01:03",
+        "seconds": 64.0,
+        "storyboard_index": 13
+      },
+      {
+        "file": "06-00-01-13.jpg",
+        "timestamp": "00:01:13",
+        "seconds": 73.8,
+        "storyboard_index": 15
+      },
+      {
+        "file": "07-00-01-23.jpg",
+        "timestamp": "00:01:23",
+        "seconds": 83.6,
+        "storyboard_index": 17
+      },
+      {
+        "file": "08-00-01-33.jpg",
+        "timestamp": "00:01:33",
+        "seconds": 93.5,
+        "storyboard_index": 19
+      },
+      {
+        "file": "09-00-01-43.jpg",
+        "timestamp": "00:01:43",
+        "seconds": 103.3,
+        "storyboard_index": 21
+      },
+      {
+        "file": "10-00-01-48.jpg",
+        "timestamp": "00:01:48",
+        "seconds": 108.3,
+        "storyboard_index": 22
+      },
+      {
+        "file": "11-00-01-58.jpg",
+        "timestamp": "00:01:58",
+        "seconds": 118.1,
+        "storyboard_index": 24
+      },
+      {
+        "file": "12-00-02-07.jpg",
+        "timestamp": "00:02:07",
+        "seconds": 127.9,
+        "storyboard_index": 26
+      },
+      {
+        "file": "13-00-02-17.jpg",
+        "timestamp": "00:02:17",
+        "seconds": 137.8,
+        "storyboard_index": 28
+      },
+      {
+        "file": "14-00-02-27.jpg",
+        "timestamp": "00:02:27",
+        "seconds": 147.6,
+        "storyboard_index": 30
+      },
+      {
+        "file": "15-00-02-37.jpg",
+        "timestamp": "00:02:37",
+        "seconds": 157.5,
+        "storyboard_index": 32
+      },
+      {
+        "file": "16-00-02-42.jpg",
+        "timestamp": "00:02:42",
+        "seconds": 162.4,
+        "storyboard_index": 33
+      },
+      {
+        "file": "17-00-02-52.jpg",
+        "timestamp": "00:02:52",
+        "seconds": 172.2,
+        "storyboard_index": 35
+      },
+      {
+        "file": "18-00-03-02.jpg",
+        "timestamp": "00:03:02",
+        "seconds": 182.1,
+        "storyboard_index": 37
+      },
+      {
+        "file": "19-00-03-11.jpg",
+        "timestamp": "00:03:11",
+        "seconds": 191.9,
+        "storyboard_index": 39
+      },
+      {
+        "file": "20-00-03-21.jpg",
+        "timestamp": "00:03:21",
+        "seconds": 201.7,
+        "storyboard_index": 41
+      },
+      {
+        "file": "21-00-03-31.jpg",
+        "timestamp": "00:03:31",
+        "seconds": 211.6,
+        "storyboard_index": 43
+      },
+      {
+        "file": "22-00-03-36.jpg",
+        "timestamp": "00:03:36",
+        "seconds": 216.5,
+        "storyboard_index": 44
+      },
+      {
+        "file": "23-00-03-46.jpg",
+        "timestamp": "00:03:46",
+        "seconds": 226.3,
+        "storyboard_index": 46
+      },
+      {
+        "file": "24-00-03-56.jpg",
+        "timestamp": "00:03:56",
+        "seconds": 236.2,
+        "storyboard_index": 48
+      },
+      {
+        "file": "25-00-04-06.jpg",
+        "timestamp": "00:04:06",
+        "seconds": 246.0,
+        "storyboard_index": 50
+      },
+      {
+        "file": "26-00-04-20.jpg",
+        "timestamp": "00:04:20",
+        "seconds": 260.8,
+        "storyboard_index": 53
+      },
+      {
+        "file": "27-00-04-25.jpg",
+        "timestamp": "00:04:25",
+        "seconds": 265.7,
+        "storyboard_index": 54
+      },
+      {
+        "file": "28-00-04-45.jpg",
+        "timestamp": "00:04:45",
+        "seconds": 285.4,
+        "storyboard_index": 58
+      },
+      {
+        "file": "29-00-04-55.jpg",
+        "timestamp": "00:04:55",
+        "seconds": 295.2,
+        "storyboard_index": 60
+      },
+      {
+        "file": "30-00-05-05.jpg",
+        "timestamp": "00:05:05",
+        "seconds": 305.1,
+        "storyboard_index": 62
+      },
+      {
+        "file": "31-00-05-19.jpg",
+        "timestamp": "00:05:19",
+        "seconds": 319.8,
+        "storyboard_index": 65
+      },
+      {
+        "file": "32-00-05-29.jpg",
+        "timestamp": "00:05:29",
+        "seconds": 329.7,
+        "storyboard_index": 67
+      },
+      {
+        "file": "33-00-05-39.jpg",
+        "timestamp": "00:05:39",
+        "seconds": 339.5,
+        "storyboard_index": 69
+      },
+      {
+        "file": "34-00-05-49.jpg",
+        "timestamp": "00:05:49",
+        "seconds": 349.4,
+        "storyboard_index": 71
+      },
+      {
+        "file": "35-00-06-13.jpg",
+        "timestamp": "00:06:13",
+        "seconds": 374.0,
+        "storyboard_index": 76
+      },
+      {
+        "file": "36-00-06-23.jpg",
+        "timestamp": "00:06:23",
+        "seconds": 383.8,
+        "storyboard_index": 78
+      },
+      {
+        "file": "37-00-06-33.jpg",
+        "timestamp": "00:06:33",
+        "seconds": 393.6,
+        "storyboard_index": 80
+      },
+      {
+        "file": "38-00-06-53.jpg",
+        "timestamp": "00:06:53",
+        "seconds": 413.3,
+        "storyboard_index": 84
+      },
+      {
+        "file": "39-00-07-08.jpg",
+        "timestamp": "00:07:08",
+        "seconds": 428.1,
+        "storyboard_index": 87
+      }
+    ]
+  },
+  {
+    "slug": "05-brain-signals-spiking-activity",
+    "title": "Brain Signals: Spiking Activity",
+    "key_frame_count": 14,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-19.jpg",
+        "timestamp": "00:00:19",
+        "seconds": 19.8,
+        "storyboard_index": 2
+      },
+      {
+        "file": "03-00-00-59.jpg",
+        "timestamp": "00:00:59",
+        "seconds": 59.3,
+        "storyboard_index": 6
+      },
+      {
+        "file": "04-00-02-57.jpg",
+        "timestamp": "00:02:57",
+        "seconds": 177.9,
+        "storyboard_index": 18
+      },
+      {
+        "file": "05-00-05-55.jpg",
+        "timestamp": "00:05:55",
+        "seconds": 355.8,
+        "storyboard_index": 36
+      },
+      {
+        "file": "06-00-08-53.jpg",
+        "timestamp": "00:08:53",
+        "seconds": 533.7,
+        "storyboard_index": 54
+      },
+      {
+        "file": "07-00-11-51.jpg",
+        "timestamp": "00:11:51",
+        "seconds": 711.6,
+        "storyboard_index": 72
+      },
+      {
+        "file": "08-00-14-00.jpg",
+        "timestamp": "00:14:00",
+        "seconds": 840.0,
+        "storyboard_index": 85
+      },
+      {
+        "file": "09-00-14-49.jpg",
+        "timestamp": "00:14:49",
+        "seconds": 889.4,
+        "storyboard_index": 90
+      },
+      {
+        "file": "10-00-17-47.jpg",
+        "timestamp": "00:17:47",
+        "seconds": 1067.3,
+        "storyboard_index": 108
+      },
+      {
+        "file": "11-00-18-07.jpg",
+        "timestamp": "00:18:07",
+        "seconds": 1087.1,
+        "storyboard_index": 110
+      },
+      {
+        "file": "12-00-20-45.jpg",
+        "timestamp": "00:20:45",
+        "seconds": 1245.2,
+        "storyboard_index": 126
+      },
+      {
+        "file": "13-00-22-43.jpg",
+        "timestamp": "00:22:43",
+        "seconds": 1363.8,
+        "storyboard_index": 138
+      },
+      {
+        "file": "14-00-23-43.jpg",
+        "timestamp": "00:23:43",
+        "seconds": 1423.1,
+        "storyboard_index": 144
+      }
+    ]
+  },
+  {
+    "slug": "06-brain-signals-lfp",
+    "title": "Brain Signals: LFP",
+    "key_frame_count": 11,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-19.jpg",
+        "timestamp": "00:00:19",
+        "seconds": 19.8,
+        "storyboard_index": 2
+      },
+      {
+        "file": "03-00-02-08.jpg",
+        "timestamp": "00:02:08",
+        "seconds": 128.6,
+        "storyboard_index": 13
+      },
+      {
+        "file": "04-00-04-27.jpg",
+        "timestamp": "00:04:27",
+        "seconds": 267.0,
+        "storyboard_index": 27
+      },
+      {
+        "file": "05-00-06-35.jpg",
+        "timestamp": "00:06:35",
+        "seconds": 395.6,
+        "storyboard_index": 40
+      },
+      {
+        "file": "06-00-08-54.jpg",
+        "timestamp": "00:08:54",
+        "seconds": 534.0,
+        "storyboard_index": 54
+      },
+      {
+        "file": "07-00-11-02.jpg",
+        "timestamp": "00:11:02",
+        "seconds": 662.6,
+        "storyboard_index": 67
+      },
+      {
+        "file": "08-00-12-51.jpg",
+        "timestamp": "00:12:51",
+        "seconds": 771.3,
+        "storyboard_index": 78
+      },
+      {
+        "file": "09-00-13-11.jpg",
+        "timestamp": "00:13:11",
+        "seconds": 791.1,
+        "storyboard_index": 80
+      },
+      {
+        "file": "10-00-15-29.jpg",
+        "timestamp": "00:15:29",
+        "seconds": 929.6,
+        "storyboard_index": 94
+      },
+      {
+        "file": "11-00-17-38.jpg",
+        "timestamp": "00:17:38",
+        "seconds": 1058.1,
+        "storyboard_index": 107
+      }
+    ]
+  },
+  {
+    "slug": "07-brain-signals-eeg-meg",
+    "title": "Brain Signals: EEG & MEG",
+    "key_frame_count": 15,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-39.jpg",
+        "timestamp": "00:00:39",
+        "seconds": 39.6,
+        "storyboard_index": 4
+      },
+      {
+        "file": "03-00-02-18.jpg",
+        "timestamp": "00:02:18",
+        "seconds": 138.5,
+        "storyboard_index": 14
+      },
+      {
+        "file": "04-00-02-28.jpg",
+        "timestamp": "00:02:28",
+        "seconds": 148.4,
+        "storyboard_index": 15
+      },
+      {
+        "file": "05-00-03-17.jpg",
+        "timestamp": "00:03:17",
+        "seconds": 197.8,
+        "storyboard_index": 20
+      },
+      {
+        "file": "06-00-04-56.jpg",
+        "timestamp": "00:04:56",
+        "seconds": 296.7,
+        "storyboard_index": 30
+      },
+      {
+        "file": "07-00-07-15.jpg",
+        "timestamp": "00:07:15",
+        "seconds": 435.2,
+        "storyboard_index": 44
+      },
+      {
+        "file": "08-00-09-33.jpg",
+        "timestamp": "00:09:33",
+        "seconds": 573.7,
+        "storyboard_index": 58
+      },
+      {
+        "file": "09-00-09-43.jpg",
+        "timestamp": "00:09:43",
+        "seconds": 583.6,
+        "storyboard_index": 59
+      },
+      {
+        "file": "10-00-10-52.jpg",
+        "timestamp": "00:10:52",
+        "seconds": 652.8,
+        "storyboard_index": 66
+      },
+      {
+        "file": "11-00-12-11.jpg",
+        "timestamp": "00:12:11",
+        "seconds": 731.9,
+        "storyboard_index": 74
+      },
+      {
+        "file": "12-00-14-30.jpg",
+        "timestamp": "00:14:30",
+        "seconds": 870.4,
+        "storyboard_index": 88
+      },
+      {
+        "file": "13-00-16-58.jpg",
+        "timestamp": "00:16:58",
+        "seconds": 1018.7,
+        "storyboard_index": 103
+      },
+      {
+        "file": "14-00-17-48.jpg",
+        "timestamp": "00:17:48",
+        "seconds": 1068.2,
+        "storyboard_index": 108
+      },
+      {
+        "file": "15-00-19-27.jpg",
+        "timestamp": "00:19:27",
+        "seconds": 1167.1,
+        "storyboard_index": 118
+      }
+    ]
+  },
+  {
+    "slug": "08-brain-signals-fmri",
+    "title": "Brain Signals: fMRI",
+    "key_frame_count": 19,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-19.jpg",
+        "timestamp": "00:00:19",
+        "seconds": 19.7,
+        "storyboard_index": 2
+      },
+      {
+        "file": "03-00-01-38.jpg",
+        "timestamp": "00:01:38",
+        "seconds": 98.7,
+        "storyboard_index": 10
+      },
+      {
+        "file": "04-00-01-58.jpg",
+        "timestamp": "00:01:58",
+        "seconds": 118.4,
+        "storyboard_index": 12
+      },
+      {
+        "file": "05-00-03-27.jpg",
+        "timestamp": "00:03:27",
+        "seconds": 207.3,
+        "storyboard_index": 21
+      },
+      {
+        "file": "06-00-04-06.jpg",
+        "timestamp": "00:04:06",
+        "seconds": 246.7,
+        "storyboard_index": 25
+      },
+      {
+        "file": "07-00-04-36.jpg",
+        "timestamp": "00:04:36",
+        "seconds": 276.4,
+        "storyboard_index": 28
+      },
+      {
+        "file": "08-00-05-45.jpg",
+        "timestamp": "00:05:45",
+        "seconds": 345.4,
+        "storyboard_index": 35
+      },
+      {
+        "file": "09-00-06-05.jpg",
+        "timestamp": "00:06:05",
+        "seconds": 365.2,
+        "storyboard_index": 37
+      },
+      {
+        "file": "10-00-06-44.jpg",
+        "timestamp": "00:06:44",
+        "seconds": 404.7,
+        "storyboard_index": 41
+      },
+      {
+        "file": "11-00-07-34.jpg",
+        "timestamp": "00:07:34",
+        "seconds": 454.0,
+        "storyboard_index": 46
+      },
+      {
+        "file": "12-00-08-13.jpg",
+        "timestamp": "00:08:13",
+        "seconds": 493.5,
+        "storyboard_index": 50
+      },
+      {
+        "file": "13-00-10-11.jpg",
+        "timestamp": "00:10:11",
+        "seconds": 611.9,
+        "storyboard_index": 62
+      },
+      {
+        "file": "14-00-12-00.jpg",
+        "timestamp": "00:12:00",
+        "seconds": 720.5,
+        "storyboard_index": 73
+      },
+      {
+        "file": "15-00-12-10.jpg",
+        "timestamp": "00:12:10",
+        "seconds": 730.4,
+        "storyboard_index": 74
+      },
+      {
+        "file": "16-00-14-18.jpg",
+        "timestamp": "00:14:18",
+        "seconds": 858.7,
+        "storyboard_index": 87
+      },
+      {
+        "file": "17-00-14-48.jpg",
+        "timestamp": "00:14:48",
+        "seconds": 888.3,
+        "storyboard_index": 90
+      },
+      {
+        "file": "18-00-15-57.jpg",
+        "timestamp": "00:15:57",
+        "seconds": 957.4,
+        "storyboard_index": 97
+      },
+      {
+        "file": "19-00-16-17.jpg",
+        "timestamp": "00:16:17",
+        "seconds": 977.1,
+        "storyboard_index": 99
+      }
+    ]
+  },
+  {
+    "slug": "09-brain-signals-calcium-imaging",
+    "title": "Brain Signals: Calcium Imaging",
+    "key_frame_count": 15,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-14.jpg",
+        "timestamp": "00:00:14",
+        "seconds": 14.9,
+        "storyboard_index": 3
+      },
+      {
+        "file": "03-00-01-44.jpg",
+        "timestamp": "00:01:44",
+        "seconds": 104.2,
+        "storyboard_index": 21
+      },
+      {
+        "file": "04-00-03-23.jpg",
+        "timestamp": "00:03:23",
+        "seconds": 203.5,
+        "storyboard_index": 41
+      },
+      {
+        "file": "05-00-05-07.jpg",
+        "timestamp": "00:05:07",
+        "seconds": 307.8,
+        "storyboard_index": 62
+      },
+      {
+        "file": "06-00-06-47.jpg",
+        "timestamp": "00:06:47",
+        "seconds": 407.0,
+        "storyboard_index": 82
+      },
+      {
+        "file": "07-00-08-31.jpg",
+        "timestamp": "00:08:31",
+        "seconds": 511.3,
+        "storyboard_index": 103
+      },
+      {
+        "file": "08-00-09-01.jpg",
+        "timestamp": "00:09:01",
+        "seconds": 541.1,
+        "storyboard_index": 109
+      },
+      {
+        "file": "09-00-09-15.jpg",
+        "timestamp": "00:09:15",
+        "seconds": 556.0,
+        "storyboard_index": 112
+      },
+      {
+        "file": "10-00-10-15.jpg",
+        "timestamp": "00:10:15",
+        "seconds": 615.5,
+        "storyboard_index": 124
+      },
+      {
+        "file": "11-00-11-00.jpg",
+        "timestamp": "00:11:00",
+        "seconds": 660.2,
+        "storyboard_index": 133
+      },
+      {
+        "file": "12-00-11-15.jpg",
+        "timestamp": "00:11:15",
+        "seconds": 675.1,
+        "storyboard_index": 136
+      },
+      {
+        "file": "13-00-11-54.jpg",
+        "timestamp": "00:11:54",
+        "seconds": 714.8,
+        "storyboard_index": 144
+      },
+      {
+        "file": "14-00-12-34.jpg",
+        "timestamp": "00:12:34",
+        "seconds": 754.5,
+        "storyboard_index": 152
+      },
+      {
+        "file": "15-00-13-39.jpg",
+        "timestamp": "00:13:39",
+        "seconds": 819.0,
+        "storyboard_index": 165
+      }
+    ]
+  },
+  {
+    "slug": "10-stimulus-representation",
+    "title": "Stimulus Representation",
+    "key_frame_count": 15,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-03-07.jpg",
+        "timestamp": "00:03:07",
+        "seconds": 187.9,
+        "storyboard_index": 19
+      },
+      {
+        "file": "03-00-05-26.jpg",
+        "timestamp": "00:05:26",
+        "seconds": 326.4,
+        "storyboard_index": 33
+      },
+      {
+        "file": "04-00-05-56.jpg",
+        "timestamp": "00:05:56",
+        "seconds": 356.1,
+        "storyboard_index": 36
+      },
+      {
+        "file": "05-00-06-25.jpg",
+        "timestamp": "00:06:25",
+        "seconds": 385.8,
+        "storyboard_index": 39
+      },
+      {
+        "file": "06-00-07-05.jpg",
+        "timestamp": "00:07:05",
+        "seconds": 425.3,
+        "storyboard_index": 43
+      },
+      {
+        "file": "07-00-07-25.jpg",
+        "timestamp": "00:07:25",
+        "seconds": 445.1,
+        "storyboard_index": 45
+      },
+      {
+        "file": "08-00-09-33.jpg",
+        "timestamp": "00:09:33",
+        "seconds": 573.7,
+        "storyboard_index": 58
+      },
+      {
+        "file": "09-00-10-42.jpg",
+        "timestamp": "00:10:42",
+        "seconds": 642.9,
+        "storyboard_index": 65
+      },
+      {
+        "file": "10-00-12-02.jpg",
+        "timestamp": "00:12:02",
+        "seconds": 722.0,
+        "storyboard_index": 73
+      },
+      {
+        "file": "11-00-12-51.jpg",
+        "timestamp": "00:12:51",
+        "seconds": 771.5,
+        "storyboard_index": 78
+      },
+      {
+        "file": "12-00-15-59.jpg",
+        "timestamp": "00:15:59",
+        "seconds": 959.4,
+        "storyboard_index": 97
+      },
+      {
+        "file": "13-00-19-07.jpg",
+        "timestamp": "00:19:07",
+        "seconds": 1147.4,
+        "storyboard_index": 116
+      },
+      {
+        "file": "14-00-22-25.jpg",
+        "timestamp": "00:22:25",
+        "seconds": 1345.2,
+        "storyboard_index": 136
+      },
+      {
+        "file": "15-00-25-33.jpg",
+        "timestamp": "00:25:33",
+        "seconds": 1533.1,
+        "storyboard_index": 155
+      }
+    ]
+  },
+  {
+    "slug": "11-neurotransmitters",
+    "title": "Neurotransmitters",
+    "key_frame_count": 10,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-59.jpg",
+        "timestamp": "00:00:59",
+        "seconds": 59.2,
+        "storyboard_index": 6
+      },
+      {
+        "file": "03-00-02-08.jpg",
+        "timestamp": "00:02:08",
+        "seconds": 128.2,
+        "storyboard_index": 13
+      },
+      {
+        "file": "04-00-04-16.jpg",
+        "timestamp": "00:04:16",
+        "seconds": 256.4,
+        "storyboard_index": 26
+      },
+      {
+        "file": "05-00-06-34.jpg",
+        "timestamp": "00:06:34",
+        "seconds": 394.4,
+        "storyboard_index": 40
+      },
+      {
+        "file": "06-00-08-42.jpg",
+        "timestamp": "00:08:42",
+        "seconds": 522.6,
+        "storyboard_index": 53
+      },
+      {
+        "file": "07-00-10-50.jpg",
+        "timestamp": "00:10:50",
+        "seconds": 650.7,
+        "storyboard_index": 66
+      },
+      {
+        "file": "08-00-13-08.jpg",
+        "timestamp": "00:13:08",
+        "seconds": 788.8,
+        "storyboard_index": 80
+      },
+      {
+        "file": "09-00-15-16.jpg",
+        "timestamp": "00:15:16",
+        "seconds": 917.0,
+        "storyboard_index": 93
+      },
+      {
+        "file": "10-00-17-25.jpg",
+        "timestamp": "00:17:25",
+        "seconds": 1045.1,
+        "storyboard_index": 106
+      }
+    ]
+  },
+  {
+    "slug": "12-neurons-to-consciousness",
+    "title": "Neurons to Consciousness",
+    "key_frame_count": 15,
+    "frames": [
+      {
+        "file": "01-00-00-00.jpg",
+        "timestamp": "00:00:00",
+        "seconds": 0.0,
+        "storyboard_index": 0
+      },
+      {
+        "file": "02-00-00-19.jpg",
+        "timestamp": "00:00:19",
+        "seconds": 19.7,
+        "storyboard_index": 2
+      },
+      {
+        "file": "03-00-02-17.jpg",
+        "timestamp": "00:02:17",
+        "seconds": 138.0,
+        "storyboard_index": 14
+      },
+      {
+        "file": "04-00-04-26.jpg",
+        "timestamp": "00:04:26",
+        "seconds": 266.1,
+        "storyboard_index": 27
+      },
+      {
+        "file": "05-00-06-44.jpg",
+        "timestamp": "00:06:44",
+        "seconds": 404.0,
+        "storyboard_index": 41
+      },
+      {
+        "file": "06-00-08-52.jpg",
+        "timestamp": "00:08:52",
+        "seconds": 532.1,
+        "storyboard_index": 54
+      },
+      {
+        "file": "07-00-10-01.jpg",
+        "timestamp": "00:10:01",
+        "seconds": 601.1,
+        "storyboard_index": 61
+      },
+      {
+        "file": "08-00-11-10.jpg",
+        "timestamp": "00:11:10",
+        "seconds": 670.1,
+        "storyboard_index": 68
+      },
+      {
+        "file": "09-00-13-28.jpg",
+        "timestamp": "00:13:28",
+        "seconds": 808.1,
+        "storyboard_index": 82
+      },
+      {
+        "file": "10-00-14-17.jpg",
+        "timestamp": "00:14:17",
+        "seconds": 857.3,
+        "storyboard_index": 87
+      },
+      {
+        "file": "11-00-15-36.jpg",
+        "timestamp": "00:15:36",
+        "seconds": 936.2,
+        "storyboard_index": 95
+      },
+      {
+        "file": "12-00-16-15.jpg",
+        "timestamp": "00:16:15",
+        "seconds": 975.6,
+        "storyboard_index": 99
+      },
+      {
+        "file": "13-00-16-35.jpg",
+        "timestamp": "00:16:35",
+        "seconds": 995.3,
+        "storyboard_index": 101
+      },
+      {
+        "file": "14-00-17-34.jpg",
+        "timestamp": "00:17:34",
+        "seconds": 1054.4,
+        "storyboard_index": 107
+      },
+      {
+        "file": "15-00-17-54.jpg",
+        "timestamp": "00:17:54",
+        "seconds": 1074.1,
+        "storyboard_index": 109
+      }
+    ]
+  }
+]

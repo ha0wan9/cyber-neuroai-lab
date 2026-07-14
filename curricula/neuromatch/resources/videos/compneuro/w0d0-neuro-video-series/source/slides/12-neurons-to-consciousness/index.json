@@ -1,0 +1,96 @@
+{
+  "video": "12-neurons-to-consciousness",
+  "frame_count": 110,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-00-19.jpg",
+      "timestamp": "00:00:19",
+      "seconds": 19.7,
+      "storyboard_index": 2
+    },
+    {
+      "file": "03-00-02-17.jpg",
+      "timestamp": "00:02:17",
+      "seconds": 138.0,
+      "storyboard_index": 14
+    },
+    {
+      "file": "04-00-04-26.jpg",
+      "timestamp": "00:04:26",
+      "seconds": 266.1,
+      "storyboard_index": 27
+    },
+    {
+      "file": "05-00-06-44.jpg",
+      "timestamp": "00:06:44",
+      "seconds": 404.0,
+      "storyboard_index": 41
+    },
+    {
+      "file": "06-00-08-52.jpg",
+      "timestamp": "00:08:52",
+      "seconds": 532.1,
+      "storyboard_index": 54
+    },
+    {
+      "file": "07-00-10-01.jpg",
+      "timestamp": "00:10:01",
+      "seconds": 601.1,
+      "storyboard_index": 61
+    },
+    {
+      "file": "08-00-11-10.jpg",
+      "timestamp": "00:11:10",
+      "seconds": 670.1,
+      "storyboard_index": 68
+    },
+    {
+      "file": "09-00-13-28.jpg",
+      "timestamp": "00:13:28",
+      "seconds": 808.1,
+      "storyboard_index": 82
+    },
+    {
+      "file": "10-00-14-17.jpg",
+      "timestamp": "00:14:17",
+      "seconds": 857.3,
+      "storyboard_index": 87
+    },
+    {
+      "file": "11-00-15-36.jpg",
+      "timestamp": "00:15:36",
+      "seconds": 936.2,
+      "storyboard_index": 95
+    },
+    {
+      "file": "12-00-16-15.jpg",
+      "timestamp": "00:16:15",
+      "seconds": 975.6,
+      "storyboard_index": 99
+    },
+    {
+      "file": "13-00-16-35.jpg",
+      "timestamp": "00:16:35",
+      "seconds": 995.3,
+      "storyboard_index": 101
+    },
+    {
+      "file": "14-00-17-34.jpg",
+      "timestamp": "00:17:34",
+      "seconds": 1054.4,
+      "storyboard_index": 107
+    },
+    {
+      "file": "15-00-17-54.jpg",
+      "timestamp": "00:17:54",
+      "seconds": 1074.1,
+      "storyboard_index": 109
+    }
+  ]
+}

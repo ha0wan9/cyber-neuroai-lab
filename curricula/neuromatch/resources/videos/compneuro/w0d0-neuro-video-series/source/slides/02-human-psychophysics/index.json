@@ -1,0 +1,126 @@
+{
+  "video": "02-human-psychophysics",
+  "frame_count": 133,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-00-29.jpg",
+      "timestamp": "00:00:29",
+      "seconds": 29.6,
+      "storyboard_index": 3
+    },
+    {
+      "file": "03-00-01-38.jpg",
+      "timestamp": "00:01:38",
+      "seconds": 98.7,
+      "storyboard_index": 10
+    },
+    {
+      "file": "04-00-01-58.jpg",
+      "timestamp": "00:01:58",
+      "seconds": 118.5,
+      "storyboard_index": 12
+    },
+    {
+      "file": "05-00-02-37.jpg",
+      "timestamp": "00:02:37",
+      "seconds": 158.0,
+      "storyboard_index": 16
+    },
+    {
+      "file": "06-00-04-06.jpg",
+      "timestamp": "00:04:06",
+      "seconds": 246.8,
+      "storyboard_index": 25
+    },
+    {
+      "file": "07-00-04-46.jpg",
+      "timestamp": "00:04:46",
+      "seconds": 286.3,
+      "storyboard_index": 29
+    },
+    {
+      "file": "08-00-05-25.jpg",
+      "timestamp": "00:05:25",
+      "seconds": 325.8,
+      "storyboard_index": 33
+    },
+    {
+      "file": "09-00-06-05.jpg",
+      "timestamp": "00:06:05",
+      "seconds": 365.3,
+      "storyboard_index": 37
+    },
+    {
+      "file": "10-00-06-34.jpg",
+      "timestamp": "00:06:34",
+      "seconds": 394.9,
+      "storyboard_index": 40
+    },
+    {
+      "file": "11-00-08-13.jpg",
+      "timestamp": "00:08:13",
+      "seconds": 493.6,
+      "storyboard_index": 50
+    },
+    {
+      "file": "12-00-10-51.jpg",
+      "timestamp": "00:10:51",
+      "seconds": 651.6,
+      "storyboard_index": 66
+    },
+    {
+      "file": "13-00-13-29.jpg",
+      "timestamp": "00:13:29",
+      "seconds": 809.5,
+      "storyboard_index": 82
+    },
+    {
+      "file": "14-00-16-17.jpg",
+      "timestamp": "00:16:17",
+      "seconds": 977.3,
+      "storyboard_index": 99
+    },
+    {
+      "file": "15-00-16-37.jpg",
+      "timestamp": "00:16:37",
+      "seconds": 997.1,
+      "storyboard_index": 101
+    },
+    {
+      "file": "16-00-16-56.jpg",
+      "timestamp": "00:16:56",
+      "seconds": 1016.8,
+      "storyboard_index": 103
+    },
+    {
+      "file": "17-00-17-16.jpg",
+      "timestamp": "00:17:16",
+      "seconds": 1036.6,
+      "storyboard_index": 105
+    },
+    {
+      "file": "18-00-17-36.jpg",
+      "timestamp": "00:17:36",
+      "seconds": 1056.3,
+      "storyboard_index": 107
+    },
+    {
+      "file": "19-00-19-05.jpg",
+      "timestamp": "00:19:05",
+      "seconds": 1145.2,
+      "storyboard_index": 116
+    },
+    {
+      "file": "20-00-21-43.jpg",
+      "timestamp": "00:21:43",
+      "seconds": 1303.1,
+      "storyboard_index": 132
+    }
+  ]
+}

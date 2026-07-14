@@ -6,6 +6,8 @@ Purpose: collect unresolved questions that should survive beyond individual note
 
 | Question | Domain | Type | Next artifact | Status |
 | --- | --- | --- | --- | --- |
+| At matched architecture, initialization, and task performance, do e-prop and BPTT have distinguishable representational learning trajectories? | NeuroAI / credit assignment | research/experiment | `indexes/research-project-phase-1-credit-assignment.md` | working candidate — W1D1 |
+| Which observations could identify a biological learning rule rather than merely show that a rule can produce brain-like activity? | NeuroAI / learning | paper/concept | `notes/neuroai/biological-credit-assignment.md` | open |
 | What makes a neural code explanatory rather than merely descriptive? | computational neuroscience | concept | `notes/computational-neuroscience/neural-code.md` | open |
 | When does dimensionality reduction reveal a real computational variable? | computational neuroscience | concept/experiment | `experiments/pca-neural-population/` | open |
 | What evidence is needed to claim brain-model alignment? | NeuroAI | paper/concept | `notes/neuroai/brain-model-alignment.md` | open |

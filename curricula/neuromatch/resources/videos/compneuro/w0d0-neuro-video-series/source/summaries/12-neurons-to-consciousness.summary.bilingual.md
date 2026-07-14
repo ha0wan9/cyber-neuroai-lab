@@ -1,0 +1,246 @@
+# W0D0 Neurons to Consciousness - Bilingual Paragraph Timestamp Summaries
+
+- Source page: https://compneuro.neuromatch.io/tutorials/W0D0_NeuroVideoSeries/student/W0D0_Tutorial12.html
+- YouTube: https://youtube.com/watch?v=CevNjz23pIM
+- Subtitle basis: `../transcripts/12-neurons-to-consciousness.en.md`
+- Summary languages: zh-CN, en
+
+## 01 · 00:00:00.720 - 00:00:20.480
+
+**中文摘要：** Christoph Koch自我介绍，作为Allen Institute和Tiny Blue Dot Foundation的首席科学家，将介绍如何将大脑作为一个整体来研究。
+
+**English summary:** Christoph Koch introduces himself as Chief Scientist of the Allen Institute and Tiny Blue Dot Foundation, and will describe how to study the brain as a whole.
+
+## 02 · 00:00:22.720 - 00:00:45.120
+
+**中文摘要：** 研究大脑的首要动机来自医学和临床，旨在减轻阿尔茨海默病、中风、帕金森、抑郁和失明等精神与神经疾病的影响。
+
+**English summary:** The primary motivation for studying the brain is medical and clinical, aiming to alleviate mental and neurological diseases including Alzheimer's, stroke, Parkinson's, depression, and blindness.
+
+## 03 · 00:00:45.680 - 00:00:59.920
+
+**中文摘要：** 这些病理源于大脑，理解大脑有助于修复它；第二个动机是好奇心驱动，希望理解意识。
+
+**English summary:** These pathologies originate from the brain; understanding the brain aids repair; the second motivation is curiosity-driven, seeking to understand consciousness.
+
+## 04 · 00:01:00.480 - 00:01:21.360
+
+**中文摘要：** 好奇心驱动的目标还包括理解行为、记忆、思想、有意识与无意识心智、觉知，以及心智的发育轨迹和进化起源。
+
+**English summary:** Curiosity-driven goals also include understanding behavior, memory, thoughts, conscious and unconscious mind, awareness, as well as the developmental trajectory and evolutionary origins of the mind.
+
+## 05 · 00:01:23.200 - 00:01:57.760
+
+**中文摘要：** 第三个近期动机是用脑机接口、药物、强化训练等技术增强正常大脑能力，而不仅是修复丧失功能。
+
+**English summary:** The third recent motivation is to enhance normal brain capabilities using brain-computer interfaces, drugs, and intensive training, not merely repairing lost functions.
+
+## 06 · 00:01:57.760 - 00:02:36.240
+
+**中文摘要：** 第四个历史重要动机：人脑是智能系统的唯一实例，启发了从McCulloch-Pitts到现代深度卷积网络的神经网络发展。
+
+**English summary:** The fourth historically important motivation is that the human brain is the only instance of an intelligent system, inspiring neural network development from McCulloch-Pitts to modern deep convolutional networks.
+
+## 07 · 00:02:38.320 - 00:03:06.480
+
+**中文摘要：** 理解生物器官需要认识细胞类型，大脑中神经元由不同形状、树突和轴突形态定义。
+
+**English summary:** Understanding a biological organ requires recognizing cell types; neurons in the brain are defined by different shapes, dendrites, and axon morphologies.
+
+## 08 · 00:03:06.480 - 00:03:24.800
+
+**中文摘要：** 神经元类型多达约一千种，最新研究显示仅海马和皮层就约有400种不同细胞类型。
+
+**English summary:** Neuron types number up to about one thousand; recent research shows that the hippocampus and cortex alone contain approximately 400 distinct cell types.
+
+## 09 · 00:03:24.800 - 00:03:57.840
+
+**中文摘要：** 整个大脑总共约一千种细胞类型，它们通过形态、蛋白质表达（转录组学）以及投射目标等差异区分。
+
+**English summary:** The entire brain comprises about one thousand cell types, distinguished by morphology, protein expression (transcriptomics), and projection targets.
+
+## 10 · 00:03:58.560 - 00:04:23.520
+
+**中文摘要：** 某些细胞类型仅在发育早期短暂出现，提供支架后通过凋亡消失。
+
+**English summary:** Some cell types appear only transiently during early development, providing a scaffold and then disappearing via apoptosis.
+
+## 11 · 00:04:24.640 - 00:04:49.120
+
+**中文摘要：** 理解大脑需要认识所有细胞类型及其功能，例如视网膜有20-30种不同的 retinal ganglion cell types 并行处理光信息，各自投射到不同靶区且功能不同。
+
+**English summary:** Understanding the brain requires knowing all cell types and their functions; for example, the retina has 20–30 different retinal ganglion cell types that process light information in parallel, each projecting to different targets with distinct functions.
+
+## 12 · 00:04:49.120 - 00:05:22.320
+
+**中文摘要：** 不同细胞类型功能各异，许多神经疾病如 Alzheimer's、ALS、Parkinson's、失明早期主要影响特定细胞类型，识别并修复这些细胞类型有重要临床意义。
+
+**English summary:** Different cell types have distinct functions; many neurological diseases such as Alzheimer's, ALS, Parkinson's, and early blindness primarily affect specific cell types, and identifying and repairing these cell types has significant clinical importance.
+
+## 13 · 00:05:22.320 - 00:05:39.840
+
+**中文摘要：** 若能通过遗传策略识别并修复特定细胞类型的功能异常，将极大促进疾病治疗，如 spinal muscular atrophy。
+
+**English summary:** Identifying and repairing functional abnormalities in specific cell types via genetic strategies could greatly advance treatment of diseases such as spinal muscular atrophy.
+
+## 14 · 00:05:39.840 - 00:06:11.840
+
+**中文摘要：** 大脑皮层是薄片状结构，厚度仅2–3毫米（人），但面积可达1200–1300 cm²，在鼠中则小于1 cm²，高度皱褶。
+
+**English summary:** The cerebral cortex is a thin sheet, 2–3 mm thick in humans but with an area of 1200–1300 cm², whereas in mice it is less than 1 cm² and highly folded.
+
+## 15 · 00:06:11.840 - 00:06:43.520
+
+**中文摘要：** 视觉皮层中从 layer 1 到 layer 6 包含多种兴奋性细胞，可通过胞体位置、树突形状、投射目标和电生理行为进行分类。
+
+**English summary:** Visual cortex layers 1 through 6 contain multiple excitatory cell types classified by soma location, dendritic morphology, projection targets, and electrophysiological behavior.
+
+## 16 · 00:06:43.520 - 00:07:12.320
+
+**中文摘要：** 兴奋性细胞根据胞体位置、树突形态、投射目标（局部皮层、跨皮层、或至 thalamus、basal ganglia、spinal cord）以及 slice 下电生理反应（如适应 burst、单双 spike、stutter）进行分类。
+
+**English summary:** Excitatory cells are classified by soma location, dendritic morphology, projection targets (local cortex, cross-cortical, or to thalamus, basal ganglia, spinal cord), and electrophysiological responses in slices (e.g., adapting burst, single/double spike, stutter).
+
+## 17 · 00:07:12.320 - 00:07:45.600
+
+**中文摘要：** 抑制性中间神经元（如 somatostatin、PV）轴突通常仅局部投射，可通过电行为区分；小鼠视觉皮层约有50种由形态和电行为定义的细胞类型。
+
+**English summary:** Inhibitory interneurons (e.g., somatostatin, PV) typically have only local axonal projections and can be distinguished by electrical behavior; mouse visual cortex contains about 50 cell types defined by morphology and electrical behavior.
+
+## 18 · 00:07:45.600 - 00:08:03.920
+
+**中文摘要：** 这种由形态和电行为定义约50种细胞类型的多样性在所有皮层区域都是典型的。
+
+**English summary:** This diversity of about 50 cell types defined by morphology and electrical behavior is typical across all cortical areas.
+
+## 19 · 00:08:05.840 - 00:08:28.640
+
+**中文摘要：** 运动皮层中使用 MERFISH 技术分析约30万细胞，不同颜色代表不同兴奋性、抑制性和非神经元细胞类型，排列系统有序。
+
+**English summary:** In motor cortex, MERFISH analysis of approximately 300,000 cells uses different colors to represent distinct excitatory, inhibitory, and non-neuronal cell types, arranged in a systematic order.
+
+## 20 · 00:08:31.200 - 00:09:02.400
+
+**中文摘要：** 皮层的投射细胞从 layer 2 顶部到 layer 6 底部呈系统分层（如 intraencephalic、extraencephalic），记录细胞时需明确其所在层、投射目标和形态特征。
+
+**English summary:** Cortical projection cells are systematically layered from the top of layer 2 to the bottom of layer 6 (e.g., intraencephalic, extraencephalic); when recording cells, one must identify their layer, projection target, and morphological features.
+
+## 21 · 00:09:04.080 - 00:09:33.600
+
+**中文摘要：** 小鼠脑重不足0.5克、皮层面积<1 cm²、约7400万神经元，人脑重1300克、皮层面积2500 cm²、约860亿神经元，相差约1000倍。
+
+**English summary:** The mouse brain weighs less than 0.5 g, with a cortical area <1 cm² and about 74 million neurons; the human brain weighs 1300 g, with a cortical area of 2500 cm² and about 86 billion neurons, a ~1000-fold difference.
+
+## 22 · 00:09:33.600 - 00:10:02.480
+
+**中文摘要：** 小鼠和人脑的神经元数量相差千倍，但并非简单缩放，因共同祖先生活在6500万年前，进化分化显著。
+
+**English summary:** Neuron numbers in mouse and human brains differ by a factor of about 1000, but this is not simple scaling because the common ancestor lived 65 million years ago and evolutionary divergence has been significant.
+
+## 23 · 00:10:02.480 - 00:10:35.760
+
+**中文摘要：** 小鼠皮层厚度比人薄2-3倍，但每个皮层区域内的细胞类型数量（约80-100种）与人类大致相当。
+
+**English summary:** Mouse cortex is 2–3 times thinner than human cortex, but the number of cell types per cortical area (about 80–100) is roughly similar.
+
+## 24 · 00:10:35.760 - 00:11:06.080
+
+**中文摘要：** 大脑皮层高度互联而非前馈结构，要理解视觉、记忆、意识等模块，需在神经元层面记录大范围脑活动。
+
+**English summary:** The cerebral cortex is highly interconnected rather than feedforward; understanding modules such as vision, memory, and consciousness requires recording large-scale brain activity at the neuronal level.
+
+## 25 · 00:11:06.080 - 00:11:42.000
+
+**中文摘要：** 理解认知模块需要在神经元层面记录大量脑区，这需构建类似天文台的专门脑观测站。
+
+**English summary:** Understanding cognitive modules requires recording from many brain regions at the single-neuron level, necessitating specialized brain observatories akin to astronomical observatories.
+
+## 26 · 00:11:42.000 - 00:12:07.520
+
+**中文摘要：** 他们构建脑观测站并公开数据，国际脑实验室（IBL）也尝试在标准化条件下进行全脑记录。
+
+**English summary:** They built a brain observatory and make data public; the International Brain Laboratory (IBL) also attempts whole-brain recording under standardized conditions.
+
+## 27 · 00:12:08.160 - 00:12:49.120
+
+**中文摘要：** 用双光子钙成像记录小鼠视觉皮层约6万个神经元，在观看电影、自然场景和光栅等刺激时的荧光活动。
+
+**English summary:** Two-photon calcium imaging recorded fluorescence activity from ~60,000 neurons in mouse visual cortex during viewing of movies, natural scenes, and grating stimuli.
+
+## 28 · 00:12:49.120 - 00:13:15.840
+
+**中文摘要：** 神经像素（neural pixel）探针（细如头发）带有300多个电极，可记录全脑范围内单个神经元的spike，采样率达30 kHz。
+
+**English summary:** Neural pixel probes, as thin as a hair and containing over 300 electrodes, record spikes from individual neurons across the whole brain at a sampling rate of 30 kHz.
+
+## 29 · 00:13:16.400 - 00:13:49.280
+
+**中文摘要：** 钙成像（30 Hz）可长期追踪同一神经元，而神经像素（10-30 kHz）记录电极周围100 μm内的任意神经元spike。
+
+**English summary:** Calcium imaging (30 Hz) can track the same neuron over long periods, while neural pixel probes (10–30 kHz) record spikes from any neuron within 100 μm of the electrode.
+
+## 30 · 00:13:50.560 - 00:14:17.120
+
+**中文摘要：** 最新行为数据使用先进显微镜在8个平面同时记录，并提供动物注视位置、体态等元数据，可在brain-map下载。
+
+**English summary:** Latest behavioral data use advanced microscopes to simultaneously record across eight planes and provide metadata such as animal gaze position and posture, downloadable from brain-map.
+
+## 31 · 00:14:17.120 - 00:14:35.280
+
+**中文摘要：** 使用标准SDK可无限制访问数十万神经元数据；作者终身兴趣是理解意识。
+
+**English summary:** A standard SDK allows unlimited access to data from hundreds of thousands of neurons; the author's lifelong interest is understanding consciousness.
+
+## 32 · 00:14:35.280 - 00:14:51.840
+
+**中文摘要：** 通过对比技术（如fMRI或EEG）研究主观体验，识别与意识相关的脑活动。
+
+**English summary:** By comparing techniques such as fMRI or EEG to study subjective experience, researchers identify brain activity associated with consciousness.
+
+## 33 · 00:14:51.840 - 00:15:20.880
+
+**中文摘要：** 使用对比范式：快速闪现模糊图案，一半时间被试报告看到脸，对比找出对脸的意识体验选择性响应的脑区。
+
+**English summary:** Using a contrast paradigm where briefly flashed blurred patterns are reported as faces half the time, they identify brain regions selectively responsive to conscious face perception.
+
+## 34 · 00:15:20.880 - 00:15:50.880
+
+**中文摘要：** 通过清醒与睡眠或麻醉的对比，追踪"意识的神经关联"（NCC），即足以产生任一意识体验的最小神经机制。
+
+**English summary:** Through contrasts between wakefulness and sleep or anesthesia, they track the neural correlates of consciousness (NCC), defined as the minimal neural mechanism sufficient for any single conscious experience.
+
+## 35 · 00:15:50.880 - 00:16:06.000
+
+**中文摘要：** 必须区分意识的背景条件（如心跳、供氧）与意识的神经关联（NCC）。
+
+**English summary:** One must distinguish background conditions for consciousness, such as heartbeat and oxygen supply, from the neural correlates of consciousness (NCC).
+
+## 36 · 00:16:06.000 - 00:16:33.040
+
+**中文摘要：** 脑干机制维持皮层活动，皮层为具体意识体验（如疼痛、快乐）提供内容；小鼠也可用掩蔽范式和光遗传学进行类似实验。
+
+**English summary:** Brainstem mechanisms maintain cortical activity, while cortex provides content for specific conscious experiences such as pain and pleasure; similar experiments can be performed in mice using masking paradigms and optogenetics.
+
+## 37 · 00:16:33.040 - 00:16:43.680
+
+**中文摘要：** 使用视觉掩蔽范式和光遗传学，可操控动物是否看到特定刺激。
+
+**English summary:** Using visual masking paradigms and optogenetics, it is possible to manipulate whether an animal perceives a specific stimulus.
+
+## 38 · 00:16:45.680 - 00:17:14.000
+
+**中文摘要：** 哺乳动物脑含1亿-1000亿神经元、约1000种细胞类型，高度递归连接，与深度前馈网络截然不同。
+
+**English summary:** The mammalian brain contains 100 million to 100 billion neurons and approximately 1,000 cell types with highly recurrent connections, fundamentally differing from deep feedforward networks.
+
+## 39 · 00:17:14.000 - 00:17:35.760
+
+**中文摘要：** 数字计算机只用少数通用门，而大脑使用约1000种神经元类型，这对计算建模构成挑战。
+
+**English summary:** Digital computers use only a few universal gates, whereas the brain employs about 1,000 neuron types, posing a challenge for computational modeling.
+
+## 40 · 00:17:35.760 - 00:18:03.840
+
+**中文摘要：** 纯计算神经网络能否理解已知宇宙中最复杂的活跃物质仍无定论；致谢团队和Paul Allen。
+
+**English summary:** It remains unresolved whether purely computational neural networks can comprehend the most complex active matter in the known universe; acknowledgments to the team and Paul Allen.

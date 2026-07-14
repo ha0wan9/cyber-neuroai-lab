@@ -1,0 +1,90 @@
+{
+  "video": "05-brain-signals-spiking-activity",
+  "frame_count": 145,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-00-19.jpg",
+      "timestamp": "00:00:19",
+      "seconds": 19.8,
+      "storyboard_index": 2
+    },
+    {
+      "file": "03-00-00-59.jpg",
+      "timestamp": "00:00:59",
+      "seconds": 59.3,
+      "storyboard_index": 6
+    },
+    {
+      "file": "04-00-02-57.jpg",
+      "timestamp": "00:02:57",
+      "seconds": 177.9,
+      "storyboard_index": 18
+    },
+    {
+      "file": "05-00-05-55.jpg",
+      "timestamp": "00:05:55",
+      "seconds": 355.8,
+      "storyboard_index": 36
+    },
+    {
+      "file": "06-00-08-53.jpg",
+      "timestamp": "00:08:53",
+      "seconds": 533.7,
+      "storyboard_index": 54
+    },
+    {
+      "file": "07-00-11-51.jpg",
+      "timestamp": "00:11:51",
+      "seconds": 711.6,
+      "storyboard_index": 72
+    },
+    {
+      "file": "08-00-14-00.jpg",
+      "timestamp": "00:14:00",
+      "seconds": 840.0,
+      "storyboard_index": 85
+    },
+    {
+      "file": "09-00-14-49.jpg",
+      "timestamp": "00:14:49",
+      "seconds": 889.4,
+      "storyboard_index": 90
+    },
+    {
+      "file": "10-00-17-47.jpg",
+      "timestamp": "00:17:47",
+      "seconds": 1067.3,
+      "storyboard_index": 108
+    },
+    {
+      "file": "11-00-18-07.jpg",
+      "timestamp": "00:18:07",
+      "seconds": 1087.1,
+      "storyboard_index": 110
+    },
+    {
+      "file": "12-00-20-45.jpg",
+      "timestamp": "00:20:45",
+      "seconds": 1245.2,
+      "storyboard_index": 126
+    },
+    {
+      "file": "13-00-22-43.jpg",
+      "timestamp": "00:22:43",
+      "seconds": 1363.8,
+      "storyboard_index": 138
+    },
+    {
+      "file": "14-00-23-43.jpg",
+      "timestamp": "00:23:43",
+      "seconds": 1423.1,
+      "storyboard_index": 144
+    }
+  ]
+}

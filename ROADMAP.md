@@ -126,6 +126,17 @@ Develop coherent personal research directions from accumulated learning and expe
 - Experiment plans
 - Public-facing technical notes
 
+### Active Project Incubation
+
+- **Biologically constrained credit assignment:** Phase I direction selection
+  and research-question design are recorded in
+  [`indexes/research-project-phase-1-credit-assignment.md`](indexes/research-project-phase-1-credit-assignment.md).
+  The W1D1 working question asks whether e-prop and BPTT have distinguishable
+  representational learning trajectories after architecture, initialization,
+  and task performance are matched. The direction remains provisional until
+  the W1D4 project proposal. This incubation does not mark the earlier
+  foundation or bridge phases complete.
+
 ---
 
 ## Phase 4 — Public Research Profile

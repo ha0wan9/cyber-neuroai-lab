@@ -1,0 +1,120 @@
+{
+  "video": "08-brain-signals-fmri",
+  "frame_count": 100,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-00-19.jpg",
+      "timestamp": "00:00:19",
+      "seconds": 19.7,
+      "storyboard_index": 2
+    },
+    {
+      "file": "03-00-01-38.jpg",
+      "timestamp": "00:01:38",
+      "seconds": 98.7,
+      "storyboard_index": 10
+    },
+    {
+      "file": "04-00-01-58.jpg",
+      "timestamp": "00:01:58",
+      "seconds": 118.4,
+      "storyboard_index": 12
+    },
+    {
+      "file": "05-00-03-27.jpg",
+      "timestamp": "00:03:27",
+      "seconds": 207.3,
+      "storyboard_index": 21
+    },
+    {
+      "file": "06-00-04-06.jpg",
+      "timestamp": "00:04:06",
+      "seconds": 246.7,
+      "storyboard_index": 25
+    },
+    {
+      "file": "07-00-04-36.jpg",
+      "timestamp": "00:04:36",
+      "seconds": 276.4,
+      "storyboard_index": 28
+    },
+    {
+      "file": "08-00-05-45.jpg",
+      "timestamp": "00:05:45",
+      "seconds": 345.4,
+      "storyboard_index": 35
+    },
+    {
+      "file": "09-00-06-05.jpg",
+      "timestamp": "00:06:05",
+      "seconds": 365.2,
+      "storyboard_index": 37
+    },
+    {
+      "file": "10-00-06-44.jpg",
+      "timestamp": "00:06:44",
+      "seconds": 404.7,
+      "storyboard_index": 41
+    },
+    {
+      "file": "11-00-07-34.jpg",
+      "timestamp": "00:07:34",
+      "seconds": 454.0,
+      "storyboard_index": 46
+    },
+    {
+      "file": "12-00-08-13.jpg",
+      "timestamp": "00:08:13",
+      "seconds": 493.5,
+      "storyboard_index": 50
+    },
+    {
+      "file": "13-00-10-11.jpg",
+      "timestamp": "00:10:11",
+      "seconds": 611.9,
+      "storyboard_index": 62
+    },
+    {
+      "file": "14-00-12-00.jpg",
+      "timestamp": "00:12:00",
+      "seconds": 720.5,
+      "storyboard_index": 73
+    },
+    {
+      "file": "15-00-12-10.jpg",
+      "timestamp": "00:12:10",
+      "seconds": 730.4,
+      "storyboard_index": 74
+    },
+    {
+      "file": "16-00-14-18.jpg",
+      "timestamp": "00:14:18",
+      "seconds": 858.7,
+      "storyboard_index": 87
+    },
+    {
+      "file": "17-00-14-48.jpg",
+      "timestamp": "00:14:48",
+      "seconds": 888.3,
+      "storyboard_index": 90
+    },
+    {
+      "file": "18-00-15-57.jpg",
+      "timestamp": "00:15:57",
+      "seconds": 957.4,
+      "storyboard_index": 97
+    },
+    {
+      "file": "19-00-16-17.jpg",
+      "timestamp": "00:16:17",
+      "seconds": 977.1,
+      "storyboard_index": 99
+    }
+  ]
+}

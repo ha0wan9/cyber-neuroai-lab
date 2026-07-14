@@ -1,0 +1,108 @@
+{
+  "video": "03-behavioral-readout",
+  "frame_count": 96,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-01-19.jpg",
+      "timestamp": "00:01:19",
+      "seconds": 79.1,
+      "storyboard_index": 8
+    },
+    {
+      "file": "03-00-01-58.jpg",
+      "timestamp": "00:01:58",
+      "seconds": 118.6,
+      "storyboard_index": 12
+    },
+    {
+      "file": "04-00-02-28.jpg",
+      "timestamp": "00:02:28",
+      "seconds": 148.3,
+      "storyboard_index": 15
+    },
+    {
+      "file": "05-00-03-57.jpg",
+      "timestamp": "00:03:57",
+      "seconds": 237.2,
+      "storyboard_index": 24
+    },
+    {
+      "file": "06-00-05-55.jpg",
+      "timestamp": "00:05:55",
+      "seconds": 355.9,
+      "storyboard_index": 36
+    },
+    {
+      "file": "07-00-07-14.jpg",
+      "timestamp": "00:07:14",
+      "seconds": 435.0,
+      "storyboard_index": 44
+    },
+    {
+      "file": "08-00-07-54.jpg",
+      "timestamp": "00:07:54",
+      "seconds": 474.5,
+      "storyboard_index": 48
+    },
+    {
+      "file": "09-00-08-14.jpg",
+      "timestamp": "00:08:14",
+      "seconds": 494.3,
+      "storyboard_index": 50
+    },
+    {
+      "file": "10-00-09-43.jpg",
+      "timestamp": "00:09:43",
+      "seconds": 583.2,
+      "storyboard_index": 59
+    },
+    {
+      "file": "11-00-11-31.jpg",
+      "timestamp": "00:11:31",
+      "seconds": 692.0,
+      "storyboard_index": 70
+    },
+    {
+      "file": "12-00-11-41.jpg",
+      "timestamp": "00:11:41",
+      "seconds": 701.9,
+      "storyboard_index": 71
+    },
+    {
+      "file": "13-00-12-11.jpg",
+      "timestamp": "00:12:11",
+      "seconds": 731.5,
+      "storyboard_index": 74
+    },
+    {
+      "file": "14-00-13-40.jpg",
+      "timestamp": "00:13:40",
+      "seconds": 820.5,
+      "storyboard_index": 83
+    },
+    {
+      "file": "15-00-14-20.jpg",
+      "timestamp": "00:14:20",
+      "seconds": 860.0,
+      "storyboard_index": 87
+    },
+    {
+      "file": "16-00-15-19.jpg",
+      "timestamp": "00:15:19",
+      "seconds": 919.3,
+      "storyboard_index": 93
+    },
+    {
+      "file": "17-00-15-39.jpg",
+      "timestamp": "00:15:39",
+      "seconds": 939.1,
+      "storyboard_index": 95
+    }
+  ]
+}

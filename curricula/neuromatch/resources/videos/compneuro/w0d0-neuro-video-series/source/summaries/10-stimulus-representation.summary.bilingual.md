@@ -1,0 +1,390 @@
+# W0D0 Stimulus Representation - Bilingual Paragraph Timestamp Summaries
+
+- Source page: https://compneuro.neuromatch.io/tutorials/W0D0_NeuroVideoSeries/student/W0D0_Tutorial10.html
+- YouTube: https://youtube.com/watch?v=-BUM4JcT9WA
+- Subtitle basis: `../transcripts/10-stimulus-representation.en.md`
+- Summary languages: zh-CN, en
+
+## 01 · 00:00:00.320 - 00:00:29.760
+
+**中文摘要：** 介绍讲座主题是关于感觉信息表征，大脑整合环境信息，并重点解释感觉环境信息在大脑中的表征关键概念。
+
+**English summary:** The lecture introduces the topic of sensory information representation, how the brain integrates environmental information, and focuses on key concepts of how sensory environmental information is represented in the brain.
+
+## 02 · 00:00:29.760 - 00:00:34.240
+
+**中文摘要：** 为介绍关键概念，讲座将聚焦于视觉系统。
+
+**English summary:** To introduce key concepts, the lecture focuses on the visual system.
+
+## 03 · 00:00:38.320 - 00:01:09.280
+
+**中文摘要：** 视觉系统从眼睛的光感受器、视网膜神经节细胞传递信息到丘脑LGN，再到初级视觉皮层V1。
+
+**English summary:** The visual system transmits information from photoreceptors in the eye to retinal ganglion cells, then to the thalamic LGN, and then to primary visual cortex V1.
+
+## 04 · 00:01:10.240 - 00:01:43.760
+
+**中文摘要：** V1中已有大量计算，信息经背侧和腹侧通路传输到高级视觉皮层，讲座主要聚焦早期视觉系统（视网膜、LGN和V1）。
+
+**English summary:** Extensive computation occurs in V1, and information is transmitted via dorsal and ventral pathways to higher visual cortex, but the lecture focuses primarily on the early visual system (retina, LGN, and V1).
+
+## 05 · 00:01:45.360 - 00:01:50.400
+
+**中文摘要：** 提出如何找出这些通路中神经元如何表征感觉信息的问题。
+
+**English summary:** The question is raised of how to determine how neurons in these pathways represent sensory information.
+
+## 06 · 00:01:52.800 - 00:02:24.240
+
+**中文摘要：** 采用系统方法将大脑视为黑箱，通过系统性地提供输入（视觉刺激）并测量输出，理解系统的实现和机制。
+
+**English summary:** A systems approach treats the brain as a black box, systematically providing inputs (visual stimuli) and measuring outputs to understand the system's implementation and mechanisms.
+
+## 07 · 00:02:24.240 - 00:02:42.080
+
+**中文摘要：** 视觉刺激由电脑屏幕呈现，输出是在早期视觉系统（如V1、LGN、视网膜）记录的神经活动。
+
+**English summary:** Visual stimuli are presented on a computer screen, and outputs are neural activities recorded in the early visual system (e.g., V1, LGN, retina).
+
+## 08 · 00:02:43.520 - 00:03:07.280
+
+**中文摘要：** 通过系统测试不同朝向的条状光栅等刺激，可推断神经元表征感觉信息的机制，接下来将介绍两三个关键概念。
+
+**English summary:** By systematically testing stimuli such as oriented gratings, the mechanisms by which neurons represent sensory information can be inferred; next, two or three key concepts will be introduced.
+
+## 09 · 00:03:09.360 - 00:03:30.640
+
+**中文摘要：** 介绍感受野概念：神经元只响应感觉环境中特定局部区域，如V1神经元只响应视觉场中一个小区域。
+
+**English summary:** The concept of the receptive field is introduced: a neuron only responds to a specific local region of the sensory environment, e.g., a V1 neuron responds only to a small region of the visual field.
+
+## 10 · 00:03:30.640 - 00:03:42.160
+
+**中文摘要：** 神经元仅响应视觉场中的局部区域，称为感受野，该概念同样适用于其他感觉系统。
+
+**English summary:** A neuron responds only to a local region of the visual field, termed its receptive field, a concept that also applies to other sensory systems.
+
+## 11 · 00:03:43.680 - 00:04:13.200
+
+**中文摘要：** 视觉世界以拓扑方式映射到视觉皮层，相邻V1神经元的receptive field也相邻。
+
+**English summary:** The visual world is topographically mapped onto the visual cortex, such that neighboring V1 neurons have adjacent receptive fields.
+
+## 12 · 00:04:13.200 - 00:04:17.040
+
+**中文摘要：** 右侧蓝色神经元的receptive field位于另一位置。
+
+**English summary:** The receptive field of the blue neuron on the right is located at a different position.
+
+## 13 · 00:04:20.240 - 00:04:30.080
+
+**中文摘要：** 视觉场在视觉皮层的拓扑映射称为retinotopic map，这在体感系统中也存在。
+
+**English summary:** The topographic mapping of the visual field onto the visual cortex, termed the retinotopic map, also exists in the somatosensory system.
+
+## 14 · 00:04:32.320 - 00:05:03.760
+
+**中文摘要：** 通过Spike Triggered Averaging方法，将spike时间之前的视觉刺激（如随机棋盘格）进行平均来测量receptive field。
+
+**English summary:** Using spike-triggered averaging, visual stimuli (e.g., random checkerboards) preceding spike times are averaged to measure the receptive field.
+
+## 15 · 00:05:03.760 - 00:05:24.320
+
+**中文摘要：** 对多个spike，平均刺激可揭示该神经元平均偏好什么。
+
+**English summary:** Averaging stimuli across multiple spikes reveals the average preference of that neuron.
+
+## 16 · 00:05:25.360 - 00:05:41.760
+
+**中文摘要：** 右侧图示显示，对多个spike平均后可见该神经元对视觉场中局部区域的响应。
+
+**English summary:** The right panel shows that after averaging over multiple spikes, the neuron's response to a local region of the visual field becomes apparent.
+
+## 17 · 00:05:44.640 - 00:06:13.520
+
+**中文摘要：** 该方法在视觉神经科学中常见，动画演示：左侧为spike时的帧，右侧随包含spike数增加而更新平均。
+
+**English summary:** This method is common in visual neuroscience; an animation displays frames at spike times on the left and updates the average on the right as spike count increases.
+
+## 18 · 00:06:13.520 - 00:06:39.680
+
+**中文摘要：** 随着动画中spike数量增加，平均图像的结构逐渐显现，receptive field变得清晰。
+
+**English summary:** As spike count increases in the animation, the structure of the average image emerges and the receptive field becomes clear.
+
+## 19 · 00:06:41.360 - 00:06:52.400
+
+**中文摘要：** 这是因为该神经元在该位置有刺激时高概率发放spike，噪声被平均掉。
+
+**English summary:** This occurs because the neuron fires spikes with high probability when stimuli appear at that location, and noise is averaged out.
+
+## 20 · 00:06:53.920 - 00:07:12.000
+
+**中文摘要：** 通过三个同时记录神经元的receptive field位置（左、中、右），展示了retinotopic map。
+
+**English summary:** The retinotopic map is demonstrated by the receptive field positions (left, center, right) of three simultaneously recorded neurons.
+
+## 21 · 00:07:13.680 - 00:07:30.800
+
+**中文摘要：** retinotopic map 在视觉皮层中不均匀，视觉系统不像相机均匀扫描视野。
+
+**English summary:** The retinotopic map in the visual cortex is nonuniform; the visual system does not scan the visual field uniformly like a camera.
+
+## 22 · 00:07:32.400 - 00:08:04.320
+
+**中文摘要：** 中央凹(fovea)区域很小但占据视觉皮层高放大倍数，体现高空间分辨率。
+
+**English summary:** The fovea, though small in area, occupies a high magnification factor in the visual cortex, reflecting high spatial resolution.
+
+## 23 · 00:08:04.320 - 00:08:20.880
+
+**中文摘要：** 视觉皮层上 retinotopic map 显示中央凹(fovea)对应前 16 度视野几乎占据一半皮层面积。
+
+**English summary:** The retinotopic map on the visual cortex shows that the fovea, corresponding to the central 16 degrees of the visual field, occupies nearly half of the cortical area.
+
+## 24 · 00:08:21.680 - 00:08:38.080
+
+**中文摘要：** 皮层对感觉信息的表征根据系统需求定制，中央高空间 acuity 分配大量皮层网络。
+
+**English summary:** Cortical representation of sensory information is tailored to system demands, with high spatial acuity in the center allocated a large cortical network.
+
+## 25 · 00:08:39.840 - 00:08:43.440
+
+**中文摘要：** 最小视野部分被大量皮层网络专门用于分析。
+
+**English summary:** The smallest visual field regions are analyzed by extensive cortical networks.
+
+## 26 · 00:08:46.240 - 00:09:14.160
+
+**中文摘要：** 感受野具有 center-surround 结构，中心驱动 spike，周围起调制作用。
+
+**English summary:** Receptive fields have a center-surround structure where the center drives spikes and the surround modulates responses.
+
+## 27 · 00:09:14.160 - 00:09:44.080
+
+**中文摘要：** 视网膜和 LGN 中的 ON-Center/OFF-Surround 细胞处理光增量，OFF-Center/ON-Surround 细胞处理光减量。
+
+**English summary:** In retina and LGN, ON-center/OFF-surround cells process light increments, while OFF-center/ON-surround cells process light decrements.
+
+## 28 · 00:09:46.960 - 00:10:16.720
+
+**中文摘要：** ON-Center 细胞中心兴奋（excitatory），周围抑制（suppressive），对中心白点产生 spike。
+
+**English summary:** ON-center cells have an excitatory center and suppressive surround, generating spikes to a central white spot.
+
+## 29 · 00:10:16.720 - 00:10:42.400
+
+**中文摘要：** 小光点引起高 firing rate，扩展到抑制性周围时 firing 降低，光环则强烈抑制 ON-Center 细胞。
+
+**English summary:** A small light spot elicits a high firing rate, which decreases when it expands into the suppressive surround, and an annulus strongly suppresses ON-center cells.
+
+## 30 · 00:10:44.640 - 00:11:15.120
+
+**中文摘要：** OFF-Center 细胞相反，暗点兴奋、亮点抑制，ON 与 OFF 细胞均为 spot detectors，in vivo 测量用红 ON 蓝 OFF 标示。
+
+**English summary:** OFF-center cells are opposite, excited by dark spots and inhibited by bright spots; both ON and OFF cells are spot detectors, labeled red ON and blue OFF in vivo recordings.
+
+## 31 · 00:11:15.120 - 00:11:22.080
+
+**中文摘要：** 具有暗晕的小中心感受野以及相反的中心OFF型感受野是LGN神经元的经典例子。
+
+**English summary:** A small center receptive field with a dark surround and the opposite center-OFF type are classic examples of LGN neurons.
+
+## 32 · 00:11:24.080 - 00:11:41.840
+
+**中文摘要：** LGN神经元感受野常被建模为差分高斯函数，中心为高斯兴奋区，周围为宽高斯抑制区。
+
+**English summary:** LGN neuron receptive fields are often modeled as a difference of Gaussians, with a Gaussian excitatory center and a wider Gaussian suppressive surround.
+
+## 33 · 00:11:42.720 - 00:11:47.600
+
+**中文摘要：** 这表明感受野是动态的并存在交互作用。
+
+**English summary:** This indicates that receptive fields are dynamic and undergo interactions.
+
+## 34 · 00:11:49.200 - 00:12:01.680
+
+**中文摘要：** LGN和视网膜具有类似点检测器的感受野，而更高级视觉皮层的神经元则具有更复杂的响应特征。
+
+**English summary:** LGN and retina have spot-detector-like receptive fields, while neurons in higher visual cortex have more complex response properties.
+
+## 35 · 00:12:03.280 - 00:12:31.600
+
+**中文摘要：** 视觉环境中充满定向边缘，例如Neuromatch Academy标志包含垂直、水平及倾斜边缘。
+
+**English summary:** The visual environment is full of oriented edges, for example the Neuromatch Academy logo contains vertical, horizontal, and oblique edges.
+
+## 36 · 00:12:31.600 - 00:12:55.200
+
+**中文摘要：** 视觉皮层神经元对边缘方向具有选择性，这一特性称为方向选择性，由Hubel和Wiesel首次发现。
+
+**English summary:** Visual cortex neurons are selective for edge orientation, a property called orientation selectivity first discovered by Hubel and Wiesel.
+
+## 37 · 00:12:56.560 - 00:13:25.920
+
+**中文摘要：** Hubel和Wiesel通过记录视觉皮层神经活动发现方向选择性，并因此获得诺贝尔奖。
+
+**English summary:** Hubel and Wiesel recorded neural activity in the visual cortex to discover orientation selectivity, for which they received the Nobel Prize.
+
+## 38 · 00:13:26.720 - 00:13:45.760
+
+**中文摘要：** 该神经元偏好垂直条，对垂直刺激产生强烈响应，这种响应常用调谐曲线描述。
+
+**English summary:** This neuron prefers vertical bars and responds strongly to vertical stimuli, with such responses typically described by a tuning curve.
+
+## 39 · 00:13:46.880 - 00:14:17.760
+
+**中文摘要：** 调谐曲线是放电率作为刺激特征（如朝向）的函数，通常呈钟形，峰值对应偏好朝向。
+
+**English summary:** A tuning curve plots firing rate as a function of a stimulus feature, such as orientation, typically bell-shaped with the peak at the preferred orientation.
+
+## 40 · 00:14:18.800 - 00:14:37.280
+
+**中文摘要：** 调谐曲线宽度表征神经元选择性：窄曲线表示高选择性，宽曲线表示低选择性。
+
+**English summary:** Tuning curve width characterizes neuronal selectivity: a narrow curve indicates high selectivity, while a wide curve indicates low selectivity.
+
+## 41 · 00:14:38.880 - 00:15:08.000
+
+**中文摘要：** Tuning curve是核心概念，在多种感觉系统和刺激参数中均适用，例如视觉神经元对运动方向（如左下方向）具有选择性，并以极坐标图展示最大发放率与角度的关系。
+
+**English summary:** The tuning curve is a core concept applicable across sensory systems and stimulus parameters; for example, visual neurons selective for motion direction, such as lower left, exhibit maximal firing rate relative to angle in a polar plot.
+
+## 42 · 00:15:08.000 - 00:15:45.680
+
+**中文摘要：** 运动方向选择性神经元对特定方向（如左下）有强烈响应，通过极坐标图直观表示其发放率随方向角度变化的关系。
+
+**English summary:** Motion direction-selective neurons respond strongly to a specific direction, such as lower left, with a polar plot illustrating firing rate as a function of directional angle.
+
+## 43 · 00:15:45.680 - 00:16:22.080
+
+**中文摘要：** 视觉神经元对空间频率（如高或低）具有调谐特性，通过移动光栅测试得到空间频率调谐曲线，展示其偏好频率。
+
+**English summary:** Visual neurons are tuned to spatial frequency, either high or low, tested with drifting gratings to yield a spatial frequency tuning curve that indicates their preferred frequency.
+
+## 44 · 00:16:22.080 - 00:16:31.840
+
+**中文摘要：** Tuning curves是讨论大脑如何表征感觉信息的重要概念，广泛存在于不同感觉系统中。
+
+**English summary:** Tuning curves are an important concept for understanding how the brain represents sensory information and are widely observed across different sensory systems.
+
+## 45 · 00:16:33.040 - 00:16:57.600
+
+**中文摘要：** 具有特定响应选择性的神经元在视觉皮层中并非随机分布，而是形成功能性地图（orientation preference map），反映神经元的偏好朝向。
+
+**English summary:** Neurons with specific response selectivity are not randomly distributed in visual cortex; instead, they form functional maps, such as the orientation preference map, reflecting their preferred orientations.
+
+## 46 · 00:16:59.200 - 00:17:17.840
+
+**中文摘要：** 视觉皮层的顶视图用颜色编码神经元的偏好朝向，例如黄色区域对应垂直条，深蓝区域对应水平条，形成朝向偏好图。
+
+**English summary:** A top view of visual cortex uses color coding for neuronal preferred orientation, such as yellow for vertical bars and dark blue for horizontal bars, forming an orientation preference map.
+
+## 47 · 00:17:19.040 - 00:17:55.120
+
+**中文摘要：** 朝向偏好图呈现系统性变化，其中pinwheels（朝向快速变化的位点）是特征，代表感觉皮层的功能组织。
+
+**English summary:** The orientation preference map exhibits systematic variations, featuring pinwheels—sites of rapid orientation change—that represent the functional organization of sensory cortex.
+
+## 48 · 00:17:56.320 - 00:18:30.720
+
+**中文摘要：** 功能性地图（如朝向偏好图与retinotopic map）彼此关联，在单细胞层面通过光点测量感受野（ON/OFF响应）揭示关系。
+
+**English summary:** Functional maps, such as the orientation preference map and retinotopic map, are interrelated, with their relationship revealed at the single-cell level by measuring receptive fields (ON/OFF responses) using light spots.
+
+## 49 · 00:18:30.720 - 00:18:59.360
+
+**中文摘要：** 通过叠加ON和OFF响应可见简单细胞的感受野类似边缘检测器，其边缘朝向和空间频率与移动条测得的tuning曲线匹配。
+
+**English summary:** Simple cells' receptive fields, revealed by summing ON and OFF responses, resemble edge detectors; their edge orientation and spatial frequency match tuning curves measured with moving bars.
+
+## 50 · 00:18:59.360 - 00:19:30.880
+
+**中文摘要：** 视觉皮层的简单细胞是边缘检测器，其感受野由ON-OFF和亮度-暗度响应建立，常被建模为Gabor filters，这是视觉系统的重要概念。
+
+**English summary:** Simple cells in visual cortex are edge detectors, with receptive fields constructed from ON-OFF and brightness-darkness responses, often modeled as Gabor filters, a key concept in vision.
+
+## 51 · 00:19:30.880 - 00:19:58.240
+
+**中文摘要：** Gabor滤波器是局部化的正弦波乘以高斯核，具有朝向和ON-OFF感受野，作为定向边缘检测器在计算机视觉中重要。
+
+**English summary:** A Gabor filter is a localized sine wave multiplied by a Gaussian kernel, with orientation and ON-OFF receptive fields, important as oriented edge detectors in computer vision.
+
+## 52 · 00:19:59.920 - 00:20:30.240
+
+**中文摘要：** 通过多电极阵列记录视觉皮层，发现ON/OFF视网膜拓扑映射到皮层表面是朝向图的起源。
+
+**English summary:** Multi-electrode array recordings in visual cortex revealed that the ON/OFF retinal topographic mapping onto the cortical surface is the origin of orientation maps.
+
+## 53 · 00:20:33.120 - 00:20:59.760
+
+**中文摘要：** 同时记录的多个位点的ON/OFF感受野和朝向调谐预测与实际记录匹配，说明视网膜拓扑映射是功能组织的基础。
+
+**English summary:** Simultaneously recorded ON/OFF receptive fields and orientation tuning predictions at multiple sites matched actual recordings, indicating that retinal topographic mapping underlies functional organization.
+
+## 54 · 00:20:59.760 - 00:21:35.360
+
+**中文摘要：** 感觉信息在皮层水平的表征高度结构化、有组织，不同层次表征之间存在紧密联系。
+
+**English summary:** Sensory representation at the cortical level is highly structured and organized, with tight links between representations at different levels.
+
+## 55 · 00:21:37.520 - 00:22:04.880
+
+**中文摘要：** 复杂细胞对光和暗响应与空间相位无关，也有调谐，存在其生成模型。
+
+**English summary:** Complex cells respond to light and dark independent of spatial phase and are also tuned; a generative model exists for them.
+
+## 56 · 00:22:04.880 - 00:22:32.480
+
+**中文摘要：** 视觉系统从初级到高级表征逐渐复杂，低级处理分解朝向、颜色、对比、视差、运动方向等。
+
+**English summary:** The visual system progresses from simple to complex representations; low-level processing decomposes orientation, color, contrast, disparity, motion direction, etc.
+
+## 57 · 00:22:33.040 - 00:22:54.720
+
+**中文摘要：** 视觉层次中依次进行形状辨别、纹理辨别，最终高级处理实现物体识别，如识别图像中的猫。
+
+**English summary:** In the visual hierarchy, shape discrimination and texture discrimination occur sequentially, culminating in high-level object recognition, e.g., recognizing a cat in an image.
+
+## 58 · 00:22:56.640 - 00:23:25.120
+
+**中文摘要：** 视觉系统将场景分解为各级表征并构建更复杂表征，这些表征通常组织成功能图，如朝向图和视网膜拓扑图。
+
+**English summary:** The visual system decomposes a scene into representations at multiple levels and constructs more complex ones; these representations are often organized into functional maps, such as orientation maps and retinotopic maps.
+
+## 59 · 00:23:25.760 - 00:23:41.600
+
+**中文摘要：** 视觉皮层除了朝向偏好图，还有眼优势图，分别对应左右眼的输入。
+
+**English summary:** In addition to orientation preference maps, visual cortex has ocular dominance maps corresponding to left and right eye inputs.
+
+## 60 · 00:23:41.600 - 00:24:09.920
+
+**中文摘要：** 视觉皮层还有颜色斑点（color blobs），其中包含对颜色敏感的神经元，整体表征高度结构化。
+
+**English summary:** Visual cortex also contains color blobs with color-sensitive neurons; overall representation is highly structured.
+
+## 61 · 00:24:09.920 - 00:24:28.720
+
+**中文摘要：** 介绍了感受野（receptive fields）和调谐曲线（tuning curves）等关键概念，并以ON-Center OFF-Surround感受野为例说明了其动态性和交互性。
+
+**English summary:** Introduces key concepts such as receptive fields and tuning curves, and uses the ON-Center OFF-Surround receptive field as an example to illustrate their dynamics and interactivity.
+
+## 62 · 00:24:31.920 - 00:25:07.920
+
+**中文摘要：** 讲解了调谐曲线（tuning curves）如何描述神经活动对刺激特征（如朝向偏好orientation preference、空间频率spatial frequency）的依赖，并展示了钟形响应曲线。
+
+**English summary:** Explains how tuning curves describe the dependence of neural activity on stimulus features like orientation preference and spatial frequency, and presents bell-shaped response curves.
+
+## 63 · 00:25:07.920 - 00:25:34.080
+
+**中文摘要：** 强调调谐曲线（tuning curves）对理解大脑感觉信息表征的重要性，并以视网膜拓扑（retinotopic）与朝向偏好调谐的关联为例，说明不同表征层次之间的连接。
+
+**English summary:** Emphasizes the importance of tuning curves for understanding sensory information representation in the brain, and uses the link between retinotopic mapping and orientation preference tuning as an example of connections across representation levels.
+
+## 64 · 00:25:34.080 - 00:25:41.840
+
+**中文摘要：** 表达感谢并邀请听众如有问题进一步联系。
+
+**English summary:** Expresses gratitude and invites further contact if the audience has questions.

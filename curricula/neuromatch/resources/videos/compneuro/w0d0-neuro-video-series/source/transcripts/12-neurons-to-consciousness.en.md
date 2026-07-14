@@ -1,0 +1,165 @@
+# W0D0 Neurons to Consciousness - en Subtitle Transcript
+
+- Source page: https://compneuro.neuromatch.io/tutorials/W0D0_NeuroVideoSeries/student/W0D0_Tutorial12.html
+- YouTube: https://youtube.com/watch?v=CevNjz23pIM
+- Caption track: en (manual)
+
+## 01 · 00:00:00.720 - 00:00:20.480
+
+Hello. I'm Dr. Christoph Koch. I'm the chief scientist of the Allen Institute Mind Scope program in Seattle, as well as the chief scientist of The Tiny Blue Dot Foundation in Santa Monica and I'm here to give you an introduction into studying the brain as a whole.
+
+## 02 · 00:00:22.720 - 00:00:45.120
+
+Why study the brain? Well there are different motivations: the first and foremost, the one that drives the vast majority of the funding, comes from medicine and the clinic. To ameliorate the impact of psychiatric and neurological conditions, whether that's alzheimer's disease, stroke, Parkinson's, depression, or blindness.
+
+## 03 · 00:00:45.680 - 00:00:59.920
+
+All of those pathologies, all of those conditions originate in the brain and if we can understand the brain we should be able to fix it. The second motivation is a curiosity-driven one.
+
+## 04 · 00:01:00.480 - 00:01:21.360
+
+We want to understand consciousness, in particular in my case, but also behavior, memory, thoughts - everything that goes that makes part of our mind, the conscious and the unconscious mind, as well as awareness. We want to understand its developmental trajectory as well as the evolutionary origin of our minds and how we relate to the minds of other creatures.
+
+## 05 · 00:01:23.200 - 00:01:57.760
+
+Thirdly and this is a more recent reason: we'd like to extend the capabilities of the normal brain using artificial means. So not just to reconstitute lost function in people who are paralyzed or who have memory loss but also to enhance the capabilities of the normal brain using various technologies such as brain machine interfaces, drugs, training, enhanced training, etc. And lastly a motivation that was historically very important: because the brain, particularly the human brain, is the only instance of an actual intelligent
+
+## 06 · 00:01:57.760 - 00:02:36.240
+
+system and so not only provides the existing proof that something like intelligence can exist but a particular form of intelligence and of course we know the early neural networks going all the way back to McCulloch and Pitts in 1943 - sort of a direct ancestors to the modern convolutional network, deep convolutional learning, etc. They directly derive their ancestry from these early computational neuroscience considerations. Whether that remains true in the future given the very rapid evolution of gtp2, gtp3, now the lambda model by Google, remains to be seen.
+
+## 07 · 00:02:38.320 - 00:03:06.480
+
+So to understand anything in biology, every organ including the brain consists of one or many different types of cells. So we know there are kidney cells, there are heart cells, there are liver cells, there are brain cells but of course as we know from Ramon y Cajal more than a hundred years ago, there are different types of neurons defined by the different shapes, the different inputs, and dendritic tree ... the different shapes and morphologies of the
+
+## 08 · 00:03:06.480 - 00:03:24.800
+
+output axonal tree. It turns out they're not just a handful of different cell types but roughly a thousand. So the latest survey of our paper we just published in Cell, turns out in just in hippocampus and cortex there are roughly 400 different cell types.
+
+## 09 · 00:03:24.800 - 00:03:57.840
+
+So once everything will be said and done in the brain as a whole it's going to be on the order of a thousand different types of cell types. So they differ by shape. So said by the morphology, by the dendritic and axonal architecture, very important of course by the diversity of the proteins that are expressed. So the most popular techniques to look at this is transcriptomics. By the projection targets: there may be two neurons that are directly adjacent in the brain but they're projected to very different areas.
+
+## 10 · 00:03:58.560 - 00:04:23.520
+
+The developmental trajectory: certain cell types may only be expressed very early on because unlike a computer that sort of, you know, computer chip that comes to us as it is you know on the silicon fabricated as it is, brains develop from a single egg. So certain cell types appear early on but only appear transiently. They build, they provide the scaffolding and then they undergo apoptosis.
+
+## 11 · 00:04:24.640 - 00:04:49.120
+
+And understanding brains requires understanding of all these cell types and how they relate to function. So we know this very particularly in the retina where you would think computation - that the job of the retina is trivial. You just convert the incoming streams of photons into an action potential on the optic nerve but it turns out the way we do it or biology does it, we have like 20 or 30 different cameras in parallel in the form of different retinal ganglion
+
+## 12 · 00:04:49.120 - 00:05:22.320
+
+cell types. They project to different targets. They enhance .. they've very different function, they've very different properties. So nothing in the retina makes sense without referring to which type of cell you're recording from and that will very likely be true for all of the brain. And furthermore again very important from a clinical point of view, many diseases like for example Alzheimer's, Lou Gehrig's disease, ALS, Parkinson's, many forms of blindness are pathologies of specific cell types. It's not just a generic
+
+## 13 · 00:05:22.320 - 00:05:39.840
+
+brain process but it's specific types of cells that are primarily affected. Certainly early on in the progression of the disease SMA, spinal muscular atrophy. And so if we can identify what goes wrong there and fix it using for example genetic strategy that would be a great boon.
+
+## 14 · 00:05:39.840 - 00:06:11.840
+
+So all of these regions we need to understand the types of cells. Now the outermost layer of the brain is the cortex. It's really a sheet. It's a 2+ε dimensional technology, if you want, vastly more extended than thick. So here I showed in this drawing from my book. This in a mouse is roughly, you know, it's under a millimeter. In a human it's between two and three millimeter and this cortical sheet can vary greatly. So in a mouse it's under a square centimeter. In
+
+## 15 · 00:06:11.840 - 00:06:43.520
+
+In us it's like a pizza, 1200–1300 square centimeter. In fact it's roughly the thickness of a pizza to a pizza with topping: two to three millimeter, and you've got two of these sheets and of course they're highly convoluted and packaged into your skull. So if we look at just among the cells, for instance here in the visual brain, we see a dizzing variety of cells. So here you can see this is cortex. Once again, this is the top of cortex, this is the bottom. So this is so-called layer
+
+## 16 · 00:06:43.520 - 00:07:12.320
+
+1. This is layer 6. Here are all the different types of excitatory cells. So these are the cell whose output axons project either locally within cortex or in other cortical areas more globally or they project straight out - they may go down to the basal ganglia or down to the thalamus or maybe if they're in motor cortex even down into the spinal cord. And so here we can classify different types of cells by where the cell body is located, by the shape of the dendritic tree,
+
+## 17 · 00:07:12.320 - 00:07:45.600
+
+where they project to, and their electrical behavior in response to stereotyped injection of current under slice conditions. As you can see these action potentials ... certain cells fire brrrrr [spikes] ... this adapting burst. Some cells fire just one or two spikes and then shut off. Some cells stutter. Here are some of the inhibitory cell types characterized by the names: these somatostatin, PV, etc., you don't need to know for the purpose. But here in the different interneurons, typically the axon does not project outside. They only project locally and you can
+
+## 18 · 00:07:45.600 - 00:08:03.920
+
+also distinguish them by the electrical behavior. So here in the case of mouse visual cortex, which is just a couple of square millimeter of course, there are roughly 50 different types defined by the morphology and the electrical behavior. This is typical for all of cortex.
+
+## 19 · 00:08:05.840 - 00:08:28.640
+
+Here for example you see it, this is a paper coming out in Nature. You see it in motor cortex. So here all the different types of cells that express, using a technique called MERFISH ... roughly 300,000 cells. Each color here is a different cell type: inhibitory, excitatory, non-neuronal cell types ... You can see it's quite systematic. In fact, here we only show
+
+## 20 · 00:08:31.200 - 00:09:02.400
+
+the projection cells from the top of layer 2 all the way down to the bottom of layer 6 here. It's very systematically layered. So some of these so-called intraencephalic... some are down here, extraencephalic ... very lawful! And as I said it's going to be critical to know when you're recording from a cell, does it sit here in the top of layer 3 and projecting to some target or does it sit in the bottom of layer 2 and project somewhere else and has a different morphology?
+
+## 21 · 00:09:04.080 - 00:09:33.600
+
+So, many of us are interested in both the human and the mouse brain. Say some good numbers to remember: there are roughly in fact a thousand different between this guy here ... this is at scale and the human brain is seen here from the bottom. The weight is under a half a gram to 1300 grams. Cortical surface area, as I said, is under a square centimeter compared to 2500 square centimeter for both cortical hemispheres ... roughly you know 70 million–74 million for the
+
+## 22 · 00:09:33.600 - 00:10:02.480
+
+entire mouse brain, 86 billion for human brain. So again a factor of 1000 ... if we just look at cortex again it's a factor of 1000. But of course it's not just true that if you take this brain and multiply it by a thousand you get to this brain because they have evolved the last common ancestor between mice and humans lived, you know, 65 million years ago after the asteroid impacted and killed off all the remaining dinosaurs. So there has been quite a bit of evolution although
+
+## 23 · 00:10:02.480 - 00:10:35.760
+
+there are these evolutionary relationships between humans and mice cell types, you can see in here, for instance ... here drawn equivalent at the same scale both mouse inhibitory cells and excitatory projection cells. And inhibitory cells ... they're not the same although they are rather similar in particular once you normalize for the different thickness ... mice of course being 2–3 times thinner the cortical surface than human. And so overall the number of cell types we find in the
+
+## 24 · 00:10:35.760 - 00:11:06.080
+
+human is roughly comparable to the number of cell types we find in the mouse per cortical areas, on the order of 80 to 100. Now, so that tells us a lot about the individual neurons. Then of course we need to understand how they are wired together and again unlike for instance modern machine learning networks, like deep convolutional networks, that are essentially all feed forward to first order, there's nothing feed forward in cortex or an associated structure.
+
+## 25 · 00:11:06.080 - 00:11:42.000
+
+It's all heavily interconnected and so in order to understand that even if we have the complete connectivity in terms of the anatomy on the electron-microscopic description what we need to do to understand the behavior of any of these cognitive modules like vision, short term memory, intelligence, or consciousness, we need to be able to record a large part of the brain at the relevant level. The relevant level being neurons, right? Neurons are the atoms of perception, of consciousness, of memories, of thought... We need to understand brains at the level
+
+## 26 · 00:11:42.000 - 00:12:07.520
+
+of neurons and vast assembly of them. So that really requires the construction of specialized observatory which is what we do here similar to astronomical observatory. These are brain observatories. So this is one thing we specialize in. We make all this data available. More recently there has been an attempt to do that quite successfully at cost. So we are of course all in one building and in one organization. There's an alternative attempt to do this,
+
+## 27 · 00:12:08.160 - 00:12:49.120
+
+it's known as the IBL - the international brain lab, that also tries to sort of do brain wide recording under fairly standardized conditions. So we have done these surveys where we record day-in day-out professional staff, just like in an astronomical observatory. We record 2-photon calcium imaging activity where we can capture the flickering activity ... the flickering fluorescent changes in genetically encoded populations of sort of typically horizontal neurons ... typically in a horizontal plane, typically in cortex. In this case 60,000 neurons roughly in visual cortex
+
+## 28 · 00:12:49.120 - 00:13:15.840
+
+in mice that were stimulated by movies, natural scenes, and gratings and all that stuff. We've also done the same where we record new neural pixels. The neural pixel is an advanced recording technology where on a tiny silicon shaft, you know a third of the diameter of the human hair, we can record from more than 300 electrodes. And so we can listen into the individual chatter of neurons throughout the entire brain because these neural probes are 10 millimeter long.
+
+## 29 · 00:13:16.400 - 00:13:49.280
+
+So the difference between here and here is ... this is from a genetically identified population ... this is from any neuron within the listening radius of the electrode on the order of 100 micron. This works at 30 hertz. This works at 10,000 or 30 000 Hz. Here you can come back session after session to the same neuron. That's very difficult to do using this technology. So like anywhere, in any measurement field you have different technologies that open different windows in different spatial, temporal, spectral, or levels of granularity.
+
+## 30 · 00:13:50.560 - 00:14:17.120
+
+So we've also just recently released data ... behavioral data where we record using an advanced scope or we can summon changes in the recording in eight different planes ... in the animal ... as the animal is doing a particular task ... and all the data together with all the metadata ... so all the behavior, the video where was the animal looking, what was the position of the body ... so you can request in principle all of that is made available here at brain-map. You can go download
+
+## 31 · 00:14:17.120 - 00:14:35.280
+
+using a standard sdk ... you don't need to log in. Anyone can do it. There's no restrictions. So you know we have now a couple of hundred thousand neurons in these different surveys. Lastly I'm also interested, in fact my lifelong interest has been to understand consciousness.
+
+## 32 · 00:14:35.280 - 00:14:51.840
+
+So experience, subjective experience. And I've written about it in this book here and the way you can approach that as a neuroscientist is you do this contrastive technique. You show, for example, here in the humans lying inside the scanner but you can also do the EEG or other techniques.
+
+## 33 · 00:14:51.840 - 00:15:20.880
+
+You very quickly show ... for 20 milliseconds you flash this sort of pattern. Half the time you can arrange it ... so half the time people see it as a face, half the time ... the same percept because it's ... you'll just see some cloudy thing, you don't know what it is ... so here you press 'face' ... here you press "non-face". Then you can contrast. So here you pick up all the brain areas that selectively respond to the conscious experience of faces versus
+
+## 34 · 00:15:20.880 - 00:15:50.880
+
+seeing something else always for the same input. Of course you got to be very careful that this doesn't depend on the task, on the button press, etc etc ... Another technique is you can, for example, compare quite wakefulness when you're lying inside the magnet with eyes closed compared when you're asleep or you can do quite wakefulness compared to anesthesia. These are different ways how people have addressed trying to track what Francis Crick and I call the "neuronal correlates of consciousness", the minimal neuronal mechanism jointly sufficient for any one conscious
+
+## 35 · 00:15:50.880 - 00:16:06.000
+
+experience. And those you have to distinguish sharply from the background condition. There are many things that have to go on in your brain or in your body for you to be conscious. Your heart has to beat. You have to have sufficient oxygen supply to the brain otherwise you won't be conscious.
+
+## 36 · 00:16:06.000 - 00:16:33.040
+
+Lots of neural mechanisms in the brainstem have to work properly to suffuse the cortex with sufficient activity because it is cortex that appears to give rise ... that provides content for any one specific experience. If you feel pain, if you feel pleasure, if you feel in love, if you hate somebody ... it is because neural mechanisms in the cortex are active. And you can do similar experiments in mice. So we are trying here now this visual
+
+## 37 · 00:16:33.040 - 00:16:43.680
+
+masking paradigm and then with optogenetics where you can turn specific areas ... or you can turn the effect of the mask ... of seeing or not seeing this ... on or off. It's really pretty cool.
+
+## 38 · 00:16:45.680 - 00:17:14.000
+
+And so let me come to my last slide: computational challenges faced by us neuroscientists are considerable. So mammalian brains have on the order between 100 million–100 billion neurons. These are organized within a 1000 different cell types. So think about a lego set, you know the children's playset. 100 billion lego stones of a 1000 different types but then they're also interconnected massively and recurrently ... you know between 10 to the 3 and probably 10 to
+
+## 39 · 00:17:14.000 - 00:17:35.760
+
+the 4 if not 10 to the 5 other neurons, makes it radically different from any feed forward deep convolutional network. And of course in digital computers we know there's a few gates like [N]AND and [NOR], it's two universal [gates]... why brains use a thousand types remains unclear. And so fact this is a challenge for computational people.
+
+## 40 · 00:17:35.760 - 00:18:03.840
+
+The extent to which a purely computational approach with formal neural networks can help us understand this most complex piece of active evolved matter in the known universe remains open. And with that I thank you for your attention. And I thank our teams and Paul Allen who made all of this funding ... and who made all of this possible because we are really a team ... a large-scale team endeavor at the Allen Institute. Thank you very much.

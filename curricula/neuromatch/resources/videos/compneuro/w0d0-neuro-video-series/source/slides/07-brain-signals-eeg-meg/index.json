@@ -1,0 +1,96 @@
+{
+  "video": "07-brain-signals-eeg-meg",
+  "frame_count": 119,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-00-39.jpg",
+      "timestamp": "00:00:39",
+      "seconds": 39.6,
+      "storyboard_index": 4
+    },
+    {
+      "file": "03-00-02-18.jpg",
+      "timestamp": "00:02:18",
+      "seconds": 138.5,
+      "storyboard_index": 14
+    },
+    {
+      "file": "04-00-02-28.jpg",
+      "timestamp": "00:02:28",
+      "seconds": 148.4,
+      "storyboard_index": 15
+    },
+    {
+      "file": "05-00-03-17.jpg",
+      "timestamp": "00:03:17",
+      "seconds": 197.8,
+      "storyboard_index": 20
+    },
+    {
+      "file": "06-00-04-56.jpg",
+      "timestamp": "00:04:56",
+      "seconds": 296.7,
+      "storyboard_index": 30
+    },
+    {
+      "file": "07-00-07-15.jpg",
+      "timestamp": "00:07:15",
+      "seconds": 435.2,
+      "storyboard_index": 44
+    },
+    {
+      "file": "08-00-09-33.jpg",
+      "timestamp": "00:09:33",
+      "seconds": 573.7,
+      "storyboard_index": 58
+    },
+    {
+      "file": "09-00-09-43.jpg",
+      "timestamp": "00:09:43",
+      "seconds": 583.6,
+      "storyboard_index": 59
+    },
+    {
+      "file": "10-00-10-52.jpg",
+      "timestamp": "00:10:52",
+      "seconds": 652.8,
+      "storyboard_index": 66
+    },
+    {
+      "file": "11-00-12-11.jpg",
+      "timestamp": "00:12:11",
+      "seconds": 731.9,
+      "storyboard_index": 74
+    },
+    {
+      "file": "12-00-14-30.jpg",
+      "timestamp": "00:14:30",
+      "seconds": 870.4,
+      "storyboard_index": 88
+    },
+    {
+      "file": "13-00-16-58.jpg",
+      "timestamp": "00:16:58",
+      "seconds": 1018.7,
+      "storyboard_index": 103
+    },
+    {
+      "file": "14-00-17-48.jpg",
+      "timestamp": "00:17:48",
+      "seconds": 1068.2,
+      "storyboard_index": 108
+    },
+    {
+      "file": "15-00-19-27.jpg",
+      "timestamp": "00:19:27",
+      "seconds": 1167.1,
+      "storyboard_index": 118
+    }
+  ]
+}

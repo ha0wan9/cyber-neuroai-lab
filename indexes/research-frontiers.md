@@ -8,6 +8,7 @@ Primary source: `.research/surveys/neuroai-foundations-frontiers/survey.md`, esp
 
 | Frontier | Core question | Why it matters | Current status | First learning move |
 | --- | --- | --- | --- | --- |
+| Biologically constrained credit assignment | Can local or approximate learning rules be distinguished by the representations and dynamics they produce, rather than task accuracy alone? | Connects learning mechanisms to brain–model comparison and tests what neural similarity can reveal about learning. | working candidate — W1D1 | Use [`research-project-phase-1-credit-assignment.md`](research-project-phase-1-credit-assignment.md) to compare the lead and backup before W1D4. |
 | Brain foundation models and digital twins | Can large neural-data models become reusable instruments for in-silico neuroscience? | Connects AI engineering with experimental neuroscience and model-brain alignment. | strategic frontier | Read P045, P047, P105 after encoding/decoding basics. |
 | Foundation models of cognition | Can behavior-scale models predict human choices without collapsing into curve fitting? | Bridges cognitive science, LLMs, and human-AI interface design. | watch closely | Read P101 with P070 and P068 as critique companions. |
 | LLMs and language cortex | Is language-model-brain alignment evidence of shared computation or shared objective pressure? | Important for cognitive neuroscience and AI interpretability. | active frontier | Read P036-P038, then P071. |

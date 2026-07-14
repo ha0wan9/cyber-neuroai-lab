@@ -1,0 +1,396 @@
+{
+  "slug": "11-neurotransmitters",
+  "title": "Neurotransmitters",
+  "source_page": "https://compneuro.neuromatch.io/tutorials/W0D0_NeuroVideoSeries/student/W0D0_Tutorial11.html",
+  "youtube_id": "yik9AePHZ1A",
+  "youtube_url": "https://youtube.com/watch?v=yik9AePHZ1A",
+  "caption_language": "en",
+  "caption_kind": "manual",
+  "paragraphs": [
+    {
+      "index": 1,
+      "start": 1.3,
+      "end": 32.22,
+      "timestamp": "00:00:01.300 - 00:00:32.220",
+      "text": "Hi all, before starting, let me introduce myself and my laboratory. My name is Emanuela Santini, and I am an assistant professor at the department of neuroscience at the Karolinska Institute. Josep Carbonell, Clarissa Anna Pisano, Alina Aaltonen, Maya Molinari, Veronica Cartocci are the dedicated doctoral students and postdoctoral fellows that are studying with me the molecular mechanisms and synaptic circuits that allow the generation of motivated behaviors and their shaping by experience."
+    },
+    {
+      "index": 2,
+      "start": 32.22,
+      "end": 46.449,
+      "timestamp": "00:00:32.220 - 00:00:46.449",
+      "text": "Our search also aims to identify the pathological alterations responsible for neurodevelopmental disorders and intellectual disability, as well as other neuropsychiatric disorders, such as ADHD and OCD."
+    },
+    {
+      "index": 3,
+      "start": 46.449,
+      "end": 70.09,
+      "timestamp": "00:00:46.449 - 00:01:10.090",
+      "text": "If you are interested in our study publications, you can read more about us on our website, or follow us on Twitter. So, neurons are highly specialized cells with unique morphology, and they came in all shapes and dimensions and this image is just a representative image of an average neuron."
+    },
+    {
+      "index": 4,
+      "start": 70.09,
+      "end": 86.43,
+      "timestamp": "00:01:10.090 - 00:01:26.430",
+      "text": "As any other cell, they have a cell body, where the nucleus containing the genetic material is located, and they also have multiple short processes, called dendrites, and a single process, called axon."
+    },
+    {
+      "index": 5,
+      "start": 86.43,
+      "end": 102.20400000000001,
+      "timestamp": "00:01:26.430 - 00:01:42.204",
+      "text": "Here, also depicted are oligodendrocytes, the non-neuronal cell of the central nervous system that provides myelin sheath around the axon. Myelin is a fatty white substance that wraps around the axons, providing coating."
+    },
+    {
+      "index": 6,
+      "start": 102.204,
+      "end": 118.202,
+      "timestamp": "00:01:42.204 - 00:01:58.202",
+      "text": "The myelin coating is an insulating and regulates axon potential conduction velocity. Neurons are linked to each other with a specialization at the axon terminal end called synapses."
+    },
+    {
+      "index": 7,
+      "start": 118.202,
+      "end": 131.373,
+      "timestamp": "00:01:58.202 - 00:02:11.373",
+      "text": "Generally speaking, an axon makes synapses with a dendritic tree of a second neuron named postsynaptic neuron, and receives synapses from the axon of another neuron."
+    },
+    {
+      "index": 8,
+      "start": 131.373,
+      "end": 155.496,
+      "timestamp": "00:02:11.373 - 00:02:35.496",
+      "text": "Neurons are electrically excitable cells, so signals come in through the dendrites, which are the input structure of the neuron, travel the cell body, ending in the axon, which is the output structure of the neuron, so generally speaking, the signal travels unidirectionally from the dendrites to the axon."
+    },
+    {
+      "index": 9,
+      "start": 155.496,
+      "end": 174.68,
+      "timestamp": "00:02:35.496 - 00:02:54.680",
+      "text": "So before entering into the way in which neurons signal to each other, let's briefly recap some basic principals of neuronal excitability. One of them is the concept of membrane potential, which refers to the difference in charge between the inside and outside of the neuron."
+    },
+    {
+      "index": 10,
+      "start": 174.68,
+      "end": 194.56900000000002,
+      "timestamp": "00:02:54.680 - 00:03:14.569",
+      "text": "So if we imagine to look closely at the plasma cell membrane of the neuron, this is a structure that separates the inside of the cell from the outside environment. The difference in the electrical charge of the membrane developed through the grouping of ions in the inside and the outside of the membrane."
+    },
+    {
+      "index": 11,
+      "start": 194.569,
+      "end": 208.31,
+      "timestamp": "00:03:14.569 - 00:03:28.310",
+      "text": "There are several ions that play an important role in membrane potential. For instance, there are positively charged sodium ions, represented here in green, and negatively charged chloride ions, in blue."
+    },
+    {
+      "index": 12,
+      "start": 208.31,
+      "end": 234.15200000000002,
+      "timestamp": "00:03:28.310 - 00:03:54.152",
+      "text": "When the neuron is at rest, sodium and chloride ions are more prevalent outside of the cell. There are also positive charged potassium ions, in red, that are more prevalent in the inside of the neuron, and various negatively charged ions, often referred to as organic anions, which include amino acid, proteins, and so on, here in gray."
+    },
+    {
+      "index": 13,
+      "start": 234.152,
+      "end": 253.631,
+      "timestamp": "00:03:54.152 - 00:04:13.631",
+      "text": "So the unequal distribution of ions on both sides of the cell make the inside of the neuron more negative than the outside, at rest. The resting membrane potential of an average neuron is around -70 mV (Dr. Santini meant to say \"millivolts\", not \"volts\"!)."
+    },
+    {
+      "index": 14,
+      "start": 253.631,
+      "end": 279.60699999999997,
+      "timestamp": "00:04:13.631 - 00:04:39.607",
+      "text": "The resting membrane potential is maintained by keeping the concentration of ions (mainly sodium and potassium) different between the sides of the neuron. And this occurs because of protein pumps that use energy to actively maintain this difference, such as by sodium-potassium ATPase, or by channels that are permeable to certain ions."
+    },
+    {
+      "index": 15,
+      "start": 280.18,
+      "end": 300.44899999999996,
+      "timestamp": "00:04:40.180 - 00:05:00.449",
+      "text": "Now, if there is enough stimulation in the dendritic tree, a \"spike\", or action potential will go through axon until it reaches the synapses. The action potential is a momentary inversion of the membrane potential that is at the basis of electrical signaling between neurons."
+    },
+    {
+      "index": 16,
+      "start": 300.449,
+      "end": 323.81,
+      "timestamp": "00:05:00.449 - 00:05:23.810",
+      "text": "So let's graph the action potential by illustrating the changes in membrane potential in function of the time. So the neuron starts at resting membrane potential of -70mV. As the dendritic tree of the neuron receives increasing stimulation, the neuron will move the membrane potential from -70 to more positive values."
+    },
+    {
+      "index": 17,
+      "start": 323.81,
+      "end": 342.27,
+      "timestamp": "00:05:23.810 - 00:05:42.270",
+      "text": "This is known as depolarization. The depolarization will bring the neuron to reach the threshold membrane potential, that in our example is around -55 mV. This is an irreversible point, at which the neuron will fire an action potential."
+    },
+    {
+      "index": 18,
+      "start": 342.27,
+      "end": 360.0,
+      "timestamp": "00:05:42.270 - 00:06:00.000",
+      "text": "At this point, a large number of sodium channels open, which let positively charged sodium enter the neuron, causing a massive depolarization of the neuron, also known as rising phase of the action potential."
+    },
+    {
+      "index": 19,
+      "start": 360.0,
+      "end": 379.749,
+      "timestamp": "00:06:00.000 - 00:06:19.749",
+      "text": "The flux of positive ions creates the electrical signal of the action potential, which travels down the neuron. Eventually, the action potential will reach it's peak: sodium channels will close, potassium channels will open, and this allows potassium to flow out of the cell."
+    },
+    {
+      "index": 20,
+      "start": 379.749,
+      "end": 399.303,
+      "timestamp": "00:06:19.749 - 00:06:39.303",
+      "text": "The loss of potassium promotes the repolarization of the neuron by making the inside of the membrane more negative. So the neuron will eventually go back to the resting membrane potential and will actually overshoot it. In fact, it will become more hyperpolarized, or more negative."
+    },
+    {
+      "index": 21,
+      "start": 399.303,
+      "end": 416.44,
+      "timestamp": "00:06:39.303 - 00:06:56.440",
+      "text": "This period is also called the refractory period, and in this phase, the neuron is quiet, and will not be activated. Eventually, potassium channels close, and the neuron will go back to the resting membrane potential, ready to be activated again."
+    },
+    {
+      "index": 22,
+      "start": 416.44,
+      "end": 453.782,
+      "timestamp": "00:06:56.440 - 00:07:33.782",
+      "text": "When the action potential travels into the axon terminal, it might cause the release of neurotransmitters at the synapse. So if we imagine to look closely at the synapse, we can recognize the presynaptic portion, which is the axon, containing synaptic vesicles filled with neurotransmitters, which are chemical messengers, the synaptic cleft, which is the space between the pre and postsynaptic neuron, and the neurotransmitter receptors, which are proteins inserted in specialized portions of dendrites named dendritic spines."
+    },
+    {
+      "index": 23,
+      "start": 453.956,
+      "end": 470.827,
+      "timestamp": "00:07:33.956 - 00:07:50.827",
+      "text": "When an action potential reaches the axon terminal at the synapse, voltage-gated calcium channels (ion channels that open in response to changes in potential) open, and calcium concentration increases."
+    },
+    {
+      "index": 24,
+      "start": 470.827,
+      "end": 487.28900000000004,
+      "timestamp": "00:07:50.827 - 00:08:07.289",
+      "text": "This results in the fusion of the vesicles with the membrane, and this allows the neurotransmitters to be released in the synaptic cleft and to communicate to the postsynaptic neuron via binding to the specific neurotransmitter receptor."
+    },
+    {
+      "index": 25,
+      "start": 487.289,
+      "end": 504.08,
+      "timestamp": "00:08:07.289 - 00:08:24.080",
+      "text": "Thus, the synapse is the place where the electrical signal are transduced into chemical signals, and the message is transmitter from one neuron to another. So the presynaptic neuron managed to convert the electrical message into a chemical one."
+    },
+    {
+      "index": 26,
+      "start": 504.08,
+      "end": 519.7330000000001,
+      "timestamp": "00:08:24.080 - 00:08:39.733",
+      "text": "But in order for it to become an action potential again in the receiving postsynaptic neuron, the message has to be converted again into electrical, and this happens when the neurotransmitter binds to these receptors."
+    },
+    {
+      "index": 27,
+      "start": 519.907,
+      "end": 538.35,
+      "timestamp": "00:08:39.907 - 00:08:58.350",
+      "text": "So receptors are large proteins embedded in plasma membrane, and there two broad families of neurotransmitter receptors. The ionotropic receptor are also known as ligand gated ion channels. This receptor have a neurotransmitter binding site on the synaptic cleft."
+    },
+    {
+      "index": 28,
+      "start": 538.35,
+      "end": 553.0999999999999,
+      "timestamp": "00:08:58.350 - 00:09:13.100",
+      "text": "When the neurotransmitter binds to it, it opens a channel in the receptor, and this channel allows the flow of ions into the neuron. This changes the membrane potential of the neuron."
+    },
+    {
+      "index": 29,
+      "start": 553.1,
+      "end": 572.8000000000001,
+      "timestamp": "00:09:13.100 - 00:09:32.800",
+      "text": "If, for instance, positive ions flow in the cell, such as sodium in this example, it makes the cytoplasmic side of the membrane more positive. So if we go back to our graph, this will bring the resting membrane potential close to the action potential threshold."
+    },
+    {
+      "index": 30,
+      "start": 572.8,
+      "end": 596.4499999999999,
+      "timestamp": "00:09:32.800 - 00:09:56.450",
+      "text": "This depolarizes the postsynaptic neuron, and it's know as EPSP, or excitatory postsynaptic membrane potential. On the contrary, if negatively charged ions flow in the cell, such as chloride in this example, it makes the inside more negative, driving the charge away from the threshold."
+    },
+    {
+      "index": 31,
+      "start": 596.45,
+      "end": 611.874,
+      "timestamp": "00:09:56.450 - 00:10:11.874",
+      "text": "In this case, the resting membrane potential will move away from the action potential threshold. This hyperpolarizes the postsynaptic neuron and is known as IPSP, or inhibitory postsynaptic membrane potential."
+    },
+    {
+      "index": 32,
+      "start": 612.497,
+      "end": 637.406,
+      "timestamp": "00:10:12.497 - 00:10:37.406",
+      "text": "The second family of receptors are named metabotropic (G protein-coupled) receptors. These are slow acting receptors that tune and modulate the function of a neuron over a long period of time. This receptors do not have an ion channel as part of the structure, but they have a intracellular domain that binds a molecule called G protein."
+    },
+    {
+      "index": 33,
+      "start": 637.655,
+      "end": 657.281,
+      "timestamp": "00:10:37.655 - 00:10:57.281",
+      "text": "When the neurotransmitter binds to this receptor, activated G protein then disassociates from the receptor, and either interacts directly with an ion channel, or bind to an effector protein, such as enzymes that subsequently start intracellular signaling pathways."
+    },
+    {
+      "index": 34,
+      "start": 657.281,
+      "end": 673.6769999999999,
+      "timestamp": "00:10:57.281 - 00:11:13.677",
+      "text": "Importantly, many neurotransmitters can activate both ionotropic and metabotropic receptors to produce both fast and slow postsynaptic potentials, sometimes even at the same membrane."
+    },
+    {
+      "index": 35,
+      "start": 673.677,
+      "end": 698.97,
+      "timestamp": "00:11:13.677 - 00:11:38.970",
+      "text": "Depending on the particular neurotransmitter and a particular receptor, the neuron might either get excited or inhibited. Therefore, we talk about excitatory or inhibitory neurotransmission. Nearly all excitatory neurons in the central nervous system are glutamatergic, and it's estimated that more than half of all brain synapses release this neurotransmitter."
+    },
+    {
+      "index": 36,
+      "start": 698.97,
+      "end": 714.449,
+      "timestamp": "00:11:38.970 - 00:11:54.449",
+      "text": "Glutamate is a nonessential amino acid that does NOT cross the blood-brain barrier, and therefore, must be synthesized in the neuron by local precursors. The glutamate receptor are ligand gated ion channels."
+    },
+    {
+      "index": 37,
+      "start": 714.449,
+      "end": 726.9609999999999,
+      "timestamp": "00:11:54.449 - 00:12:06.961",
+      "text": "These channels are named AMPA, NMDA, or kainate receptors, named after the drug that activates them. Glutamate also binds to metabotropic glutamate receptors."
+    },
+    {
+      "index": 38,
+      "start": 726.961,
+      "end": 743.2929999999999,
+      "timestamp": "00:12:06.961 - 00:12:23.293",
+      "text": "Upon binding to the receptor, sodium will enter the neuron, and this will depolarize the postsynaptic neuron, bringing the membrane resting potential closer to the action potential threshold."
+    },
+    {
+      "index": 39,
+      "start": 743.293,
+      "end": 760.64,
+      "timestamp": "00:12:23.293 - 00:12:40.640",
+      "text": "This depolarization is known as EPSP, or excitatory postsynaptic potential. Glutamate is involved in different aspects of brain functions, including cognition, learning, and memory."
+    },
+    {
+      "index": 40,
+      "start": 762.529,
+      "end": 787.826,
+      "timestamp": "00:12:42.529 - 00:13:07.826",
+      "text": "Gamma aminobutyric acid, or GABA, is an amino acid, and is the main inhibitory neurotransmitter in the brain. It is estimated that almost one third of the synapses use GABA as an inhibitory neurotransmitter. GABA binds to two types of postsynaptic receptor: GABA_A and GABA_B, where GABA_A are ionotropic receptors and GABA_B are metabotropic receptors."
+    },
+    {
+      "index": 41,
+      "start": 787.826,
+      "end": 808.342,
+      "timestamp": "00:13:07.826 - 00:13:28.342",
+      "text": "Here represented GABA_A receptor, which are ion channels with chloride being the main permeant ion in physiological conditions. Binding of GABA to this receptor allows for chloride to diffuse inside the neuron and make the inside more negative."
+    },
+    {
+      "index": 42,
+      "start": 808.342,
+      "end": 825.24,
+      "timestamp": "00:13:28.342 - 00:13:45.240",
+      "text": "These hyperpolarize the postsynaptic neuron and make the inside more negative and drive its charge down away from the threshold. This hyperpolarization is known as IPSP, or inhibitory postsynaptic membrane potential."
+    },
+    {
+      "index": 43,
+      "start": 825.24,
+      "end": 840.4799999999999,
+      "timestamp": "00:13:45.240 - 00:14:00.480",
+      "text": "GABA is considered a significant mood modulator when GABA levels are too low or GABA function is impaired, neurons can become overexcited, which can lead to restlessness, anxiety, and irritability."
+    },
+    {
+      "index": 44,
+      "start": 842.183,
+      "end": 856.441,
+      "timestamp": "00:14:02.183 - 00:14:16.441",
+      "text": "Neuromodulation is a special type of neurotransmission, and dopamine can be used as an example of a neuromodulator. Dopamine belongs to the class of the biogenic amines, and more specifically to the catecholamines."
+    },
+    {
+      "index": 45,
+      "start": 856.441,
+      "end": 870.8789999999999,
+      "timestamp": "00:14:16.441 - 00:14:30.879",
+      "text": "Dopamine is considered a neuromodulator because it is released diffusely via volume transmission, that is, the neurotransmitter is generally released into the neuronal tissue and not at specific synapses."
+    },
+    {
+      "index": 46,
+      "start": 870.879,
+      "end": 888.35,
+      "timestamp": "00:14:30.879 - 00:14:48.350",
+      "text": "So it functions more as a chemical broadcast signal for a certain brain region rather than being targeted to a particular neuron. But to be more specific, the function of a neuromodulator is to alter the strength of signal transmission between neurons."
+    },
+    {
+      "index": 47,
+      "start": 888.35,
+      "end": 912.769,
+      "timestamp": "00:14:48.350 - 00:15:12.769",
+      "text": "A neuromodulator can alter neuronal signal transmission by controlling the amount of neurotransmitters synthesized and released by presynaptic neurons. Dopamine binds to G protein coupled receptors that belong to the two classes of D1-like and D2-like dopamine receptors, depending on the specific class of coupled G protein."
+    },
+    {
+      "index": 48,
+      "start": 912.769,
+      "end": 932.542,
+      "timestamp": "00:15:12.769 - 00:15:32.542",
+      "text": "Dopamine brain function are fundamental and go from the regulation of movement, to motivation, reward, and reinforcement. To conclude, let's briefly touch upon synaptic strength, that refers to the modulation of strength of the postsynaptic potential for a given presynaptic stimulation."
+    },
+    {
+      "index": 49,
+      "start": 933.639,
+      "end": 955.899,
+      "timestamp": "00:15:33.639 - 00:15:55.899",
+      "text": "So you know by now that when an action potential reaches the presynaptic portion of the synapse, it leads to the release of neurotransmitters, which bind to neurotransmitter-gated ion channels, which in turn, allow for the entrance of ions such as sodium to the postsynaptic neuron."
+    },
+    {
+      "index": 50,
+      "start": 955.899,
+      "end": 972.3190000000001,
+      "timestamp": "00:15:55.899 - 00:16:12.319",
+      "text": "We also know that the difference in charges between the cytoplasmic and extracellular portion of a membrane is named membrane potential. And the number of ions that enter into the postsynaptic neuron in response of released neurotransmitter affect this difference."
+    },
+    {
+      "index": 51,
+      "start": 972.319,
+      "end": 983.137,
+      "timestamp": "00:16:12.319 - 00:16:23.137",
+      "text": "This is how we measure the strength of the synapse, by how much the postsynaptic potential changes as a result of the presynaptic stimulation."
+    },
+    {
+      "index": 52,
+      "start": 983.885,
+      "end": 1002.0,
+      "timestamp": "00:16:23.885 - 00:16:42.000",
+      "text": "With repeated stimulation, the same level of presynaptic stimulation leads to greater postsynaptic potential, either by the amount of neurotransmitters released, or by the number of postsynaptic receptors available."
+    },
+    {
+      "index": 53,
+      "start": 1002.0,
+      "end": 1024.809,
+      "timestamp": "00:16:42.000 - 00:17:04.809",
+      "text": "Both have the same effect of altering how much electrical current flow through the ion channels. When this happens, we say that the synapse strength is increasing. As I mentioned earlier, neuromodulators such as dopamine can change the synaptic strength by for instance increasing the release of neurotransmitters."
+    },
+    {
+      "index": 54,
+      "start": 1024.809,
+      "end": 1040.29,
+      "timestamp": "00:17:04.809 - 00:17:20.290",
+      "text": "When this increase lasts for long time, for instance minutes or months, it's called long-term potentiation, or LTP. LTP is thought to be the cellular mechanism by which learning occurs."
+    },
+    {
+      "index": 55,
+      "start": 1040.29,
+      "end": 1051.318,
+      "timestamp": "00:17:20.290 - 00:17:31.318",
+      "text": "As synapses are strengthened and retain their strength, we can more easily recall previous experience. Thank you for your attention."
+    }
+  ]
+}

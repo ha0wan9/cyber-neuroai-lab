@@ -44,7 +44,7 @@ Purpose: maintain a cross-domain map of concepts by relation type. This is not a
 | --- | --- | --- | --- |
 | synaptic plasticity | biological learning, dynamics | TBD | raw |
 | gradient descent | representation shaping, optimization | TBD | raw |
-| credit assignment | biological plausibility, algorithmic mechanism | TBD | raw |
+| credit assignment | biological plausibility, algorithmic mechanism, representational trajectories | `indexes/research-project-phase-1-credit-assignment.md` | working candidate |
 | self-supervised learning | representation learning, NeuroAI models | TBD | raw |
 
 ## Causality

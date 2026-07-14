@@ -1,0 +1,72 @@
+{
+  "video": "06-brain-signals-lfp",
+  "frame_count": 108,
+  "key_frames": [
+    {
+      "file": "01-00-00-00.jpg",
+      "timestamp": "00:00:00",
+      "seconds": 0.0,
+      "storyboard_index": 0
+    },
+    {
+      "file": "02-00-00-19.jpg",
+      "timestamp": "00:00:19",
+      "seconds": 19.8,
+      "storyboard_index": 2
+    },
+    {
+      "file": "03-00-02-08.jpg",
+      "timestamp": "00:02:08",
+      "seconds": 128.6,
+      "storyboard_index": 13
+    },
+    {
+      "file": "04-00-04-27.jpg",
+      "timestamp": "00:04:27",
+      "seconds": 267.0,
+      "storyboard_index": 27
+    },
+    {
+      "file": "05-00-06-35.jpg",
+      "timestamp": "00:06:35",
+      "seconds": 395.6,
+      "storyboard_index": 40
+    },
+    {
+      "file": "06-00-08-54.jpg",
+      "timestamp": "00:08:54",
+      "seconds": 534.0,
+      "storyboard_index": 54
+    },
+    {
+      "file": "07-00-11-02.jpg",
+      "timestamp": "00:11:02",
+      "seconds": 662.6,
+      "storyboard_index": 67
+    },
+    {
+      "file": "08-00-12-51.jpg",
+      "timestamp": "00:12:51",
+      "seconds": 771.3,
+      "storyboard_index": 78
+    },
+    {
+      "file": "09-00-13-11.jpg",
+      "timestamp": "00:13:11",
+      "seconds": 791.1,
+      "storyboard_index": 80
+    },
+    {
+      "file": "10-00-15-29.jpg",
+      "timestamp": "00:15:29",
+      "seconds": 929.6,
+      "storyboard_index": 94
+    },
+    {
+      "file": "11-00-17-38.jpg",
+      "timestamp": "00:17:38",
+      "seconds": 1058.1,
+      "storyboard_index": 107
+    }
+  ]
+}

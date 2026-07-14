@@ -1,0 +1,114 @@
+{
+  "slug": "04-live-in-lab",
+  "title": "Live in Lab",
+  "source_page": "https://compneuro.neuromatch.io/tutorials/W0D0_NeuroVideoSeries/student/W0D0_Tutorial4.html",
+  "youtube_url": "https://youtube.com/watch?v=HCx-sOp9R7M",
+  "summary_language": "zh",
+  "summaries": [
+    {
+      "index": 1,
+      "timestamp": "00:00:00.640 - 00:00:20.800",
+      "summary": "Anne Churchland介绍她在UCLA的实验室研究决策的神经环路，并计划展示用于测量背侧皮层活动的wide-field imaging。"
+    },
+    {
+      "index": 2,
+      "timestamp": "00:00:22.800 - 00:00:45.040",
+      "summary": "实验室学生使用Neuropixel系统进行电生理记录，在动物执行任务时监测神经spike。"
+    },
+    {
+      "index": 3,
+      "timestamp": "00:00:46.080 - 00:01:03.600",
+      "summary": "同时从上方录像并用DeepLabCut追踪动物运动，与ephys记录同步，并提到wide-field imaging是另一种记录方法。"
+    },
+    {
+      "index": 4,
+      "timestamp": "00:01:05.760 - 00:01:19.120",
+      "summary": "Lucas展示用于动物行为测试的隔音箱，确保动物舒适并做出良好决策。"
+    },
+    {
+      "index": 5,
+      "timestamp": "00:01:21.920 - 00:01:48.400",
+      "summary": "隔音箱提供声音隔离和最小光照，通过计算机控制行为刺激，并可从底部或顶部视频追踪动物。"
+    },
+    {
+      "index": 6,
+      "timestamp": "00:01:51.120 - 00:02:09.040",
+      "summary": "Mike展示与wide-field成像装置相同的行为装置，便于近距离观察其结构。"
+    },
+    {
+      "index": 7,
+      "timestamp": "00:02:10.560 - 00:02:24.160",
+      "summary": "头固定装置配备传感器用于传递听觉和视觉刺激，可直接置于wide-field成像装置中同步成像。"
+    },
+    {
+      "index": 8,
+      "timestamp": "00:02:27.280 - 00:02:39.920",
+      "summary": "Anne引导前往wide-field成像装置，展示如何整合各部分测量行为中的神经活动。"
+    },
+    {
+      "index": 9,
+      "timestamp": "00:02:47.120 - 00:02:58.560",
+      "summary": "Ashley作为行为专家展示小鼠训练和成像装置的实际操作。"
+    },
+    {
+      "index": 10,
+      "timestamp": "00:03:01.360 - 00:03:26.080",
+      "summary": "Ashley每天训练小鼠，通过左右侧喷口提供视听刺激，小鼠舔左或右做决策，并使用自制电路板完全控制行为。"
+    },
+    {
+      "index": 11,
+      "timestamp": "00:03:26.080 - 00:03:47.520",
+      "summary": "宽场成像系统与行为范式计算机相连，用于记录行为期间的神经活动。"
+    },
+    {
+      "index": 12,
+      "timestamp": "00:03:48.400 - 00:04:13.840",
+      "summary": "Joao Couto介绍宽场成像装置，该装置由Simon Musall开发并已发表论文详细描述。"
+    },
+    {
+      "index": 13,
+      "timestamp": "00:04:16.080 - 00:04:44.720",
+      "summary": "宽场成像装置包含蓝色和紫色LED模块，分别用于激发GCaMP和校正血流动力学，GCaMP发出绿色荧光信号。"
+    },
+    {
+      "index": 14,
+      "timestamp": "00:04:44.720 - 00:04:49.840",
+      "summary": "绿色荧光通过滤波器后直接进入相机采集。"
+    },
+    {
+      "index": 15,
+      "timestamp": "00:04:52.000 - 00:05:26.560",
+      "summary": "通过同步和交替波长采集数据，示例显示小鼠背侧皮层图像，可对齐Allen图谱识别脑区。"
+    },
+    {
+      "index": 16,
+      "timestamp": "00:05:26.560 - 00:05:39.600",
+      "summary": "示例显示小鼠执行决策任务时，左侧试验引起右侧大脑区域激活。"
+    },
+    {
+      "index": 17,
+      "timestamp": "00:05:42.720 - 00:05:58.480",
+      "summary": "研究团队开发了基于云平台NeuroCAAS的分析框架用于处理宽场成像数据。"
+    },
+    {
+      "index": 18,
+      "timestamp": "00:06:00.080 - 00:06:22.960",
+      "summary": "NeuroCAAS可云端分析大规模宽场成像数据，另有公开协议指导搭建装置、血流动力学校正和颅骨预备等。"
+    },
+    {
+      "index": 19,
+      "timestamp": "00:06:22.960 - 00:06:39.600",
+      "summary": "公开协议详细说明如何搭建显微镜、进行血流动力学校正和颅骨预备，以及云端数据分析步骤。"
+    },
+    {
+      "index": 20,
+      "timestamp": "00:06:40.480 - 00:07:00.240",
+      "summary": "宽场成像具有高通量优势，可记录小鼠整个背侧皮层的神经活动。"
+    },
+    {
+      "index": 21,
+      "timestamp": "00:07:00.240 - 00:07:12.960",
+      "summary": "该实验室将大量数据免费在线公开，鼓励观众在宽场成像（wide-field imaging）数据中发现未知的新发现。"
+    }
+  ]
+}
